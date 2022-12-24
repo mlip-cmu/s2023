@@ -1,5 +1,9 @@
 name: publish-gh-pages
 
+on:
+  push: 
+    branch: main
+
 jobs:
   gh-pages:
     runs-on: ubuntu-latest
