@@ -1,0 +1,49 @@
+name: publish-gh-pages
+
+jobs:
+  gh-pages:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+      
+    - name: Prepare _site
+      run: |
+        echo generate main html page in _site/
+        mkdir _site
+        cd lectures
+        npm install --no-optional
+        cd ..
+
+    - name: Generate main page
+      run: |
+        cp .assets/template.html _site/index.html
+        sed 's/\](https:\/\/ckaestne.github.io\/seai\/F2022\/slides\/\([^\(]*\)\.html) (\[/\](https:\/\/ckaestne.github.io\/seai\/F2022\/slides\/\1.html) ([md](https:\/\/github.com\/ckaestne\/seai\/blob\/F2022\/lectures\/\1.md), [pdf](https:\/\/ckaestne.github.io\/seai\/F2022\/slides\/\1.pdf), \[/' < schedule.md |         sed 's/\](https:\/\/ckaestne.github.io\/seai\/F2022\/slides\/\([^\(]*\)\.html) *|/\](https:\/\/ckaestne.github.io\/seai\/F2022\/slides\/\1.html) ([md](https:\/\/github.com\/ckaestne\/seai\/blob\/F2022\/lectures\/\1.md), [pdf](https:\/\/ckaestne.github.io\/seai\/F2022\/slides\/\1.pdf)) |/'  > schedule_.md
+        sed -i -e '/^\[Schedule\]/r schedule_.md' README.md
+        npx marked -i README.md >> _site/index.html
+        cat .assets/template_end.html >> _site/index.html
+        cp *.svg _site/
+        cp *.png _site/
+        mkdir _site/assignments
+        cp assignments/*.html _site/assignments/
+        rm schedule_.md
+
+    - name: Generate slides
+      run: |
+        cd lectures
+        timeout 5m npm run generate
+        timeout 15m npm run pdf
+        cp -r _static/ ../_site/slides
+        cd ..
+
+    - name: Push to gh-pages
+      run: |
+        git clone --quiet --branch gh-pages --depth 1 https://github.com/${{ github.repository }}.git .gh-pages
+        rm -rf .gh-pages/*
+        mv _site/* .gh-pages
+        cd .gh-pages
+        git add .
+        git config --local user.email "ckaestne@nomail.cs.cmu.edu"
+        git config --local user.name "GitHub Action"
+        git commit --allow-empty -m "Update gh-pages for ${{ github.sha }}"
+        git push https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:gh-pages --force --follow-tags -v
