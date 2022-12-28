@@ -1,6 +1,6 @@
 # Individual Assignment 1: Building an ML-enabled Product
 
-(17-445/17-645/17-745 Machine Learning in Production)
+(17-445/17-645/17-745 Machine Learning in Production; 11-695 AI Engineering)
 
 ## Overview
 
