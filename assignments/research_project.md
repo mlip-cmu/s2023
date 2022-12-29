@@ -10,7 +10,7 @@ The end goal of this project should be a 4 page research paper on some topic of 
 
 ## Selecting a Topic
 
-We provide extensive flexibility to align the research project with your interests. Combining this with research you are already doing as part of your PhD is encouraged. Projects should relate to both software engineering and machine learning and have a research notion. Projects that focus only on core machine-learning topics and pure engineering projects to not apply.
+We provide extensive flexibility to align the research project with your interests. Combining this with research you are already doing as part of your PhD is encouraged. Projects should relate to both software engineering and machine learning and have a research notion in that it addresses a clear *research question*. Projects that focus only on core machine-learning topics and pure engineering projects to not apply.
 
 The goal of this assignment is to perform some self-directed research in the field of the course. This can employ different research methods and take many forms, such as:
 
@@ -20,7 +20,13 @@ The goal of this assignment is to perform some self-directed research in the fie
 * A **literature survey** on a specific topic, including surveys of academic literature and surveys of grey literature. Surveys should follow a principled approach and synthesize new insights.
 * A **replication study** of a different study in the field. This can be an exact replication or a conceptual replication that varies aspects of the original study.
 
-Given the short time frame of this project, we do not expect a fully complete study. The outcome should be a self-contained paper and corresponding presentation that motivates the work, describes the research questions, the state of the art, gives an overview of the study design, and possibly preliminary results. For more empirical work, a description and justification of a study with very preliminary results or even without results is acceptable -- if you do not have results, include a section "Expected Outcomes" that describes what you would expect if you had more time. For a survey or replication study, we expect some preliminary results at least. 
+The study should aim to provide some insights for a clear research question. A pure opinion paper, essay paper, or tool paper without any evaluation or evidence is not in scope.
+
+Given the short time frame of this project, we do not expect a fully complete study, but we do expect at least some preliminary results. For example, when planning an interview study, the paper should contain the methods section fleshed out and some results from at least two pilot interviews.
+
+The submission should be a self-contained paper and corresponding presentation that motivates the work, describes the research questions, outlines the state of the art, gives an overview of the study design, and presents some preliminary results. For more empirical work, a description and justification of a study with very preliminary results or even without full results is acceptable. For a literature survey, we expect at least a partial overview of the relevant publications with synthesized insights.
+
+We encourage research projects that align with your research outside of class. Ideally, the project aligns with research that you are doing right now anyway. You may reuse parts of other papers you wrote before the start of this semester as long as there is at least 30% new content and you indicate what is new.
 
 If you are interested, the instructors are happy to work with you beyond the end of the semester on this project to submit it for publication.
 
@@ -28,36 +34,37 @@ If you are interested, the instructors are happy to work with you beyond the end
 
 The presentation is due at the same time as those for the final team project. The paper is due at 11:59pm the same day.
 
-We strongly suggest the following milestones to better scope the project together with the instructors:
+We set the following milestones to better scope the project together with the instructors:
 
-* Sep 21: Reach out to instructors for an initial discussion of possible project ideas
-* Oct 12: Send a brief description of the project (not more than 1 page) to the instructors. The description should include references to at least 2 pieces of related work and some initial progress.
-* Nov 9: Send an initial draft of the paper to the instructors. It does not need to be complete, but should contain the entire structure, an initial complete draft of the introduction, and some initial content in other sections.
+* Feb 15: Reach out to instructors for an initial discussion of possible project ideas
+* March 1: Send a brief description of the project (not more than 1 page) to the instructors. The description should include the research question, the intended research method, and references to at least 2 pieces of related work.
+* March 29: Send an initial draft of the paper to the instructors. It does not need to be complete, but should contain the entire structure, an initial complete draft of the introduction, and some initial content in other sections.
 
 We are happy to discuss ideas or drafts at any time during the semester, not just at the milestones.
 
-If you plan to conduct interviews or surveys as part of the project, please plan early for IRB review and allow time for that review.
+If you plan to conduct interviews or surveys as part of the project and you plan to later publish the paper, please plan early for IRB review and allow time for that review. The instructors can help navigate IRB questions.
 
 ## Deliverables
 
-Submit a paper and a presentation on the final deadline.
+Submit a draft at the milestone deadlines and a paper and a presentation at the final deadline.
 
-The paper should be in a form submittable to a new-idea track or workshop in the field. It should have at least an introduction motivating the research, one or more clear and motivated research questions, a discussion of the state of the art or related work, and a description of the conducted or planned research. While we do not enforce a specific page limit, we would typically expect around 4 pages in an ACM format, such as for the [ICSE-NIER](https://conf.researchr.org/track/icse-2022/icse-2022-nier---new-ideas-and-emerging-results) track.
+The paper should be in a form submittable to a new-idea track, short-paper track, or workshop in the field. It should have at least an introduction motivating the research, one or more clear and motivated research questions, a discussion of the state of the art or related work, and a description of the conducted or planned research, and some results. While we do not enforce a specific page limit or formatting requirements, we would typically expect around 4 pages double-column format, such as for the [ICSE-NIER](https://conf.researchr.org/track/icse-2022/icse-2022-nier---new-ideas-and-emerging-results) track.
 
 The presentation should be no longer than 8 minutes. How you structure the presentation is up to you. You do not need to cover everything, but consider how to make this interesting to the audience. It will be presented in the same time slot as the presentations from the group project.
 
-Send paper and slides as attachments or links per email to the instructors.
+Send drafts, papers and slides as attachments or links per email to the instructors.
 
 ## Grading
 
 This assignment is worth 200 points. For full credit, we expect:
 
+* [ ] 20 points: A description of an intended project was sent on the second milestone. It includes the research question, the intended research method, and references to at least 2 pieces of related work.
 * [ ] 40 points: The research described in the paper is in scope for the content of this course.
-* [ ] 70 points: The research described in the paper makes a good faith attempt at exploring something novel in this field.
+* [ ] 50 points: The research described in the paper makes a good faith attempt at exploring something novel in this field.
 * [ ] 20 points: The paper states a clear research question and motivates why answering that research question is important and to whom
 * [ ] 30 points: The paper discusses the state of the art regarding the problem studied
 * [ ] 10 points: The paper makes a good faith attempt at describing the research method proposed or used to answer the research question
-* [ ] 10 points: The paper includes some preliminary results or a description of expected results
+* [ ] 10 points: The paper includes some results. In a literature survey, a reasonable synthesis of some part of the literature is included. In an interview or survey, at least preliminary results from a pilot with 2 participants are included.
 * [ ] 10 points: The paper is reasonably well written and self-contained and would be suitable for a workshop or conference.
 * [ ] 10 points: A presentation to the entire class that describes the project. Slides were submitted.
 
