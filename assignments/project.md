@@ -8,7 +8,7 @@ In this project, you will implement, evaluate, operate, monitor, and evolve a re
 
 The focus of this assignment is to *operate* a recommendation service *in production*, which entails many concerns, including deployment, scaling, reliability, drift and feedback loops.
 
-The assignment has multiple milestones and a final project presentation. It has a total of 412 points.
+The assignment has multiple milestones and a final project presentation. It has a total of 415 points.
 
 ## Overall mechanics and infrastructure
 
@@ -86,6 +86,7 @@ This milestone is worth 100 points:
 * [ ] 10pt: The report includes a description of how the team was organized, including a description of communication channels and process for work division and responsibility assignments. A screenshot of teamwork notes or a link to the notes is provided. The notes describe how the work was devided, answering *who* was supposed to do *what* by *when*.
 * [ ] 10pt: The prediction services successfully answers at least 2000 recommendation requests in the 24 hours before or after submission. To be successful, the answer must be well-formed and arrive within the time limit. (We use the status 200 message in the movielog for grading).
 * [ ] 10pt: The prediction service answers at least 10% of all recommendation requests in the 24 hours before or after submission with *personalized* recommendations (i.e., `200` status, not the same recommendation for every user).
+* [ ] 3pt (individually): The teammaker survey (on Catme) is filled out.
 * [ ] 3pt (individually): The teamwork survey for this milestone is filled out.
 * [ ] 3pt: Bonus points for social activity (see very end of this document)
 
