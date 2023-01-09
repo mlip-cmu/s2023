@@ -8,11 +8,11 @@ In this project, you will implement, evaluate, operate, monitor, and evolve a re
 
 The focus of this assignment is to *operate* a recommendation service *in production*, which entails many concerns, including deployment, scaling, reliability, drift and feedback loops.
 
-The assignment has multiple milestones and a final project presentation. It has a total of 400 points.
+The assignment has multiple milestones and a final project presentation. It has a total of 412 points.
 
 ## Overall mechanics and infrastructure
 
-**Teamwork:** You will work on this project in your assigned teams. As a team, you will use a shared GitHub repository and a virtual machine to coordinate your work. Please establish a way of communication and collaboration that works for your team -- for example, a Slack channel and a Trello board. Please agree on how you take clear notes at meetings that include agreed tasks and responsibilities. We expect that team members will have different backgrounds and different amounts of experience with machine learning and software engineering -- this is intentional. Use the first milestone to identify strength and weaknesses, fill missing gaps in background knowledge, and teach each other about tools and practices that are effective for this task. We do not expect that all team members contribute equally to each part of the project, but we expect that all team members make every effort to be a good team citizen (attend meetings, prepared and cooperative, respect for other team members, work on assigned and agreed tasks by agreed deadlines, reaching out to team members when delays are expected, etc). We will regularly check in about teamwork and perform *peer grading* to assess team citizenship of individual students after every milestone (see this [paper](http://www.rochester.edu/provost/assets/PDFs/futurefaculty/Turning%20Student%20Groups%20into%20Effective%20Teams.pdf) page 28-31 for procedure details and this [site](https://ckaestne.github.io/seai/F2022/assignments/peergrading.html) to preview impact on grades).
+**Teamwork:** You will work on this project in your assigned teams. As a team, you will use a shared GitHub repository and a virtual machine to coordinate your work. Please establish a way of communication and collaboration that works for your team -- for example, a Slack channel and a Trello board. Please agree on how you take clear notes at meetings that include agreed tasks and responsibilities. We expect that team members will have different backgrounds and different amounts of experience with machine learning and software engineering -- this is intentional. Use the first milestone to identify strength and weaknesses, fill missing gaps in background knowledge, and teach each other about tools and practices that are effective for this task. We do not expect that all team members contribute equally to each part of the project, but we expect that all team members make every effort to be a good team citizen (attend meetings, prepared and cooperative, respect for other team members, work on assigned and agreed tasks by agreed deadlines, reaching out to team members when delays are expected, etc). We will regularly check in about teamwork with a mandatory survey and perform *peer grading* to assess team citizenship of individual students after every milestone (see this [paper](http://www.rochester.edu/provost/assets/PDFs/futurefaculty/Turning%20Student%20Groups%20into%20Effective%20Teams.pdf) page 28-31 for procedure details and this [site](https://ckaestne.github.io/seai/F2022/assignments/peergrading.html) to preview impact on grades). 
 
 **Milestones:** For each milestone and the final presentation, there are separate deliverables, described below. The milestones are checkpoints to ensure that certain functionality has been delivered. Milestones are graded on a pass/fail scheme for the criteria listed with each milestone. Teams may submit work for milestones late or redo milestones with their team tokens as described in the [syllabus](https://github.com/ckaestne/seai/blob/F2022/README.md#course-syllabus-and-policies).
 
@@ -86,6 +86,7 @@ This milestone is worth 100 points:
 * [ ] 10pt: The report includes a description of how the team was organized, including a description of communication channels and process for work division and responsibility assignments. A screenshot of teamwork notes or a link to the notes is provided. The notes describe how the work was devided, answering *who* was supposed to do *what* by *when*.
 * [ ] 10pt: The prediction services successfully answers at least 2000 recommendation requests in the 24 hours before or after submission. To be successful, the answer must be well-formed and arrive within the time limit. (We use the status 200 message in the movielog for grading).
 * [ ] 10pt: The prediction service answers at least 10% of all recommendation requests in the 24 hours before or after submission with *personalized* recommendations (i.e., `200` status, not the same recommendation for every user).
+* [ ] 3pt (individually): The teamwork survey for this milestone is filled out.
 * [ ] 3pt: Bonus points for social activity (see very end of this document)
 
 
@@ -139,6 +140,7 @@ If you hit resource limits of your virtual machine, contact the course staff or 
 * [ ] 20pt: A suitable strategy for online model evaluation is described in the usual three step format: (1) the model accuracy metric used, (2) the telemetry data collected, and (3) how the metric is computed from the data. A link to a corresponding implementation that matches the description is provided. Online evaluation results that were computed with the described process and metric are included or linked.
 * [ ] 20pt: A description of how the pipeline was tested is included in the report and a link to the corresponding tests is included. The report argues why the performed testing was adequate. A coverage report is included or linked.
 * [ ] 10pt: The infrastructure tests are all automated with a continuous integration service and triggered automatically when code is changed on GitHub. A pointer to the service is provided.
+* [ ] 3pt (individually): The teamwork survey for this milestone is filled out.
 * [ ] 5pt: Bonus points for using pull requests and conducting code review within those pull requests for the majority of changes. A brief description of the process is included in the report.
 * [ ] 3pt: Bonus points for social activity (see very end of this document)
 
@@ -200,6 +202,7 @@ If you hit resource limits of your virtual machine, contact the course staff or 
 - [ ] 25pt: An infrastructure for online experimentation is implemented and has been used for at least one experiment. Appropriate statistical tests are used to report confidence in the experiments’ results. The report describes how users are split, how quality is tracked, and how results are reported. A screenshot of an experiment’s outcome is included and links to the corresponding implementation are provided. The description matches the implementation.
 - [ ] 10pt: The report describes how provenance is tracked. It explains how for a given prediction the responsible model can be identified and how for that model the corresponding pipeline version and training data can be identified. It illustrates that process with one concrete example. Links to the corresponding implementation are provided. The description matches the implementation.
 - [ ] 10pt: The recommendation service is at least 70% available in the 96 hours before the submission and the 72 hours after (i.e., max downtime of 50h), while at least two updates are performed in that time period.
+- [ ] 3pt (individually): The teamwork survey for this milestone is filled out.
 - [ ] 5pt: Bonus points if the recommendation service is at least 99% available in the same 7-day window (max 100min downtime), while at least two updates are performed in that time period.
 - [ ] 3pt: Bonus points for social activity (see very end of this document)
 
@@ -250,6 +253,7 @@ We may have introduced some bias in the data, introduced mechanisms for specific
 * [ ] 10pt: The report includes a description of the *process* used to identify possible security issues. At least two possible security issues are described. At least one of those issues relates to an attack on the recommendation model. All described security issues are plausible.
 * [ ] 5pt: The report includes a plausible discussion of how the system or development practices could be changed to mitigate the security issue. If the report suggests to not take any action, a plausible justification is included.
 * [ ] 5pt: For one of the anticipated security concerns, the system was analyzed with telemetry data to assess whether an attack is observable. The analysis is clearly described and the results are reported.
+* [ ] 3pt (individually): The teamwork survey for this milestone is filled out.
 * [ ] 3pt: Bonus points for social activity (see very end of this document)
 
 ## Final Report and Presentation
