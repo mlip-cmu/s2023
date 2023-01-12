@@ -14,8 +14,8 @@
   },
   "author": "Christian Kaestner",
   "devDependencies": {
-    "puppeteer": "^15.5.0",
-    "reveal-md": "^5.3.4"
+    "puppeteer": "^19.5.2",
+    "reveal-md": "^5.4.0"
   },
   "license": "CC-BY-SA-4.0",
   "dependencies": {
