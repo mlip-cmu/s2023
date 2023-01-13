@@ -48,6 +48,7 @@ jobs:
         mv _site/* .gh-pages
         cd .gh-pages
         git add .
+        git add .nojekyll
         git config --local user.email "ckaestne@nomail.cs.cmu.edu"
         git config --local user.name "GitHub Action"
         git commit --allow-empty -m "Update gh-pages for ${{ github.sha }}"
