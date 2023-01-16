@@ -2,7 +2,7 @@
 author: Eunsuk Kang & Christian Kaestner
 title: "MLiP: Motivation, Syllabus, and Introductions"
 semester: Fall 2022
-footer: "17-645 Machine Learning in Production • Christian Kaestner & Eunsuk Kang, Carnegie Mellon University • Spring 2023"
+footer: "Machine Learning in Production/AI Engineering • Christian Kaestner & Eunsuk Kang, Carnegie Mellon University • Spring 2023"
 license: Creative Commons Attribution 4.0 International (CC BY 4.0)
 ---  
 <!-- .element: class="titleslide"  data-background="../_chapterimg/01_intro.jpg" -->
