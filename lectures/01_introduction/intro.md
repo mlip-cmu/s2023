@@ -653,6 +653,26 @@ In group work, be honest about contributions of team members, do not cover for o
 
 If you feel overwhelmed or stressed, please come and talk to us (see syllabus for other support opportunities)
 
+----
+## Thoughts on Generative AI for Homework?
+
+<!-- discussion -->
+
+
+GPT3, ChatGPT, ...? Reading quizzes, homework submissions, ...?
+
+
+----
+## Our Position on Generative AI for Homew.
+
+This is a course on responsible building of ML products. This includes questions of how to build generative AI tools responsibly and discussing what use is ethical.
+
+Feel free to use them and explore whether they are useful. Welcome to share insights/feedback.
+
+Warning: They are *[bullshit generators](https://aisnakeoil.substack.com/p/chatgpt-is-a-bullshit-generator-but)*! Requires understanding to check answers. We test them ourselves and they often generate bad/wrong answers for reading quizzes.
+
+**You are still responsible for the correctness of what you submit!**
+
 
 
 ---
