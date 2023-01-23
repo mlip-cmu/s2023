@@ -483,11 +483,6 @@ Start understanding the **requirements** of the system and its components
 
 <!-- colend -->
 
-----
-## Running Example: Spotify Personalized Playlists
-
-[![Spotify Screenshot of (My) Personalized Playlists](spotify.png)](spotify.png)
-<!-- .element: class="stretch" -->
 
 
 
@@ -584,12 +579,11 @@ Easier and more granular to measure, but possibly only indirect relation to orga
 
 
 ----
-## Success Measures in the Spotify Scenario?
+## Success Measures in the Transcription Scenario?
 
 <!-- colstart -->
 
-[![Spotify Screenshot of (My) Personalized Playlists](spotify.png)](spotify.png)
-<!-- .element: style="width:50%" -->
+![Transcription service screenshot](temi.png)<!-- .element: style="width:60%" -->
 
 Organizational goals? Leading indicators? System goals? User goals? Model goals?
 
@@ -600,10 +594,21 @@ Organizational goals? Leading indicators? System goals? User goals? Model goals?
 
 <!-- colend -->
 
-Notes:
+----
+## Success Measures in the Audit Risk Scenario?
 
-Accuracy of song predictions does not necessarily lead to increased
-user engagement (e.g., if the UI is terrible)
+<!-- colstart -->
+
+[![Audit risk meter](audit-risk-meter.png)<!-- .element: style="width:80%" -->](https://ttlc.intuit.com/community/choosing-a-product/help/about-the-audit-risk-meter/00/25924)
+
+Organizational goals? Leading indicators? System goals? User goals? Model goals?
+
+<!-- col -->
+
+![Goal relationships](goal-relationships.svg)
+<!-- .element: class="plain" -->
+
+<!-- colend -->
 
 ----
 ## Breakout: Automating Admission Decisions
