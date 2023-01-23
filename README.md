@@ -6,7 +6,7 @@
 
 ---
 
-**Note for Spring 2023: We have a fairly long waitlist on all sections for master students, but we are optimistic that we will be able to enroll most students within the first week of the semester.**
+**Note for Spring 2023: We have a fairly long waitlist on all sections for master students. After increasing capacity we could enroll a few more and we keep enrolling more students as others drop, but unfortunately we will likely not be able to enroll everybody. While not an option for everybody, we will likely teach the course again in the fall and there is plenty of material here to self-study (slides, book, readings, assignments, ...).**
 
 For researchers, educators, or others interested in this topic, we share all course material, including slides and assignments, under a creative commons license on GitHub (https://github.com/mlip-cmu) and have also published a [textbook](https://ckaestne.medium.com/machine-learning-in-production-book-overview-63be62393581) with chapters corresponding to almost every lecture. A while ago we also wrote  an article describing the rationale and the initial design of this course: [Teaching Software Engineering for AI-Enabled Systems](https://arxiv.org/abs/2001.06691). Video recordings of the Summer 2020 offering are online on the [course page](https://ckaestne.github.io/seai/S2020/#course-content), though they are a bit outdated by now. We would be happy to see this course or a similar version taught at other universities. See also an [annotated bibliography](https://github.com/ckaestne/seaibib) on research in this field.
 
