@@ -19,7 +19,7 @@
   </head>
   <body>
     <div class="reveal">
-      <div class="slides"><div id="footer">17-645 Machine Learning in Production • Christian Kaestner, Carnegie Mellon University • Fall 2022</div><section  data-markdown><script type="text/template">  
+      <div class="slides"><div id="footer">17-645 Machine Learning in Production • Christian Kaestner & Eunsuk Kang, Carnegie Mellon University • Spring 2023</div><section  data-markdown><script type="text/template">  
 <!-- .element: class="titleslide"  data-background="../_chapterimg/06_requirements.jpg" -->
 <div class="stretch"></div>
 
@@ -39,7 +39,8 @@ failures
 * Understand the distinction between the world and the machine
 * Understand the importance of environmental assumptions in
   establishing system requirements
-
+* Understand the challenges in and techniques for gathering, validating,
+  and negotiating requirements 
 </script></section><section data-markdown><script type="text/template">## Readings
 
 Required reading: 🗎 Jackson, Michael. "[The world and the machine](https://web.archive.org/web/20170519054102id_/http://mcs.open.ac.uk:80/mj665/icse17kn.pdf)." In Proceedings of the International Conference on Software Engineering. IEEE, 1995.
@@ -63,8 +64,10 @@ Going deeper: 🕮 Van Lamsweerde, Axel. [Requirements engineering: From system 
 
 ![Tesla autopilot](tesla.png)
 
-![Tesla crash](tesla-crash.jpeg)
-<!-- .element: class="stretch" -->
+>  ...police reportedly found a "steering wheel weight" in the vehicle's
+>  footwell. Such a device is used to trick Tesla's safety systems
+>  into thinking a driver's hands remain on a wheel so that the
+>  autopilot remains active...
 
 **Q. What went wrong? What is the root cause of the failure?**
 </script></section><section data-markdown><script type="text/template">## IBM Watson
@@ -82,12 +85,12 @@ Washington Post, 06/2015
 ![IBM Watson sold](watson_sold.png)
 <!-- .element: class="stretch" -->
 
-> "We got concerns from them that the recommendations that it was
+> We got concerns from them that the recommendations that it was
 > giving were just not relevant...it would suggest a particular
 > kind of treatment that wasn’t available in the locality in which it
 > was making the recommendation, or the recommendation did not at all
 > square with the treatment protocols that were in use at the local
-> institution..."
+> institution...
 
 Slate, 01/2022
 </script></section><section data-markdown><script type="text/template">## Risks in ML-based Systems
@@ -105,6 +108,7 @@ Machine learning is a component within a system
 
 Need to also understand other parts and environment
 
+Often, a failure occurs due to misunderstanding of the environment!
 
 </script></section></section><section ><section data-markdown><script type="text/template"># Software Requirements
 </script></section><section data-markdown><script type="text/template">## Software Requirements
@@ -159,8 +163,12 @@ Often ignore requirements...
 
 Too much effort, busywork only, distracts from coding...
 
-Facing costly problems later... (built the wrong system)
+</script></section><section data-markdown><script type="text/template">## Facing costly problems later...
 
+![bug fixing cost](bug-fixing-cost.jpg)
+<!-- .element: class="stretch" -->
+
+If you build the wrong system, it will be really expensive to fix it later!
 
 Requirements & Design: **Think before coding**
 
@@ -180,7 +188,7 @@ Requirements & Design: **Think before coding**
 **Behavioral requirements** (functional requirements)
 * What the system shall do
 * How inputs and outputs relate
-* ... typically clear 'correctness' specifications
+* ... clear 'correctness' specifications (but not always)
 
 <!-- col -->
 
@@ -213,8 +221,8 @@ environment)
   this desired state using input & output devices
 </script></section><section data-markdown><script type="text/template">## Machine vs World: Fall Detection
 
-* What are elements of the environment?
-* What are the goals/requirements of the software in the real world?
+* What are different parts of the environment?
+* What are the goals/requirements of the system in the real world?
 
 ![Smartwatch](smartwatch.jpg)
 <!-- .element: class="stretch" -->
@@ -222,8 +230,8 @@ environment)
 (Smartwatch-based fall detection and emergency response)
 </script></section><section data-markdown><script type="text/template">## Machine vs World: Lane Keeping Assist
 
-What are the goals/requirements of the software in the real world?
-
+* What are different parts of the environment?
+* What are the goals/requirements of the system in the real world?
 
 ![lane keeping](lane-keeping.png)
 <!-- .element: class="stretch" -->
@@ -264,7 +272,7 @@ Assumptions (ASM) expressed in terms of world & shared phenomena
 
 Specifications (SPEC) are expressed in terms of shared phenomena
 
-**Software cannot directly satisfy a requirement on its own; it relies on assumptions about the environment!**
+**Key point: Software cannot directly satisfy a requirement on its own; it relies on assumptions about the environment!**
 </script></section><section data-markdown><script type="text/template">## Lane Assist Specification
 
 ![lane-keeping](lane-keeping.png)
@@ -272,7 +280,7 @@ Specifications (SPEC) are expressed in terms of shared phenomena
 
 * Requirement (REQ): The vehicle must be prevented from veering off the lane.
 * Specification (SPEC): ??
-</script></section><section data-markdown><script type="text/template">## Breakout: Lane Assist Assumptions
+</script></section><section data-markdown><script type="text/template">## Lane Assist Assumptions
 
 ![lane-keeping](lane-keeping.png)
 <!-- .element: class="stretch" -->
@@ -282,7 +290,7 @@ REQ: The vehicle must be prevented from veering off the lane.
 SPEC: Lane detector accurately identifies lane markings in the input image; 
   the controller generates correct steering commands
 
-**Discuss with your neighbor to come up with 2-3 assumptions**
+**Q. What assumptions (ASM) are needed?**
 </script></section><section data-markdown><script type="text/template">## Example Assumptions for Lane Assist
 
 Sensors are providing accurate information about the lane
@@ -302,9 +310,7 @@ Recall: ASM ∧ SPEC ⊨ REQ
 
 3. Wrong or violated specification (SPEC)
 
-4. Inconsistency in assumptions & spec (ENV ∧ SPEC = False)
-
-Example each for lane assist?
+**Q. Example each for lane assist?**
 </script></section><section data-markdown><script type="text/template">## Lufthansa 2904 Runaway Crash
 
 ![Wreckage of Lufthansa Airbus A320-211 D-AIPN, which crashed at Okecie Airport](lh2904.jpg)
@@ -398,12 +404,12 @@ Wrong or violated specification (SPEC)?
 
 </script></section><section data-markdown><script type="text/template">## Process for Establishing Requirements
 
-1. Identify environmental entities and machine components
+1. Identify environmental entities and machine (software/ML) components
 2. State a desired requirement (REQ) over the environment
 3. Identify the interface between the environment & machine
-4. Identify the environmental assumptions (ENV)
+4. Identify the environmental assumptions (ASM)
 5. Develop specifications (SPEC) that are sufficient to establish REQ
-6. Check whether ENV ∧ SPEC ⊧ REQ
+6. Check whether ASM ∧ SPEC ⊧ REQ
 7. If not, go back to the beginning & repeat 
 </script></section><section data-markdown><script type="text/template">## Breakout Session: Fall detection
 
@@ -428,10 +434,7 @@ As a group, post answer to `#lecture` and tag group members:
 </script></section><section data-markdown><script type="text/template">## What went wrong? (REQ, ASM, SPEC)?
 
 ![Tesla autopilot](tesla.png)
-
-![Tesla crash](tesla-crash.jpeg)
 <!-- .element: class="stretch" -->
-
 
 </script></section><section data-markdown><script type="text/template">## What went wrong? (REQ, ASM, SPEC)?
 
@@ -510,7 +513,7 @@ All may have needs, preferences, or concerns...
 Start creating a list of all possible stakeholders
 
 
-**Stakeholders in lane keeping software? In fall detection software? In college admissions software?**
+**Q. Stakeholders in lane keeping software? In fall detection software? In college admissions software?**
 </script></section><section data-markdown><script type="text/template">## Requirements elicitation techniques
 
 ![Interview](interview.jpg)
@@ -613,7 +616,6 @@ Look for unrealistic ML-related assumptions (no false positives, unbiased repres
 </script></section><section data-markdown><script type="text/template">## How much requirements eng. and when?
 
 ![Waterfall process picture](waterfall.svg)<!-- .element: class="plain" style="width:1100px" -->
-
 </script></section><section data-markdown><script type="text/template">## How much requirements eng. and when?
 
 Requirements important in risky systems 
@@ -630,6 +632,10 @@ Low-risk problems often use lightweight, agile approaches
 </script></section><section data-markdown><script type="text/template">## How much requirements eng. and when?
 
 ![Albumy screenshot](albumy.png)
+<!-- .element: class="stretch" -->
+</script></section><section data-markdown><script type="text/template">## How much requirements eng. and when?
+
+![lane keeping](lane-keeping.png)
 <!-- .element: class="stretch" -->
 
 </script></section></section><section ><section data-markdown><script type="text/template"># Summary
@@ -655,7 +661,8 @@ Identify stakeholders, interview them, resolve conflicts
 * 🗎 Bietti, Elettra. "From ethics washing to ethics bashing: a view on tech ethics from within moral philosophy." In Proceedings of the 2020 Conference on Fairness, Accountability, and Transparency, pp. 210-219. 2020.
 * 🗎 Guizani, Mariam, Lara Letaw, Margaret Burnett, and Anita Sarma. "Gender inclusivity as a quality requirement: Practices and pitfalls." IEEE Software 37, no. 6 (2020).
 
-</div></script></section></section></div>
+</div>
+</script></section></section></div>
     </div>
 
     <script src="./../dist/reveal.js"></script>
