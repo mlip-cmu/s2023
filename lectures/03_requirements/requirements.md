@@ -1,8 +1,9 @@
 ---
 author: Christian Kaestner & Eunsuk Kang
 title: "17-645: Gathering Requirements"
-semester: Fall 2022
-footer: "17-645 Machine Learning in Production • Christian Kaestner, Carnegie Mellon University • Fall 2022"
+semester: Spring 2023
+footer: "17-645 Machine Learning in Production • Christian Kaestner &
+Eunsuk Kang, Carnegie Mellon University • Spring 2023"
 license: Creative Commons Attribution 4.0 International (CC BY 4.0)
 ---  
 <!-- .element: class="titleslide"  data-background="../_chapterimg/06_requirements.jpg" -->
@@ -28,7 +29,8 @@ failures
 * Understand the distinction between the world and the machine
 * Understand the importance of environmental assumptions in
   establishing system requirements
-
+* Understand the challenges in and techniques for gathering, validating,
+  and negotiating requirements 
 
 ----
 ## Readings
@@ -62,8 +64,10 @@ Going deeper: 🕮 Van Lamsweerde, Axel. [Requirements engineering: From system 
 
 ![Tesla autopilot](tesla.png)
 
-![Tesla crash](tesla-crash.jpeg)
-<!-- .element: class="stretch" -->
+>  ...police reportedly found a "steering wheel weight" in the vehicle's
+>  footwell. Such a device is used to trick Tesla's safety systems
+>  into thinking a driver's hands remain on a wheel so that the
+>  autopilot remains active...
 
 **Q. What went wrong? What is the root cause of the failure?**
 
@@ -87,12 +91,12 @@ Washington Post, 06/2015
 ![IBM Watson sold](watson_sold.png)
 <!-- .element: class="stretch" -->
 
-> "We got concerns from them that the recommendations that it was
+> We got concerns from them that the recommendations that it was
 > giving were just not relevant...it would suggest a particular
 > kind of treatment that wasn’t available in the locality in which it
 > was making the recommendation, or the recommendation did not at all
 > square with the treatment protocols that were in use at the local
-> institution..."
+> institution...
 
 Slate, 01/2022
 
@@ -114,6 +118,7 @@ Machine learning is a component within a system
 
 Need to also understand other parts and environment
 
+Often, a failure occurs due to misunderstanding of the environment!
 
 
 ---
@@ -180,8 +185,14 @@ Often ignore requirements...
 
 Too much effort, busywork only, distracts from coding...
 
-Facing costly problems later... (built the wrong system)
 
+----
+## Facing costly problems later...
+
+![bug fixing cost](bug-fixing-cost.jpg)
+<!-- .element: class="stretch" -->
+
+If you build the wrong system, it will be really expensive to fix it later!
 
 Requirements & Design: **Think before coding**
 
@@ -205,7 +216,7 @@ Requirements & Design: **Think before coding**
 **Behavioral requirements** (functional requirements)
 * What the system shall do
 * How inputs and outputs relate
-* ... typically clear 'correctness' specifications
+* ... clear 'correctness' specifications (but not always)
 
 <!-- col -->
 
@@ -244,8 +255,8 @@ environment)
 ----
 ## Machine vs World: Fall Detection
 
-* What are elements of the environment?
-* What are the goals/requirements of the software in the real world?
+* What are different parts of the environment?
+* What are the goals/requirements of the system in the real world?
 
 ![Smartwatch](smartwatch.jpg)
 <!-- .element: class="stretch" -->
@@ -255,8 +266,8 @@ environment)
 ----
 ## Machine vs World: Lane Keeping Assist
 
-What are the goals/requirements of the software in the real world?
-
+* What are different parts of the environment?
+* What are the goals/requirements of the system in the real world?
 
 ![lane keeping](lane-keeping.png)
 <!-- .element: class="stretch" -->
@@ -303,7 +314,7 @@ Assumptions (ASM) expressed in terms of world & shared phenomena
 
 Specifications (SPEC) are expressed in terms of shared phenomena
 
-**Software cannot directly satisfy a requirement on its own; it relies on assumptions about the environment!**
+**Key point: Software cannot directly satisfy a requirement on its own; it relies on assumptions about the environment!**
 
 ----
 ## Lane Assist Specification
@@ -315,7 +326,7 @@ Specifications (SPEC) are expressed in terms of shared phenomena
 * Specification (SPEC): ??
 
 ----
-## Breakout: Lane Assist Assumptions
+## Lane Assist Assumptions
 
 ![lane-keeping](lane-keeping.png)
 <!-- .element: class="stretch" -->
@@ -325,7 +336,7 @@ REQ: The vehicle must be prevented from veering off the lane.
 SPEC: Lane detector accurately identifies lane markings in the input image; 
   the controller generates correct steering commands
 
-**Discuss with your neighbor to come up with 2-3 assumptions**
+**Q. What assumptions (ASM) are needed?**
 
 ----
 ## Example Assumptions for Lane Assist
@@ -349,9 +360,7 @@ Recall: ASM ∧ SPEC ⊨ REQ
 
 3. Wrong or violated specification (SPEC)
 
-4. Inconsistency in assumptions & spec (ENV ∧ SPEC = False)
-
-Example each for lane assist?
+**Q. Example each for lane assist?**
 
 ----
 ## Lufthansa 2904 Runaway Crash
@@ -465,12 +474,12 @@ Wrong or violated specification (SPEC)?
 ----
 ## Process for Establishing Requirements
 
-1. Identify environmental entities and machine components
+1. Identify environmental entities and machine (software/ML) components
 2. State a desired requirement (REQ) over the environment
 3. Identify the interface between the environment & machine
-4. Identify the environmental assumptions (ENV)
+4. Identify the environmental assumptions (ASM)
 5. Develop specifications (SPEC) that are sufficient to establish REQ
-6. Check whether ENV ∧ SPEC ⊧ REQ
+6. Check whether ASM ∧ SPEC ⊧ REQ
 7. If not, go back to the beginning & repeat 
 
 ----
@@ -503,10 +512,7 @@ As a group, post answer to `#lecture` and tag group members:
 ## What went wrong? (REQ, ASM, SPEC)?
 
 ![Tesla autopilot](tesla.png)
-
-![Tesla crash](tesla-crash.jpeg)
 <!-- .element: class="stretch" -->
-
 
 
 ----
@@ -597,7 +603,7 @@ All may have needs, preferences, or concerns...
 Start creating a list of all possible stakeholders
 
 
-**Stakeholders in lane keeping software? In fall detection software? In college admissions software?**
+**Q. Stakeholders in lane keeping software? In fall detection software? In college admissions software?**
 
 ----
 ## Requirements elicitation techniques
@@ -727,7 +733,6 @@ Look for unrealistic ML-related assumptions (no false positives, unbiased repres
 
 ![Waterfall process picture](waterfall.svg)<!-- .element: class="plain" style="width:1100px" -->
 
-
 ----
 ## How much requirements eng. and when?
 
@@ -747,6 +752,12 @@ Low-risk problems often use lightweight, agile approaches
 ## How much requirements eng. and when?
 
 ![Albumy screenshot](albumy.png)
+<!-- .element: class="stretch" -->
+
+----
+## How much requirements eng. and when?
+
+![lane keeping](lane-keeping.png)
 <!-- .element: class="stretch" -->
 
 
