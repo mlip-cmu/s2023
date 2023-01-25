@@ -1,9 +1,8 @@
 ---
 author: Christian Kaestner & Eunsuk Kang
-title: "17-645: Gathering Requirements"
+title: "MLiP: Gathering Requirements"
 semester: Spring 2023
-footer: "17-645 Machine Learning in Production • Christian Kaestner &
-Eunsuk Kang, Carnegie Mellon University • Spring 2023"
+footer: "Machine Learning in Production/AI Engineering • Eunsuk Kang & Christian Kaestner, Carnegie Mellon University • Spring 2023"
 license: Creative Commons Attribution 4.0 International (CC BY 4.0)
 ---  
 <!-- .element: class="titleslide"  data-background="../_chapterimg/06_requirements.jpg" -->
@@ -63,6 +62,7 @@ Going deeper: 🕮 Van Lamsweerde, Axel. [Requirements engineering: From system 
 ## Autopilot in Vehicles
 
 ![Tesla autopilot](tesla.png)
+<!-- .element: class="stretch" -->
 
 >  ...police reportedly found a "steering wheel weight" in the vehicle's
 >  footwell. Such a device is used to trick Tesla's safety systems
