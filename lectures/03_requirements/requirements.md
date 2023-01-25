@@ -63,6 +63,7 @@ Going deeper: 🕮 Van Lamsweerde, Axel. [Requirements engineering: From system 
 ## Autopilot in Vehicles
 
 ![Tesla autopilot](tesla.png)
+<!-- .element: class="stretch" -->
 
 >  ...police reportedly found a "steering wheel weight" in the vehicle's
 >  footwell. Such a device is used to trick Tesla's safety systems
