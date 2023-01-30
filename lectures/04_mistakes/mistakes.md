@@ -170,7 +170,7 @@ Attackers can induce mistakes (adversarial inputs)
 
 
 ----
-## ML Models make crazy mistakes
+## ML models make crazy mistakes
 
 Humans often make predicable mistakes
   * most mistakes near to correct answer, distribution of mistakes
@@ -589,18 +589,18 @@ Mistake detection and recovery (monitoring, doer-checker, fail-over, redundancy)
 
 Containment and isolation
 
-<!-- ---- -->
-<!-- ## Short Breakout -->
+----
+## Short Breakout
 
-<!-- What design strategies would you consider to mitigate ML mistakes: -->
-<!-- * Credit card fraud detection -->
-<!-- * Image captioning for accessibility in photo sharing site -->
-<!-- * Speed limiter for cars (with a vision system to detect traffic signs) -->
+What ML mistakes are possible, and what design strategies would you
+consider to mitigate them?
+* Credit card fraud detection
+* Chatbot for social media
+* Lane keeping assist system in vehicles
 
-<!-- Consider: Human in the loop, Undoable actions, Guardrails, Mistake detection and recovery (monitoring, doer-checker, fail-over, redundancy), Containment and isolation -->
+Consider: Human in the loop, Undoable actions, Guardrails, Mistake detection and recovery (monitoring, doer-checker, fail-over, redundancy), Containment and isolation
 
-
-<!-- As a group, post one design idea for each scenario to `#lecture` and tag all group members. -->
+As a group, post one design idea for each scenario to `#lecture` and tag all group members.
 
 
 
