@@ -1,8 +1,8 @@
 ---
-author: Christian Kaestner and Eunsuk Kang
-title: "17-645: Planning for Mistakes"
-semester: Fall 2022
-footer: "17-645 Machine Learning in Production • Christian Kaestner, Carnegie Mellon University • Fall 2022"
+author: Eunsuk Kang and Christian Kaestner
+title: "MLiP: Planning for Mistakes"
+semester: Spring 2023
+footer: "Machine Learning in Production/AI Engineering • Eunsuk Kang & Christian Kaestner, Carnegie Mellon University • Spring 2023"
 license: Creative Commons Attribution 4.0 International (CC BY 4.0)
 ---  
 <!-- .element: class="titleslide"  data-background="../_chapterimg/07_mistakes.jpg" -->
