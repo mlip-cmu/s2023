@@ -804,7 +804,7 @@ In this class, we won't ask you to do this.
    * Assumptions (ASM) & specifications (SPEC)
 2. Identify the top event as a requirement violation (REQ)
 3. Construct the fault tree
-	* Derive intermediate events from a violation of ENV or SPEC
+	* Derive intermediate events from a violation of ASM or SPEC
 	* Decompose the intermediate events further down based on the knowledge of the domain or components
 4. Analyze the tree, Identify all possible minimal cut sets
 5. Consider design modifications
@@ -863,7 +863,7 @@ Solution combines a vision-based system identifying people in the door with pres
 * REQ: The vehicle must be prevented from veering off the lane.
 * SPEC: Lane detector accurately identifies lane markings in the input image; 
   the controller generates correct steering commands
-* ENV: Sensors are providing accurate information about the lane;
+* ASM: Sensors are providing accurate information about the lane;
   driver responses when given warning; steering wheel is functional
 
 Possible mitigations?
