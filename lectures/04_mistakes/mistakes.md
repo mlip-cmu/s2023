@@ -215,21 +215,6 @@ Anticipate the eventual mistake
 # Designing for Mistakes
 
 
-----
-## Bollards mitigate mistakes
-
-<div class="tweet" data-src="https://twitter.com/WorldBollard/status/1542959589276192770"></div>
-
-----
-## Bollards mitigate mistakes
-<div class="tweet" data-src="https://twitter.com/WorldBollard/status/1550067808742031361"></div>
-
-----
-## Bollards mitigate mistakes
-
-<div class="tweet" data-src="https://twitter.com/WorldBollard/status/1534901378983796736"></div>
-
-
 
 ----
 ## Many different strategies
@@ -358,6 +343,21 @@ CC BY 2.0 by Matt Brown
 * Hardware protections
 
 Ensures safe operation parameters despite wrong model predictions **without having to detect mistakes**
+
+----
+## Guardrails: Bollards
+
+<div class="tweet" data-src="https://twitter.com/WorldBollard/status/1534901378983796736"></div>
+
+----
+## Guardrails: Bollards 
+
+<div class="tweet" data-src="https://twitter.com/WorldBollard/status/1542959589276192770"></div>
+
+----
+## Guardrails: Bollards
+<div class="tweet" data-src="https://twitter.com/WorldBollard/status/1550067808742031361"></div>
+
 
 ----
 ## Guardrails - Examples
