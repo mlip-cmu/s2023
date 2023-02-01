@@ -19,6 +19,13 @@ license: Creative Commons Attribution 4.0
 
 
 ---
+## More model-level QA...
+
+
+![Overview of course content](../_assets/overview.svg)
+<!-- .element: class="plain stretch" -->
+
+----
 
 # Learning Goals
 

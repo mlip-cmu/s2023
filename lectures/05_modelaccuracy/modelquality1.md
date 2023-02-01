@@ -23,6 +23,15 @@ license: Creative Commons Attribution 4.0 International (CC BY 4.0)
 * Waitlist now closed
 * Fill out team survey
 
+----
+## Jumping to QA...
+
+
+![Overview of course content](../_assets/overview.svg)
+<!-- .element: class="plain stretch" -->
+
+
+
 ---
 
 # Learning Goals
