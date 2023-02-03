@@ -43,7 +43,7 @@ Your discussions may reveal limitations of your implementation and make suggesti
 
 ## Deliverables
 
-See Canvas for instructions of how to create a private repository with GitHub classrom that contains the existing *albumy* implementation (you can change or replace all code in this repository however you like).
+See Canvas for instructions of how to create a private repository with GitHub classroom that contains the existing *albumy* implementation (you can change or replace all code in this repository however you like).
 
 Commit all your code changes to your GitHub repository, but *do not commit private credentials*. Update instructions to install and run the system in the `README.md` file as necessary. For example, explain how to get an API token if needed or add additional libraries to `requirements.txt`. 
 
