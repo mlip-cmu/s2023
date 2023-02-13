@@ -14,7 +14,7 @@ Now you can see the server up message on two different ports by two different co
 * http://localhost:7004
 * http://localhost:7005
 
-Press Ctrl+C to stop the containers
+Press Ctrl+C to stop the containers or run `docker-compose down` to bring down the containers.
 # Load Balancer
 While the docker conatiners are running, do the following:
 ```
