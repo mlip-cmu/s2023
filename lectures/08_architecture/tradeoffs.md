@@ -119,18 +119,12 @@ Architectural decisions are hard to change later
 > The software architecture of a program or computing system is the **structure or structures** of the system, which comprise **software elements**, the ***externally visible properties*** of those elements, and the relationships among them.
 > -- [Kazman et al. 2012](https://www.oreilly.com/library/view/software-architecture-in/9780132942799/?ar)
 
-----
-## Software Architecture
-
-> Architecture represents the set of **significant** **design** decisions that shape the form and the function of a system, where **significant** is measured by cost of change.
-> -- [Grady Booch, 2006]
-
 
 ----
 ## Architecture Decisions: Examples
 
 * What are the major components in the system? What does each
-component do?
+component do? 
 * Where do the components live? Monolithic vs microservices?
 * How do components communicate to each other? Synchronous vs
 asynchronous calls?
@@ -141,11 +135,21 @@ asynchronous calls?
 * ...and many others
 
 ----
+## Software Architecture
+
+> Architecture represents the set of **significant** **design** decisions that shape the form and the function of a system, where **significant** is measured by cost of change.
+> -- [Grady Booch, 2006]
+
+----
 ## How much Architecture/Design?
+
+![Design](design.png)
+<!-- .element: class="stretch" -->
+
 
 Software Engineering Theme: *Think before you code*
 
-Like requirements: Upfront investment can prevent problems later, but slower initially
+Like requirements: Slower initially, but upfront investment can prevent problems later and save overall costs
 
 -> Focus on most important qualities early, but leave flexibility
 
@@ -303,8 +307,9 @@ Establishes interfaces and team boundaries
 ![Information hiding](information-hiding.png)
 <!-- .element: class="stretch plain" -->
 
-* Hide design decisions that are likely to change from clients
-* **Q. Examples? What are the benefits of information hiding?**
+Hide design decisions that are likely to change from clients
+
+**Q. Examples? What are the benefits of information hiding?**
 
 ----
 ## Information Hiding
