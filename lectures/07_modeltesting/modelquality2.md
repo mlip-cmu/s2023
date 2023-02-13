@@ -1,7 +1,7 @@
 ---
 author: Christian Kaestner and Eunsuk Kang
 title: "MLiP: Model Testing beyond Accuracy"
-semester: Fall 2022
+semester: Spring 2023
 footer: "Machine Learning in Production/AI Engineering • Christian Kaestner & Eunsuk Kang, Carnegie Mellon University • Spring 2023"
 license: Creative Commons Attribution 4.0 
 ---
