@@ -4,7 +4,7 @@ title: "MLiP: Scaling Data Storage and Data Processing"
 semester: Spring 2023
 footer: "Machine Learning in Production/AI Engineering • Christian Kaestner & Eunsuk Kang, Carnegie Mellon University • Spring 2023"
 license: Creative Commons Attribution 4.0 International (CC BY 4.0)
---- 
+---  
 <!-- .element: class="titleslide"  data-background="../_chapterimg/13_dataatscale.jpg" -->
 <div class="stretch"></div>
 
