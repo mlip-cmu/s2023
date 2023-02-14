@@ -72,7 +72,7 @@ Page limits are recommendations and not strictly enforced. You can exceed the pa
 The assignment is worth 100 points. For full credit, we expect:
 
 * [ ] 10 points: Goals are listed and appropriately grouped. There is at least one goal for each of the four categories of goals. The goals relate to the scenario and are reasonably complete.
-* [ ] 10 points: A measure is provided for each goal. Each measure is clearly described in the 3-step method of metric-data-operationalization with enough detail that somebody could independently conduct measurement.
+* [ ] 10 points: A measure is provided for each goal. Each measure is clearly described in the 3-step method of measure-data-operationalization with enough detail that somebody could independently conduct measurement.
 * [ ] 10 points: Environment entities and machine components relevant to the scenario are listed. The machine components include at least one AI component that performs image recognition.
 * [ ] 10 points: A single selected requirement (REQ) is clearly stated. The requirements mention only phenomena in the world. It relates to a system goal discussed in Section 1.
 * [ ] 10 points: Environmental assumptions (ASM) are clearly stated. All stated assumptions relate to phenomena in the world or map those to shared phenomena accessibly by the machine.
