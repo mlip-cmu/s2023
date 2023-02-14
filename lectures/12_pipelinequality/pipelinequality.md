@@ -4,7 +4,7 @@ title: "MLiP: Automating and Testing ML Pipelines"
 semester: Spring 2023
 footer: "Machine Learning in Production/AI Engineering • Christian Kaestner & Eunsuk Kang, Carnegie Mellon University • Spring 2023"
 license: Creative Commons Attribution 4.0 International (CC BY 4.0)
----  
+--- 
 <!-- .element: class="titleslide"  data-background="../_chapterimg/11_infrastructurequality.jpg" -->
 <div class="stretch"></div>
 
@@ -17,7 +17,7 @@ license: Creative Commons Attribution 4.0 International (CC BY 4.0)
 
 
 ---
-## Infrastructure and Operations...
+## Infrastructure Quality...
 
 ![Overview of course content](../_assets/overview.svg)
 <!-- .element: class="plain stretch" -->
@@ -736,7 +736,7 @@ Are unavailable APIs triggering errors?
 Are failing deployments reported?
 
 ----
-## Log Error Occurance
+## Log Error Occurrence
 
 Even when reported or mitigated, log the issue
 
