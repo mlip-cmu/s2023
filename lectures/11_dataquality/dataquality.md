@@ -141,7 +141,7 @@ Quote: Gil Press. “[Cleaning Big Data: Most Time-Consuming, Least Enjoyable Da
 ![Shelves in a warehouse](warehouse.jpg)
 <!-- .element: class="stretch" -->
 
-Goal: Train an ML model to predict future sales; make decisions about what to stock/when/how many...
+Goal: Train an ML model to predict future sales; make decisions about what to (re)stock/when/how many...
 
 ----
 ## Data Comes from Many Sources
@@ -264,7 +264,7 @@ Accuracy: Reported values (on average) represent real value
 
 Precision: Repeated measurements yield the same result
 
-Accurate, but imprecise: Average over multiple measurements
+Accurate, but imprecise: **Q. How to deal with this issue?**
 
 Inaccurate, but precise: ?
 
@@ -544,8 +544,7 @@ Well supported in databases and many tools
 ---
 # Instance-Level Problems
 
-Inconsistencies, wrong values
-
+Application- and domain-specific data issues
 
 ----
 ## Dirty Data: Example
@@ -566,7 +565,7 @@ Inconsistencies, wrong values
 * Duplicate records: `name=John Smith, name=J. Smith`
 * Wrong reference: `emp=(name=”John Smith”, deptno=127)` if department 127 defined but wrong
 
-**Can we detect these?**
+**Q. How can we detect and fix these problems?**
 
 
 <!-- references -->
