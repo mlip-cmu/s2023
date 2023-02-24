@@ -105,7 +105,7 @@ This milestone is worth 100 points:
 
 Second, if you have not done so already, migrate your learning infrastructure to a format that is easy to maintain and test. That will likely involve moving out of a notebook and splitting code for different steps in the pipeline into separate modules that can be called independently. Test all steps of your pipeline so that you have reasonable confidence in the correctness, robustness, and possibly other qualities of your learning solution. Also test the correctness of your prediction service. Design, implement, and test a strategy to deal with data quality problems, especially schema enforcement and detecting substantial drift.
 
-Finally, automate all your tests in a continuous integration platform. The platform should automatically build and test your pipeline and prediction service implementation and create reports for test results and coverage. You can also trigger the actual model training and evaluation pipeline every time a new commit is made.
+Finally, automate all your tests in a continuous integration platform. The platform should automatically build and test your pipeline and prediction service implementation and create reports for test results and coverage. You can but are not required to trigger the actual model training and evaluation pipeline every time a new commit is made.
 
 At this point, we do require that you work with Git for all your code and changes. Make reasonably cohesive commits with appropriate commit messages. We recommend adopting a process with your team in which you use [pull requests to review and integrate changes](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests).
 
