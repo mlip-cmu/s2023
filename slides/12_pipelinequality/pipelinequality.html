@@ -326,8 +326,6 @@ df['Reviws'] = df['Reviews'].apply(int)
 ```python
 df["Release Clause"] = 
     df["Release Clause"].replace(regex=['k'], value='000')
-```
-```python
 df["Release Clause"] = 
     df["Release Clause"].astype(str).astype(float)
 ```
@@ -477,6 +475,92 @@ run.log_metric('accuracy', accuracy(model1, validationData))
 
 
 
+
+
+</script></section></section><section ><section data-markdown><script type="text/template"># Testing Maturity
+
+
+<!-- references -->
+
+Eric Breck, Shanqing Cai, Eric Nielsen, Michael Salib, D. Sculley. [The ML Test Score: A Rubric for ML Production Readiness and Technical Debt Reduction](https://research.google.com/pubs/archive/46555.pdf). Proceedings of IEEE Big Data (2017)
+
+</script></section><section data-markdown><script type="text/template">
+![](mltestingandmonitoring.png)<!-- .element: class="plain" style="width:1100px" -->
+
+<!-- references -->
+Source: Eric Breck, Shanqing Cai, Eric Nielsen, Michael Salib, D. Sculley. [The ML Test Score: A Rubric for ML Production Readiness and Technical Debt Reduction](https://research.google.com/pubs/archive/46555.pdf). Proceedings of IEEE Big Data (2017)
+
+
+</script></section><section data-markdown><script type="text/template">## Data Tests
+
+1. Feature expectations are captured in a schema.
+2. All features are beneficial.
+3. No feature’s cost is too much.
+4. Features adhere to meta-level requirements.
+5. The data pipeline has appropriate privacy controls.
+6. New features can be added quickly.
+7. All input feature code is tested.
+
+<!-- references -->
+
+Eric Breck, Shanqing Cai, Eric Nielsen, Michael Salib, D. Sculley. [The ML Test Score: A Rubric for ML Production Readiness and Technical Debt Reduction](https://research.google.com/pubs/archive/46555.pdf). Proceedings of IEEE Big Data (2017)
+</script></section><section data-markdown><script type="text/template">## Tests for Model Development
+
+1. Model specs are reviewed and submitted.
+2. Offline and online metrics correlate.
+3. All hyperparameters have been tuned.
+4. The impact of model staleness is known.
+5. A simpler model is not better.
+6. Model quality is sufficient on important data slices.
+7. The model is tested for considerations of inclusion.
+
+<!-- references -->
+
+Eric Breck, Shanqing Cai, Eric Nielsen, Michael Salib, D. Sculley. [The ML Test Score: A Rubric for ML Production Readiness and Technical Debt Reduction](https://research.google.com/pubs/archive/46555.pdf). Proceedings of IEEE Big Data (2017)
+</script></section><section data-markdown><script type="text/template">## ML Infrastructure Tests
+
+1. Training is reproducible.
+2. Model specs are unit tested.
+3. The ML pipeline is Integration tested.
+4. Model quality is validated before serving.
+5. The model is debuggable.
+6. Models are canaried before serving.
+7. Serving models can be rolled back.
+
+
+<!-- references -->
+
+Eric Breck, Shanqing Cai, Eric Nielsen, Michael Salib, D. Sculley. [The ML Test Score: A Rubric for ML Production Readiness and Technical Debt Reduction](https://research.google.com/pubs/archive/46555.pdf). Proceedings of IEEE Big Data (2017)
+</script></section><section data-markdown><script type="text/template">## Monitoring Tests
+
+1. Dependency changes result in notification.
+2. Data invariants hold for inputs.
+3. Training and serving are not skewed.
+4. Models are not too stale.
+5. Models are numerically stable.
+6. Computing performance has not regressed.
+7. Prediction quality has not regressed.
+
+
+<!-- references -->
+
+Eric Breck, Shanqing Cai, Eric Nielsen, Michael Salib, D. Sculley. [The ML Test Score: A Rubric for ML Production Readiness and Technical Debt Reduction](https://research.google.com/pubs/archive/46555.pdf). Proceedings of IEEE Big Data (2017)
+
+</script></section><section data-markdown><script type="text/template">
+## Case Study: Covid-19 Detection
+
+<iframe width="90%" height="500" src="https://www.youtube.com/embed/e62ZL3dCQWM?start=42" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+(from S20 midterm; assume cloud or hybrid deployment)</script></section><section data-markdown><script type="text/template">## Breakout Groups
+
+* In the Smartphone Covid Detection scenario
+* Discuss in groups:
+  * Back left: data tests
+  * Back right: model dev. tests
+  * Front right: infrastructure tests
+  * Front left: monitoring tests
+* For 8 min, discuss some of the listed point in the context of the Covid-detection scenario: what would you do?
+* In `#lecture`, tagging group members, suggest what top 2 tests to implement and how
 
 
 
@@ -1118,90 +1202,6 @@ Testing in production
 
 
 
-</script></section></section><section ><section data-markdown><script type="text/template"># Testing Maturity
-
-
-<!-- references -->
-
-Eric Breck, Shanqing Cai, Eric Nielsen, Michael Salib, D. Sculley. [The ML Test Score: A Rubric for ML Production Readiness and Technical Debt Reduction](https://research.google.com/pubs/archive/46555.pdf). Proceedings of IEEE Big Data (2017)
-
-</script></section><section data-markdown><script type="text/template">
-![](mltestingandmonitoring.png)<!-- .element: class="plain" style="width:1100px" -->
-
-<!-- references -->
-Source: Eric Breck, Shanqing Cai, Eric Nielsen, Michael Salib, D. Sculley. [The ML Test Score: A Rubric for ML Production Readiness and Technical Debt Reduction](https://research.google.com/pubs/archive/46555.pdf). Proceedings of IEEE Big Data (2017)
-
-
-</script></section><section data-markdown><script type="text/template">## Data Tests
-
-1. Feature expectations are captured in a schema.
-2. All features are beneficial.
-3. No feature’s cost is too much.
-4. Features adhere to meta-level requirements.
-5. The data pipeline has appropriate privacy controls.
-6. New features can be added quickly.
-7. All input feature code is tested.
-
-<!-- references -->
-
-Eric Breck, Shanqing Cai, Eric Nielsen, Michael Salib, D. Sculley. [The ML Test Score: A Rubric for ML Production Readiness and Technical Debt Reduction](https://research.google.com/pubs/archive/46555.pdf). Proceedings of IEEE Big Data (2017)
-</script></section><section data-markdown><script type="text/template">## Tests for Model Development
-
-1. Model specs are reviewed and submitted.
-2. Offline and online metrics correlate.
-3. All hyperparameters have been tuned.
-4. The impact of model staleness is known.
-5. A simpler model is not better.
-6. Model quality is sufficient on important data slices.
-7. The model is tested for considerations of inclusion.
-
-<!-- references -->
-
-Eric Breck, Shanqing Cai, Eric Nielsen, Michael Salib, D. Sculley. [The ML Test Score: A Rubric for ML Production Readiness and Technical Debt Reduction](https://research.google.com/pubs/archive/46555.pdf). Proceedings of IEEE Big Data (2017)
-</script></section><section data-markdown><script type="text/template">## ML Infrastructure Tests
-
-1. Training is reproducible.
-2. Model specs are unit tested.
-3. The ML pipeline is Integration tested.
-4. Model quality is validated before serving.
-5. The model is debuggable.
-6. Models are canaried before serving.
-7. Serving models can be rolled back.
-
-
-<!-- references -->
-
-Eric Breck, Shanqing Cai, Eric Nielsen, Michael Salib, D. Sculley. [The ML Test Score: A Rubric for ML Production Readiness and Technical Debt Reduction](https://research.google.com/pubs/archive/46555.pdf). Proceedings of IEEE Big Data (2017)
-</script></section><section data-markdown><script type="text/template">## Monitoring Tests
-
-1. Dependency changes result in notification.
-2. Data invariants hold for inputs.
-3. Training and serving are not skewed.
-4. Models are not too stale.
-5. Models are numerically stable.
-6. Computing performance has not regressed.
-7. Prediction quality has not regressed.
-
-
-<!-- references -->
-
-Eric Breck, Shanqing Cai, Eric Nielsen, Michael Salib, D. Sculley. [The ML Test Score: A Rubric for ML Production Readiness and Technical Debt Reduction](https://research.google.com/pubs/archive/46555.pdf). Proceedings of IEEE Big Data (2017)
-
-</script></section><section data-markdown><script type="text/template">
-## Case Study: Covid-19 Detection
-
-<iframe width="90%" height="500" src="https://www.youtube.com/embed/e62ZL3dCQWM?start=42" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-(from S20 midterm; assume cloud or hybrid deployment)</script></section><section data-markdown><script type="text/template">## Breakout Groups
-
-* In the Smartphone Covid Detection scenario
-* Discuss in groups:
-  * Back left: data tests
-  * Back right: model dev. tests
-  * Front right: infrastructure tests
-  * Front left: monitoring tests
-* For 8 min, discuss some of the listed point in the context of the Covid-detection scenario: what would you do?
-* In `#lecture`, tagging group members, suggest what tests to implement
 
 
 
