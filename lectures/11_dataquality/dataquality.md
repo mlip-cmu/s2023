@@ -27,7 +27,7 @@ Past midterms [online](https://github.com/mlip-cmu/s2023/tree/main/exams), simil
 
 All lectures and readings in scope, focus on concepts with opportunity to practice (e.g., recitations, homeworks, in-class exercises)
 
-Closed book, but 6 sheets of notes
+Closed book, but 6 sheets of notes (sorry, no ChatGPT)
 
 
 ---
@@ -63,6 +63,63 @@ Recommended reading:
 
 
 ---
+# Poor Data Quality has Consequences
+
+(often delayed, hard-to-fix consequences)
+
+----
+
+![Data explosion](data-explosion.png)
+<!-- .element: class="stretch" -->
+
+<!-- references_ -->
+Image source: https://medium.com/@melodyucros/ladyboss-heres-why-you-should-study-big-data-721b04b8a0ca
+
+----
+
+![Oprah data](everybody-data.jpeg)
+<!-- .element: class="stretch" -->
+
+----
+## GIGO: Garbage in, garbage out
+
+![GIGO](gigo.jpg)
+<!-- .element: class="stretch" -->
+
+<!-- references_ -->
+Image source: https://monkeylearn.com/blog/data-cleaning-python
+
+----
+## Example: Systematic bias in labeling
+
+Poor data quality leads to poor models
+
+Often not detectable in offline evaluation - **Q. why not**?
+
+Causes problems in production -  now difficult to correct
+
+![Newspaper report on canceled amazon hiring project](amazon-hiring.png)
+
+----
+## Delayed Fixes increase Repair Cost
+
+![Cost of bug repair depending on when the bug was introduced and fixed](defectcost.jpg)
+
+
+----
+## Data Cascades
+
+![Data cascades figure](datacascades.png)
+
+Detection almost always delayed! Expensive rework.
+Difficult to detect in offline evaluation.
+
+<!-- references -->
+Sambasivan, N., et al. (2021, May). “[Everyone wants to do the model work, not the data work”: Data Cascades in High-Stakes AI](https://dl.acm.org/doi/abs/10.1145/3411764.3445518). In Proc. CHI (pp. 1-15).
+
+
+
+---
 
 # Data-Quality Challenges
 
@@ -84,13 +141,14 @@ Quote: Gil Press. “[Cleaning Big Data: Most Time-Consuming, Least Enjoyable Da
 ![Shelves in a warehouse](warehouse.jpg)
 <!-- .element: class="stretch" -->
 
+Goal: Train an ML model to predict future sales; make decisions about what to (re)stock/when/how many...
 
 ----
 ## Data Comes from Many Sources
 
 Manually entered
 
-Actions from IT systems
+Generated through actions in IT systems
 
 Logging information, traces of user interactions
 
@@ -191,7 +249,7 @@ Assumptions about the environment no longer hold
 ----
 ## Users may deliberately change data
 
-Users react to model output
+Users react to model output; causes data shift (more later)
 
 Users try to game/deceive the model
 
@@ -206,7 +264,7 @@ Accuracy: Reported values (on average) represent real value
 
 Precision: Repeated measurements yield the same result
 
-Accurate, but imprecise: Average over multiple measurements
+Accurate, but imprecise: **Q. How to deal with this issue?**
 
 Inaccurate, but precise: ?
 
@@ -224,7 +282,7 @@ Inaccurate, but precise: ?
 
 ----
 
-## Accuracy and Precision in Warehouse Data?
+## Accuracy and Precision Problems in Warehouse Data?
 
 ![Shelves in a warehouse](warehouse.jpg)
 <!-- .element: class="stretch" -->
@@ -244,39 +302,6 @@ Inaccurate data -> misleading models, biased models
 
 -> Invest in data quality, not just quantity
 
-
----
-# Poor Data Quality has Consequences
-
-(often delayed consequences)
-
-----
-## Example: Systematic bias in labeling
-
-Poor data quality leads to poor models
-
-*Not detectable in offline evaluation*
-
-Problem in production -- now difficult to correct
-
-![Newspaper report on canceled amazon hiring project](amazon-hiring.png)
-
-----
-## Delayed Fixes increase Repair Cost
-
-![Cost of bug repair depending on when the bug was introduced and fixed](defectcost.jpg)
-
-
-----
-## Data Cascades
-
-![Data cascades figure](datacascades.png)
-
-Detection almost always delayed! Expensive rework.
-Difficult to detect in offline evaluation.
-
-<!-- references -->
-Sambasivan, N., et al. (2021, May). “[Everyone wants to do the model work, not the data work”: Data Cascades in High-Stakes AI](https://dl.acm.org/doi/abs/10.1145/3411764.3445518). In Proc. CHI (pp. 1-15).
 
 
 
@@ -300,6 +325,32 @@ Ensuring basic consistency about shape and types
 
 
 
+----
+## Data Quality Problems
+
+![Quality Problems Taxonomy](qualityproblems.png)
+<!-- .element: class="stretch" -->
+
+* Schema-level: Generic, domain-independent issues in data
+* Instance-level: Application- and domain-specific
+
+<!-- references_ -->
+
+Source: Rahm, Erhard, and Hong Hai Do. [Data cleaning: Problems and current approaches](http://dc-pubs.dbs.uni-leipzig.de/files/Rahm2000DataCleaningProblemsand.pdf). IEEE Data Eng. Bull. 23.4 (2000): 3-13.
+
+
+----
+## Data Schema
+
+Define the expected format of data
+  * expected fields and their types
+  * expected ranges for values
+  * constraints among values (within and across sources)
+
+Data can be automatically checked against schema
+
+Protects against change; explicit interface between components
+
 
 ----
 ## Schema Problems: Uniqueness, data format, integrity, ...
@@ -314,19 +365,6 @@ Ensuring basic consistency about shape and types
 Further readings: Rahm, Erhard, and Hong Hai Do. [Data cleaning: Problems and current approaches](http://dc-pubs.dbs.uni-leipzig.de/files/Rahm2000DataCleaningProblemsand.pdf). IEEE Data Eng. Bull. 23.4 (2000): 3-13.
 
 
-
-
-----
-## Data Schema
-
-Define expected format of data
-  * expected fields and their types
-  * expected ranges for values
-  * constraints among values (within and across sources)
-
-Data can be automatically checked against schema
-
-Protects against change; explicit interface between components
 
 
 
@@ -359,12 +397,20 @@ CREATE TABLE dept_manager (
 <!-- .element: class="plain" -->
 
 
+----
+## What Happens When New Data Violates Schema?
+
+<!-- discussion -->
 
 
 ----
-## What Happens When new Data Violates Schema?
+##  Modern Databases: Schema-Less
 
-<!-- discussion -->
+![NoSQL](noSQL.jpeg)
+<!-- .element: class="plain" -->
+
+<!-- references_ -->
+Image source: https://www.kdnuggets.com/2021/05/nosql-know-it-all-compendium.html
 
 ----
 ## Schema-Less Data Exchange
@@ -383,6 +429,11 @@ CREATE TABLE dept_manager (
 ```json
 {"user_id":5,"age":26,"occupation":"scientist","gender":"M"}
 ```
+
+----
+## Schema-Less Data Exchange
+
+**Q. Benefits? Drawbacks?**
 
 ----
 ## Schema Library: Apache Avro
@@ -493,8 +544,7 @@ Well supported in databases and many tools
 ---
 # Instance-Level Problems
 
-Inconsistencies, wrong values
-
+Application- and domain-specific data issues
 
 ----
 ## Dirty Data: Example
@@ -515,7 +565,7 @@ Inconsistencies, wrong values
 * Duplicate records: `name=John Smith, name=J. Smith`
 * Wrong reference: `emp=(name=”John Smith”, deptno=127)` if department 127 defined but wrong
 
-**Can we detect these?**
+**Q. How can we detect and fix these problems?**
 
 
 <!-- references -->
@@ -644,7 +694,7 @@ Rules directly taken from external databases
 Given clean data, 
   * several algorithms that find functional relationships ($X\Rightarrow Y$) among columns
   * algorithms that find conditional relationships (if $Z$ then $X\Rightarrow Y$)
-  * algorithms that find denial constraints ($X$ and $Y$ cannot cooccur in a row)
+  * algorithms that find denial constraints ($X$ and $Y$ cannot co-occur in a row)
 
 <!-- col -->
 Given mostly clean data (probabilistic view),
@@ -708,17 +758,28 @@ Further readings: Standard algorithms and many variations, see [Wikipedia](https
 
 # Drift
 
-----
-## Monitoring for Changes
+*Why does my model begin to perform poorly over time?*
 
-![Anomalo screenshot](anomalo.png)
+<!-- ---- -->
+<!-- ## Monitoring for Changes -->
+
+<!-- ![Anomalo screenshot](anomalo.png) -->
+<!-- <\!-- .element: class="stretch" -\-> -->
+
+<!-- <\!-- references_ -\-> -->
+
+<!-- https://www.anomalo.com/ -->
+
+----
+## Types of Drift
+
+![types of drift](drifts.png)
 <!-- .element: class="stretch" -->
 
 <!-- references_ -->
+Gama et al., *A survey on concept drift adaptation*. ACM Computing Surveys Vol. 46, Issue 4 (2014)
 
-https://www.anomalo.com/
 ----
-
 
 ## Drift & Model Decay
 
@@ -729,7 +790,7 @@ https://www.anomalo.com/
   * model has not learned the relevant concepts
   * over time: different expected outputs for same inputs
   
-**Data drift** (or covariate shift, distribution shift, or population drift)
+**Data drift** (or covariate shift, virtual drift, distribution shift, or population drift)
   * characteristics of input data changes (e.g., customers with face masks)
   * input data differs from training data 
   * over time: predictions less confident, further from training data
