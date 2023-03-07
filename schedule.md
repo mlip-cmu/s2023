@@ -45,4 +45,4 @@
 | Fri, Apr 21 | ![Recitation](https://img.shields.io/badge/-rec-yellow.svg) tbd | |  |
 | Mon, Apr 24 | Fostering Interdisciplinary Teams ([book chapter](https://ckaestne.medium.com/building-machine-learning-products-with-interdisciplinary-teams-a1fdfbf49e81)) | [Collaboration Challenges in Building ML-Enabled Systems](https://arxiv.org/abs/2110.10234) |  |
 | Wed, Apr 26 | Summary and Review | | [M4: Fairness, Security and Feedback Loops](https://github.com/mlip-cmu/s2023/blob/main/assignments/project.md#milestone-4-fairness-security-and-feedback-loops) |
-| tbd | **Final Project Presentations** | | [Final report](https://github.com/mlip-cmu/s2023/blob/main/assignments/project.md#final-report-and-presentation) |
+| Thu, May 4 05:30-08:30pm | **Final Project Presentations** | | [Final report](https://github.com/mlip-cmu/s2023/blob/main/assignments/project.md#final-report-and-presentation) |
