@@ -27,22 +27,22 @@
 | Fri, Mar 10 | ![Break](https://img.shields.io/badge/-break-red.svg) Spring break, no classes | |  |
 | Mon, Mar 13 | [Scaling Data Storage and Data Processing](https://mlip-cmu.github.io/s2023/slides/13_dataatscale/dataatscale.html) ([book chapter](https://ckaestne.medium.com/scaling-ml-enabled-systems-b5c6b1527bc)) | [Big Data](https://cmu.primo.exlibrisgroup.com/permalink/01CMU_INST/6lpsnm/alma991019577936304436), Ch. 1 |  |
 | Wed, Mar 15 | [Planning for Operations](https://mlip-cmu.github.io/s2023/slides/14_operations/operations.html) ([chapter](https://ckaestne.medium.com/planning-for-operations-of-ml-enabled-systems-a3d18e07ef7c)) | [Operationalizing Machine Learning](https://arxiv.org/abs/2209.09125) |  |
-| Fri, Mar 17 | ![Recitation](https://img.shields.io/badge/-rec-yellow.svg) Pipeline automation: tbd | |  |
+| Fri, Mar 17 | ![Recitation](https://img.shields.io/badge/-rec-yellow.svg) Pipeline automation: MLFlow | |  |
 | Mon, Mar 20 | Process & Technical Debt ([book chapter 1](https://ckaestne.medium.com/responsible-ai-engineering-c97e44e6c57a), [chapter 2](https://ckaestne.medium.com/fairness-in-machine-learning-and-ml-enabled-products-8ee05ed8ffc4)) | [Hidden Technical Debt in Machine Learning Systems](http://papers.nips.cc/paper/5656-hidden-technical-debt-in-machine-learning-systems.pdf) |  |
 | Wed, Mar 22 | Intro to Ethics + Fairness ([book chapter 1](https://ckaestne.medium.com/responsible-ai-engineering-c97e44e6c57a), [chapter 2](https://ckaestne.medium.com/fairness-in-machine-learning-and-ml-enabled-products-8ee05ed8ffc4)) | |  |
 | Fri, Mar 24 | ![Recitation](https://img.shields.io/badge/-rec-yellow.svg) Monitoring: Prometheus, Grafana | |  |
 | Mon, Mar 27 | Measuring Fairness ([book chapter](https://ckaestne.medium.com/fairness-in-machine-learning-and-ml-enabled-products-8ee05ed8ffc4)) | | [M2: Infrastructure Quality](https://github.com/mlip-cmu/s2023/blob/main/assignments/project.md#milestone-2-model-and-infrastructure-quality) |
 | Wed, Mar 29 | Building Fairer Systems ([book chapter](https://ckaestne.medium.com/fairness-in-machine-learning-and-ml-enabled-products-8ee05ed8ffc4)) |                                                              |  |
-| Fri, Mar 31 | ![Recitation](https://img.shields.io/badge/-rec-yellow.svg) Fairness | |  |
+| Fri, Mar 31 | ![Recitation](https://img.shields.io/badge/-rec-yellow.svg) Container Orchestration: Kubernetis | |  |
 | Mon, Apr 03 | Explainability & Interpretability ([book chapter](https://ckaestne.medium.com/interpretability-and-explainability-a80131467856)) | [Black boxes not required](https://dataskeptic.com/blog/episodes/2020/black-boxes-are-not-required) or [Stop Explaining Black Box ML Models…](https://arxiv.org/abs/1811.10154) | [I4: Open Source Tools](https://github.com/mlip-cmu/s2023/blob/main/assignments/I4_mlops_tools.md) |
 | Wed, Apr 05 | Transparency & Accountability ([book chapter](https://ckaestne.medium.com/transparency-and-accountability-in-ml-enabled-systems-f8ed0b6fd183)) | [People + AI, Ch. Explainability and Trust](https://pair.withgoogle.com/chapter/explainability-trust/) |  |
-| Fri, Apr 07 | ![Recitation](https://img.shields.io/badge/-rec-yellow.svg) Debugging | |  |
+| Fri, Apr 07 | ![Recitation](https://img.shields.io/badge/-rec-yellow.svg) Fairness Toolkits | |  |
 | Mon, Apr 10 | Versioning, Provenance, and Reproducability ([book chapter](https://ckaestne.medium.com/versioning-provenance-and-reproducibility-in-production-machine-learning-355c48665005)) | |  |
 | Wed, Apr 12 | Safety ([book chapter](https://ckaestne.medium.com/safety-in-ml-enabled-systems-b5a5901933ac)) | |  |
 | Fri, Apr 14 | ![Break](https://img.shields.io/badge/-break-red.svg) Spring Carnival, no classes | |  |
 | Mon, Apr 17 | Security and Privacy ([book chapter](https://ckaestne.medium.com/security-and-privacy-in-ml-enabled-systems-1855f561b894)) | |  |
 | Wed, Apr 19 | More Safety, Security, and Privacy (tbd) | | [M3: Monitoring and CD](https://github.com/mlip-cmu/s2023/blob/main/assignments/project.md#milestone-3-monitoring-and-continuous-deployment) |
-| Fri, Apr 21 | ![Recitation](https://img.shields.io/badge/-rec-yellow.svg) tbd | |  |
+| Fri, Apr 21 | ![Recitation](https://img.shields.io/badge/-rec-yellow.svg) Model Explainability Tools | |  |
 | Mon, Apr 24 | Fostering Interdisciplinary Teams ([book chapter](https://ckaestne.medium.com/building-machine-learning-products-with-interdisciplinary-teams-a1fdfbf49e81)) | [Collaboration Challenges in Building ML-Enabled Systems](https://arxiv.org/abs/2110.10234) |  |
 | Wed, Apr 26 | Summary and Review | | [M4: Fairness, Security and Feedback Loops](https://github.com/mlip-cmu/s2023/blob/main/assignments/project.md#milestone-4-fairness-security-and-feedback-loops) |
 | Thu, May 4 05:30-08:30pm | **Final Project Presentations** | | [Final report](https://github.com/mlip-cmu/s2023/blob/main/assignments/project.md#final-report-and-presentation) |
