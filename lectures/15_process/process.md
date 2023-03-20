@@ -341,6 +341,8 @@ Ignore integration work
 
 Stop interacting with testers, technical writers, managers, ...
 
+-> Results in further project delays, added costs, poor product quality...
+
 <!-- references -->
 
 McConnell, Steve. Software project survival guide. Pearson Education, 1998.
@@ -586,6 +588,10 @@ Yang, Qian, Jina Suh, Nan-Chen Chen, and Gonzalo Ramos. "[Grounding interactive 
 Figure from Dogru, Ali H., and Murat M. Tanik. “A process model for component-oriented software engineering.” IEEE Software 20, no. 2 (2003): 34–41.
 
 ----
+![Combined process](combinedprocess1.png)
+<!-- .element: class="plain stretch" -->
+
+----
 ## Recall: ML models are system components
 
 ![Architecture example](transcriptionarchitecture2.svg)
@@ -600,23 +606,8 @@ Figure from Dogru, Ali H., and Murat M. Tanik. “A process model for component-
 <!-- .element: class="plain stretch" -->
 
 ----
-![Combined process](combinedprocess3.png)
-<!-- .element: class="plain stretch" -->
-----
 ![Combined process](combinedprocess5.svg)
 <!-- .element: class="plain stretch" -->
-
-----
-## Trajectories
-
-Not every project follows the same development process, e.g.
-* Small ML addition: Product first, add ML feature later
-* Research only: Explore feasibility before thinking about a product
-* Data science first: Model as central component of potential product, build system around it
-
-Different focus on system requirements, qualities, and upfront planning
-
-Manage interdisciplinary teams and different expectations
 
 ----
 ## Process for AI-Enabled Systems
@@ -638,6 +629,19 @@ Manage interdisciplinary teams and different expectations
 
 </div>
 
+----
+## Trajectories
+
+Not every project follows the same development process, e.g.
+* Small ML addition: Product first, add ML feature later
+* Research only: Explore feasibility before thinking about a product
+* Data science first: Model as central component of potential product, build system around it
+
+Different focus on system requirements, qualities, and upfront planning
+
+Manage interdisciplinary teams and different expectations
+
+
 
 ---
 # Technical debt
@@ -650,7 +654,7 @@ Manage interdisciplinary teams and different expectations
 ## Technical Debt Metaphor
 
 Analogy to financial debt
-+ Make a decision for an immediate benefit (e.g., progress quickly, release now)
++ Make a decision for an immediate benefit (e.g., release now)
 + Accepting later cost (loss of productivity, higher maintenance and operating cost, rework)
 + Debt accumulates and can suffocate project 
 
@@ -658,7 +662,7 @@ Ideally, a deliberate decision (short term tactical or long term strategic)
 
 Ideally, track debt and plan for paying it down later
 
-**Examples?**
+**Q. Examples?**
 
 ----
 ![Technical Debt Quadrant](techDebtQuadrant.png)<!-- .element: class="plain" style="width:880px" -->
