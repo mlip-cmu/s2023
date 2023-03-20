@@ -283,7 +283,15 @@ Use Docker containers to push code between developers and operation
 <!-- .element: class="stretch" -->
 
 ----
-## Developers dislike processes
+![facebook1](facebook1.jpeg)
+<!-- .element: class="stretch" -->
+
+----
+
+![facebook2](facebook2.jpeg)
+
+----
+## Developers' view of processes
 
 ![DOD Aquisition Process Chart](dodprocess.jpg)
 <!-- .element: class="stretch plain" -->
