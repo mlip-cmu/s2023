@@ -260,9 +260,7 @@ Easy to share: document includes text, code, and results
 
 > A structured, systematic way of carrying out these activities
 
-Examples?
-
-<!-- discussion -->
+**Q. Examples?**
 
 Notes: 
 
