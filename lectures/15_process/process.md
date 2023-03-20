@@ -77,6 +77,8 @@ $f(size, rooms, tax, neighborhood, ...) \rightarrow price$
 ----
 ## What's your process?
 
+**Q. What steps would you take to build this component?**
+
 <!-- discussion -->
 
 ----
@@ -84,9 +86,9 @@ $f(size, rooms, tax, neighborhood, ...) \rightarrow price$
 
 * What exactly are we trying to model and predict?
 * What types of data do we need?
-* What type of model work the best for this problem?
+* What type of model works the best for this problem?
 * What are the right metrics to evaluate the model performance?
-* Is the model output what the user is interested in?
+* What is the user actually interested in seeing?
 * Will this product actually help with the organizational goals?
 * ...
 
