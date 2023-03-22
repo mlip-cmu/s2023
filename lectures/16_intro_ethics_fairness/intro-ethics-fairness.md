@@ -1,8 +1,8 @@
 ---
 author: Eunsuk Kang & Christian Kaestner
-title: "17-645: Responsible ML Engineering"
+title: "MLiP: Intro to Ethics and Fairness"
 semester: Fall 2022
-footer: "17-645 Machine Learning in Production • Christian Kaestner, Carnegie Mellon University • Fall 2022"
+footer: "Machine Learning in Production/AI Engineering • Christian Kaestner & Eunsuk Kang, Carnegie Mellon University • Spring 2023"
 license: Creative Commons Attribution 4.0 International (CC BY 4.0)
 ---  
 <!-- .element: class="titleslide"  data-background="../_chapterimg/15_responsible.jpg" -->
@@ -66,26 +66,8 @@ Many interrelated issues:
 
 *Each is a deep and nuanced research topic. We focus on survey of some key issues.*
 
-----
-## With a few lines of code...
 
-![News headline about airlines splitting up passengers seating](airline.png)
 
-----
-## With a few lines of code...
-
-Developers have substantial power in shaping products
-
-Small design decisions can have substantial impact (safety, security, discrimination, ...) -- not always deliberate
-
-Endagering users by not thinking through consequences? Anticipating mistakes?
-
-Machine learning as a particular powerful and dangerous tool...
-
-----
-## With a few lines of code...
-
-<div class="tweet" data-src="https://twitter.com/naotokui_en/status/1556128063913615360?t=S6OZTCookeK14CrRZJGwig&s=03"></div>
 
 
 
@@ -126,7 +108,28 @@ Note: Image source: https://en.wikipedia.org/wiki/Martin_Shkreli#/media/File:Mar
 
 
 ----
-## Another Example: Social Media
+## With a few lines of code...
+
+Developers have substantial power in shaping products
+
+Small design decisions can have substantial impact (safety, security,
+discrimination, ...) -- not always deliberate
+
+Our view: We have both **legal & ethical** responsibilities to anticipate mistakes,
+think through their consequences, and build in mitigations!
+
+<!-- ---- -->
+<!-- ## With a few lines of code... -->
+
+<!-- <div class="tweet" data-src="https://twitter.com/naotokui_en/status/1556128063913615360?t=S6OZTCookeK14CrRZJGwig&s=03"></div> -->
+
+<!-- ---- -->
+<!-- ## With a few lines of code... -->
+
+<!-- ![News headline about airlines splitting up passengers seating](airline.png) -->
+
+----
+## Example: Social Media
 
 ![zuckerberg](mark-zuckerberg.png)
 <!-- .element: class="stretch" -->
@@ -234,6 +237,7 @@ Note: Software companies have usually gotten away with claiming no liability for
   rapidly exacerbated by the widespread use of ML**
 
 </div>
+
 
 
 ----
