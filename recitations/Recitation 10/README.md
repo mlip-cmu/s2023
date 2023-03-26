@@ -118,14 +118,18 @@ However, for individual components of our deployment, we can run the following c
 
     # To get the password for the Grafana UI
     kubectl get secret --namespace default prom-grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
+
+    # To get information about a specific resource
+    kubectl describe <resource-type> <resource-name>
+
     ```
 - Helm
     ```
     # To search for a Helm chart from the prometheus-community repository
     helm search repo prometheus-community
 
-    # To view the values of a Helm chart
-    helm show values prometheus-community/kube-prometheus-stack
+    # To list all Helm releases
+    helm list
     ```
 
 
