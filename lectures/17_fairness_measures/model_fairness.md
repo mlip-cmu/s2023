@@ -53,9 +53,13 @@ Recommended:
 ![tiktok](tiktok.jpg)
 <!-- .element: class="stretch" -->
 
+<!-- references_ -->
+https://www.nytimes.com/2023/03/23/business/tiktok-screen-time.html
 
 ---
 # Fairness: Definitions
+
+How do we measure the fairness of an ML model?
 
 ----
 ### Fairness is still an actively studied & disputed concept!
@@ -96,13 +100,31 @@ Source: Mortiz Hardt, https://fairmlclass.github.io/
 <!-- .element: class="stretch" -->
 
 ----
+## What is fair in mortgage applications?
+
+1. Distribute loans equally across all groups of protected attribute(s)
+   (e.g., ethnicity)
+2. Prioritize those who are more likely to pay back (e.g., higher
+   income, good credit history)
+
+<!-- discussion -->
+
+----
 ## Redlining
+
+<!-- colstart -->
+
+![Redlining](redlining.jpeg)
+<!-- .element: class="stretch" -->
+
+<!-- col -->
 
 Withold services (e.g., mortgage, education, retail) from people in neighborhoods
 deemed "risky"
 
-![Redlining](redlining.jpeg)
-<!-- .element: class="stretch" -->
+Map of Philadelphia, 1936,  Home Owners' Loan Corps. (HOLC)
+* Classification based on  estimated "riskiness" of loans
+<!-- colend -->
 
 ----
 ## Past bias, different starting positions
@@ -111,11 +133,6 @@ deemed "risky"
 
 <!-- references -->
 Source: Federal Reserve’s [Survey of Consumer Finances](https://www.federalreserve.gov/econres/scfindex.htm)
-
-----
-## What is fair in mortgage applications?
-
-<!-- discussion -->
 
 ---
 # Anti-classification
@@ -150,16 +167,10 @@ https://www.nytimes.com/2022/03/21/realestate/remote-home-appraisals-racial-bias
 ----
 ## Anti-Classification
 
-
 ![](justice.jpeg)
 <!-- .element: class="stretch" -->
 
-
-* Also called _fairness through blindness_ or _fairness through unawareness_
-* Ignore certain sensitive attributes when making a decision
-* Example: Remove gender and race from mortgage model
-* *Easy to implement, but any limitations?*
-
+*Easy to implement, but any limitations?*
 
 ----
 ## Recall: Proxies
@@ -185,7 +196,7 @@ https://www.nytimes.com/2022/03/21/realestate/remote-home-appraisals-racial-bias
 <!-- .element: class="stretch" -->
 
 * Ignore certain sensitive attributes when making a decision
-* Advantage: Trivial to implement and test
+* Advantage: Easy to implement and test
 * Limitations
   * Sensitive attributes may be correlated with other features
   * Some ML tasks need sensitive attributes (e.g., medical diagnosis)
@@ -241,8 +252,8 @@ Anti-classification is a good starting point to think about protected attributes
 
 Useful baseline for comparison
 
-Easy to implement, but only effective if (1) no proxies and (2) protected attributes
-add no predictive power
+Easy to implement, but only effective if (1) no proxies among features
+and (2) protected attributes add no predictive power 
 
 ---
 # Group fairness
@@ -267,13 +278,12 @@ Outcomes matter, not accuracy!
 
 Disparate treatment: Practices or rules that treat a certain protected
 group(s) differently from others
-* e.g., Apply different housing rules for people from different backgrounds 
-* Legally: Must show **intention** to discriminate
+* e.g., Apply different mortgage rules for people from different backgrounds 
 
-Disparate impact: Neutral rules, but outcome shows adverse impact
-on one or more protected groups
+Disparate impact: Neutral rules, but outcome is worse for
+ one or more protected groups
 * Same rules are applied, but certain groups have a harder time
-  obtaining housing in a particular neighborhood 
+  obtaining mortgage in a particular neighborhood 
 
 ----
 ## Group fairness in discrimination law
@@ -394,10 +404,11 @@ Accuracy matters, not outcomes!
 
 Relates to *disparate treatment*
 
-Typically lawsuits claim that protected attributes (e.g., race, gender) were used in decisions even though they were irrelevant
+Typically, lawsuits claim that protected attributes (e.g., race, gender) were used in decisions even though they were irrelevant
 * e.g., fired over complaint because of being Latino, whereas other White employees were not fired with similar complaints
 
-Can be difficult to prove in individual cases, typically relying on shifting justifications, inconsistent application of rules, or explicit remarks overheard or documented
+Must prove that the defendant had *intention* to discriminate
+* Often difficult: Relying on shifting justifications, inconsistent application of rules, or explicit remarks overheard or documented
 
 ----
 ## Equalized odds
@@ -449,7 +460,7 @@ Separately measure false positive and false negative rates
 
 In groups, post to `#lecture` tagging members:
 
-* Does the model meet anti-classification fairness wrt. gender?
+* Does the model meet anti-classification fairness w.r.t. gender?
 * Does the model meet group fairness?
 * Does the model meet equalized odds?
 * Is the model fair enough to use?  
@@ -594,15 +605,6 @@ Designers need to decide
 Problem dependent and goal dependent
 
 What differences are associated with merits and which with systemic disadvantages of certain groups? Can we agree on the degree a group is disadvantaged?
-
-----
-## Equality vs Equity and Politics
-
-Noticeable political split
-
-*People with right-leaning politics:* tend to prefer equality-based fairness notions of a meritocracy and decry equity-based initiatives as reverse-discrimination (discrimination against the majority group through disparate treatment) 
-
-*People with left-leaning politics:* tend to emphasize outcomes and equity-based fairness that challenge the status quo
 
 ----
 ## Trade-offs in Fairness vs Accuracy
