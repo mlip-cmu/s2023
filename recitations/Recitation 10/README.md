@@ -1,5 +1,5 @@
 # Recitation 10: Container Orchestration with Kubernetes
----
+
 
 ## Overview
 In this recitation, we explore Kubernetes, a container orchestration system. We will use Kind to deploy a local Kubernetes cluster. While this recitation aims to introduce you to Kubernetes, it is not meant to be a comprehensive guide. For more information, please refer to the [Kubernetes documentation](https://kubernetes.io/docs/home/).
@@ -20,42 +20,115 @@ In this recitation, we explore Kubernetes, a container orchestration system. We 
     sudo snap install kubectl --classic
     ```
 - *Helm* - Helm is a package manager for Kubernetes. You can install it with the following on Linux:
+    - Install Helm:
+        ```
+        sudo snap install helm --classic
+        ```
+    - Add the prometheus-community Helm repository:
+        ```
+        helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+        ```
+
+## Demo
+1. Build a docker image from the docker file in `server/` :
     ```
-    sudo snap install helm --classic
+    docker build -t server:flask server
+    ```
+2. Create a Kind Cluster with the following command:
+    ```
+    kind create cluster --config configs/kind-config.yaml
+    ```
+    This will create a cluster with 3 nodes. You can see the nodes by running:
+    ```
+    kubectl get nodes
+    ```
+3. Load the docker image into the cluster:
+    ```
+    kind load docker-image server:flask
+    ```
+4. Deploy the server to the cluster:
+    ```
+    kubectl apply -f configs/cluster-config.yaml
+    ```
+    - To view all running pods, services, etc., run:
+        ```
+        kubectl get all -o wide
+        ```
+    - To view the logs of a pod, run:
+        ```
+        kubectl logs <pod-name> [-f]
+        ```
+5. To setup Prometheus and Grafana with Helm:
+    ```
+    # Replace [RELEASE_NAME] with a name of your choice
+    helm install [RELEASE_NAME] prometheus-community/kube-prometheus-stack
+
+    ```
+6. To be able to view the Prometheus and Grafana UI, we need to forward the ports:
+    - For Prometheus:
+        ```
+        kubectl port-forward --address 0.0.0.0 service/prom-kube-prometheus-stack-prometheus  9090
+        ```
+    - For Grafana:
+        ```
+        kubectl port-forward --address 0.0.0.0 service/prom-grafana 3000:80
+        ```
+7. To view the UIs:
+    - For Prometheus:
+        - Open `http://<VM-IP>:9090`
+    - For Grafana:
+        - Open `http://<VM-IP>:3000`
+        - Username: `admin`, Password: `prom-operator`
+
+## Cleanup
+The entire cluster can be deleted by running:
+```
+kind delete cluster
+```
+
+However, for individual components of our deployment, we can run the following commands:
+- To delete the server deployment along with the NodePort service:
+    ```
+    kubectl delete -f configs/cluster-config.yaml
+    ```
+- To bring down the Prometheus and Grafana Helm release:
+    ```
+    helm uninstall [RELEASE_NAME]
+    ```
+- To delete the Docker Image we built earlier:
+    ```
+    docker rmi server:flask
     ```
 
----
-# TODO
-## Commands
-```
-kind create cluster --config configs/kind-config.yaml
-docker build -t server:flask .
-docker run -p 5555:5555 server:flask
-kubectl apply -f configs/cluster-config.yaml
-kind load docker-image server:flask
-kubectl get all -o wide
-kubectl port-forward svc/server-service 5555:5555
-kubectl get secret --namespace default prom-grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
-snap install kubectl --classic
-sudo snap install helm --classic
-helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
-helm search repo prometheus-community
-helm install [RELEASE_NAME] prometheus-community/kube-prometheus-stack
-helm uninstall [RELEASE_NAME]
-kubectl port-forward --address 0.0.0.0 service/prom-grafana 3000:80
-kubectl port-forward --address 0.0.0.0 service/prom-kube-prometheus-stack-prometheus  9090
 
-```
+## Additional Commands
+- Docker
+    ```
+    # To run the docker image locally
+    docker run -p 5555:5555 server:flask
 
-## Ordering
-```
-docker build -t server:flask .
-kind create cluster --config configs/kind-config.yaml
-kind load docker-image server:flask
-kubectl apply -f configs/cluster-config.yaml
-kubectl port-forward --address 0.0.0.0 service/prom-grafana 3000:80
-kubectl port-forward --address 0.0.0.0 service/prom-kube-prometheus-stack-prometheus  9090
-```
+    # To enter one of the nodes in the cluster
+    docker exec -it <node-name> sh
+    ```
+
+- Kubernetes
+    ```
+    # To port forward our server to the host machine
+    kubectl port-forward svc/server-service 5555:5555
+
+    # To get the password for the Grafana UI
+    kubectl get secret --namespace default prom-grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
+    ```
+- Helm
+    ```
+    # To search for a Helm chart from the prometheus-community repository
+    helm search repo prometheus-community
+
+    # To view the values of a Helm chart
+    helm show values prometheus-community/kube-prometheus-stack
+    ```
+
+
 
 ## Resources
 - [Kubernetes Documentation](https://kubernetes.io/docs/home/)
