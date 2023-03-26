@@ -96,17 +96,21 @@ Source: Mortiz Hardt, https://fairmlclass.github.io/
 <!-- .element: class="stretch" -->
 
 ----
+## Redlining
+
+Withold services (e.g., mortgage, education, retail) from people in neighborhoods
+deemed "risky"
+
+![Redlining](redlining.jpeg)
+<!-- .element: class="stretch" -->
+
+----
 ## Past bias, different starting positions
 
 ![Severe median income and worth disparities between white and black households](mortgage.png)
 
 <!-- references -->
 Source: Federal Reserve’s [Survey of Consumer Finances](https://www.federalreserve.gov/econres/scfindex.htm)
-
-----
-## Redlining
-
-![Redlining](redlining.jpeg)
 
 ----
 ## What is fair in mortgage applications?
