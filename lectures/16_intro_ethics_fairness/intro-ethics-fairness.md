@@ -1,7 +1,7 @@
 ---
 author: Eunsuk Kang & Christian Kaestner
 title: "MLiP: Intro to Ethics and Fairness"
-semester: Fall 2022
+semester: Spring 2023
 footer: "Machine Learning in Production/AI Engineering • Christian Kaestner & Eunsuk Kang, Carnegie Mellon University • Spring 2023"
 license: Creative Commons Attribution 4.0 International (CC BY 4.0)
 ---  

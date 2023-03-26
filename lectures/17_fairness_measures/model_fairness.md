@@ -1,8 +1,8 @@
 ---
 author: Christian Kaestner and Eunsuk Kang
-title: "17-645: Measuring Fairness"
-semester: Fall 2022
-footer: "17-645 Machine Learning in Production • Christian Kaestner, Carnegie Mellon University • Fall 2022"
+title: "MLiP: Measuring Fairness"
+semester: Spring 2023
+footer: "Machine Learning in Production/AI Engineering • Christian Kaestner, Carnegie Mellon University • Fall 2022"
 license: Creative Commons Attribution 4.0 International (CC BY 4.0)
 ---
 <!-- .element: class="titleslide"  data-background="../_chapterimg/16_fairness.jpg" -->
@@ -28,16 +28,15 @@ license: Creative Commons Attribution 4.0 International (CC BY 4.0)
 <div class="small">
 
 Required:
-- 🗎 Holstein, Kenneth, Jennifer Wortman Vaughan, Hal
-Daumé III, Miro Dudik, and Hanna
-Wallach. "[Improving fairness in machine learning systems: What do industry practitioners need?](http://users.umiacs.umd.edu/~hal/docs/daume19fairness.pdf)"
-In Proceedings of the 2019 CHI Conference on Human Factors in
-Computing Systems, pp. 1-16. 2019.
+- Nina Grgic-Hlaca, Elissa M. Redmiles, Krishna P. Gummadi, and Adrian Weller.
+[Human Perceptions of Fairness in Algorithmic Decision Making:
+A Case Study of Criminal Risk Prediction](https://dl.acm.org/doi/pdf/10.1145/3178876.3186138)
+In WWW, 2018.
 
 Recommended:
-- 🕮 Ian Foster, Rayid Ghani, Ron S. Jarmin, Frauke Kreuter and Julia Lane. [Big Data and Social Science: Data Science Methods and Tools for Research and Practice](https://textbook.coleridgeinitiative.org/). Chapter 11, 2nd ed, 2020
-- 🕮 Solon Barocas and Moritz Hardt and Arvind Narayanan. [Fairness and Machine Learning](http://www.fairmlbook.org). 2019 (incomplete book)
-- 🗎 Pessach, Dana, and Erez Shmueli. "[A Review on Fairness in Machine Learning](https://dl.acm.org/doi/full/10.1145/3494672)." ACM Computing Surveys (CSUR) 55, no. 3 (2022): 1-44.
+- Ian Foster, Rayid Ghani, Ron S. Jarmin, Frauke Kreuter and Julia Lane. [Big Data and Social Science: Data Science Methods and Tools for Research and Practice](https://textbook.coleridgeinitiative.org/). Chapter 11, 2nd ed, 2020
+- Solon Barocas and Moritz Hardt and Arvind Narayanan. [Fairness and Machine Learning](http://www.fairmlbook.org). 2019 (incomplete book)
+- Pessach, Dana, and Erez Shmueli. "[A Review on Fairness in Machine Learning](https://dl.acm.org/doi/full/10.1145/3494672)." ACM Computing Surveys (CSUR) 55, no. 3 (2022): 1-44.
 
 </div>
 
@@ -90,27 +89,11 @@ Source: Mortiz Hardt, https://fairmlclass.github.io/
 
 > Fairness discourse asks questions about how to treat people and whether treating different groups of people differently is ethical. If two groups of people are systematically treated differently, this is often considered unfair.
 
-
 ----
 ## Recall: What is fair?
 
-<!-- colstart -->
-
-
-* Equal slices for everybody
-* Bigger slices for active bakers
-* Bigger slices for inexperienced/new members (e.g., children)
-* Bigger slices for hungry people
-* More pie for everybody, bake more
-
-*(Not everybody contributed equally during baking, not everybody is equally hungry)*
-
-
-<!-- col -->
-
-![Pie](../_chapterimg/16_fairness.jpg)
-
-<!-- colend -->
+![Contrasting equality, equity, and justice](eej2.jpeg)
+<!-- .element: class="stretch" -->
 
 ----
 ## Past bias, different starting positions
@@ -119,6 +102,11 @@ Source: Mortiz Hardt, https://fairmlclass.github.io/
 
 <!-- references -->
 Source: Federal Reserve’s [Survey of Consumer Finances](https://www.federalreserve.gov/econres/scfindex.htm)
+
+----
+## Redlining
+
+![Redlining](redlining.jpeg)
 
 ----
 ## What is fair in mortgage applications?
@@ -140,11 +128,34 @@ Source: Federal Reserve’s [Survey of Consumer Finances](https://www.federalres
 ![](justice.jpeg)
 <!-- .element: class="stretch" -->
 
+* Also called _fairness through blindness_ or _fairness through unawareness_
+* Ignore certain sensitive attributes when making a decision
+* Example: Remove gender and race from mortgage model
+
+----
+## Anti-Classification: Example
+
+![appraisal](appraisal.png)
+<!-- .element: class="stretch" -->
+
+"After Ms. Horton removed all signs of Blackness, a second appraisal valued a Jacksonville home owned by her and her husband, Alex Horton, at 40 percent higher."
+
+<!-- references_ -->
+https://www.nytimes.com/2022/03/21/realestate/remote-home-appraisals-racial-bias.html
+
+----
+## Anti-Classification
+
+
+![](justice.jpeg)
+<!-- .element: class="stretch" -->
+
 
 * Also called _fairness through blindness_ or _fairness through unawareness_
 * Ignore certain sensitive attributes when making a decision
 * Example: Remove gender and race from mortgage model
 * *Easy to implement, but any limitations?*
+
 
 ----
 ## Recall: Proxies
@@ -178,14 +189,14 @@ Source: Federal Reserve’s [Survey of Consumer Finances](https://www.federalres
 ----
 ## Ensuring Anti-Classification
 
-How to train models that are fair wrt. anti-classification?
+How to train models that are fair w.r.t. anti-classification?
 
 <!-- discussion -->
 
 ----
 ## Ensuring Anti-Classification
 
-How to train models that are fair wrt. anti-classification?
+How to train models that are fair w.r.t. anti-classification?
 
 --> Simply remove features for protected attributes from training and inference data
 
@@ -226,8 +237,8 @@ Anti-classification is a good starting point to think about protected attributes
 
 Useful baseline for comparison
 
-Rarely ever used as serious fairness concept
-
+Easy to implement, but only effective if (1) no proxies and (2) protected attributes
+add no predictive power
 
 ---
 # Group fairness
@@ -246,6 +257,19 @@ Key idea: Compare outcomes across two groups
 * Similar rates of (predicted) recidivism across racial groups?
 
 Outcomes matter, not accuracy!
+
+----
+## Disparate impact vs. disparate treatment
+
+Disparate treatment: Practices or rules that treat a certain protected
+group(s) differently from others
+* e.g., Apply different housing rules for people from different backgrounds 
+* Legally: Must show **intention** to discriminate
+
+Disparate impact: Neutral rules, but outcome shows adverse impact
+on one or more protected groups
+* Same rules are applied, but certain groups have a harder time
+  obtaining housing in a particular neighborhood 
 
 ----
 ## Group fairness in discrimination law
@@ -297,7 +321,7 @@ What are limitations of group fairness?
 ## Group Fairness Limitations
 
 * Ignores possible correlation between $Y$ and $A$
-* Rules out perfect predictor $Y' = Y$ when $Y$ & $A$ are correlated
+  * Rules out perfect predictor $Y' = Y$ when $Y$ & $A$ are correlated!
 * Permits abuse and laziness: Can be satisfied by randomly assigning    a positive outcome ($Y' = 1$) to protected groups
 	* e.g., Randomly promote people (regardless of their
       job performance) to match the rate across all groups
@@ -421,7 +445,7 @@ Separately measure false positive and false negative rates
 
 In groups, post to `#lecture` tagging members:
 
-* Does the model meet anti-classification fairness wrt. sex?
+* Does the model meet anti-classification fairness wrt. gender?
 * Does the model meet group fairness?
 * Does the model meet equalized odds?
 * Is the model fair enough to use?  
@@ -490,7 +514,7 @@ Research on what post people perceive as fair/just (psychology)
 When rewards depend on inputs and participants can chose contributions: Most people find it fair to split rewards proportional to inputs
 * *Which fairness measure does this relate to?*
 
-Most people agree that for a decision to be fair, personal characteristics that do not influence the reward, such as sex or age, should not be considered when dividing the rewards. 
+Most people agree that for a decision to be fair, personal characteristics that do not influence the reward, such as gender or age, should not be considered when dividing the rewards. 
 * *Which fairness measure does this relate to?*
 
 ----
