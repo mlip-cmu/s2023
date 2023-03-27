@@ -58,13 +58,43 @@ In this recitation, we explore Kubernetes, a container orchestration system. We 
         ```
         kubectl logs <pod-name> [-f]
         ```
-5. To setup Prometheus and Grafana with Helm:
+5. Let us now query some end points on the Flask server via the NodePort Service
+    - To get the NodePort Service IP:
+        ```
+        kubectl get svc -o wide
+        ```
+    - To get the Control Node IP:
+        ```
+        kubectl get nodes -o wide
+        ```
+    - To query the server:
+        ```
+        curl http://<Control-Node-IP>:<NodePort-Port>/
+        ```
+    - To kill the server:
+        ```
+        curl http://<Control-Node-IP>:<NodePort-Port>/health/kill
+        ```
+        Once the server is Killed, you can see that the pod is restarted by running:
+        ```
+        kubectl get pods -o wide
+        ```
+        
+    - Some other endpoints:
+        ```
+        # End point to see server status
+        curl http://<Control-Node-IP>:<NodePort-Port>/health/status
+
+        # End point to get the current time
+        curl http://<Control-Node-IP>:<NodePort-Port>/datetime
+        ```
+6. To setup Prometheus and Grafana with Helm:
     ```
     # Replace [RELEASE_NAME] with a name of your choice
     helm install [RELEASE_NAME] prometheus-community/kube-prometheus-stack
 
     ```
-6. To be able to view the Prometheus and Grafana UI, we need to forward the ports:
+7. To be able to view the Prometheus and Grafana UI, we need to forward the ports:
     - For Prometheus:
         ```
         kubectl port-forward --address 0.0.0.0 service/prom-kube-prometheus-stack-prometheus  9090
@@ -73,7 +103,7 @@ In this recitation, we explore Kubernetes, a container orchestration system. We 
         ```
         kubectl port-forward --address 0.0.0.0 service/prom-grafana 3000:80
         ```
-7. To view the UIs:
+8. To view the UIs:
     - For Prometheus:
         - Open `http://<VM-IP>:9090`
     - For Grafana:
