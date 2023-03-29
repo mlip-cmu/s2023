@@ -49,7 +49,7 @@ fairness criteria
 ---
 ## A few words about I4
 
-* Pick an open source tool & write a blog post about it
+* Pick a tool & write a blog post about it
   * Must have engineering aspect for building ML **systems**
   * Out of scope: Purely model-centric tools (e.g., better ML libraries)
 * Use case in the context of movie recommendation, but no need to be
