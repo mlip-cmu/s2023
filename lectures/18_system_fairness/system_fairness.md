@@ -49,7 +49,9 @@ fairness criteria
 ---
 ## A few words about I4
 
-* Pick an ML-related open source tool & write a blog post about it
+* Pick an open source tool & write a blog post about it
+  * Must have engineering aspect for building ML **systems**
+  * Out of scope: Purely model-centric tools (e.g., better ML libraries)
 * Use case in the context of movie recommendation, but no need to be
 about your specific system
 * If the tool is from the previous semester, discuss different
@@ -114,13 +116,20 @@ i.e., Requirements engineering
 
 <div class="smallish">
 
-* What is the goal of the system? What benefits does it provide and to whom?
+* What is the goal of the system? What benefits does it provide and to
+  whom?
+  <!-- .element: class="fragment" -->
 * Who are the stakeholders of the system? What are the stakeholders’ views or expectations on fairness and where do they conflict? Are we trying to achieve fairness based on equality or equity? 
+<!-- .element: class="fragment" -->
 * What subpopulations (including minority groups) may be using or be affected by the system? What types of harms can the system cause with discrimination?
+<!-- .element: class="fragment" -->
 * Does fairness undermine any other goals of the system (e.g., accuracy, profits, time to release)?
+<!-- .element: class="fragment" -->
 * Are there legal anti-discrimination requirements to consider? Are
   there societal expectations about ethics w.r.t. to this product? What is the activist position?
+<!-- .element: class="fragment" -->
 * ...
+<!-- .element: class="fragment" -->
 
 </div>
 
@@ -140,11 +149,19 @@ Involve stakeholders, consult lawyers, read research, ask experts, ...
 
 
 ----
+## Protected attributes are not always obvious
+
+![ATM](atm.gif)
+<!-- .element: class="stretch" -->
+
+**Q. Other examples?**
+
+----
 ## 2. Analyze Potential Harms
 
 Anticipate harms from unfair decisions
 * Harms of allocation, harms of representation?
-* How do biased model predictions contribute to system behavior? (show predictions, act on predictions?)
+* How do biased model predictions contribute to system behavior?
 
 Consider how automation can amplify harm
 
@@ -173,15 +190,32 @@ Participants write "Product reviews" from different perspectives
 <!-- colend -->
 
 ----
+## Example: Judgment Call Game
+
+<!-- colstart -->
+![user-review1](user-review1.png)
+
+<!-- col -->
+![user-review2](user-review2.png)
+<!-- .element: class="stretch" -->
+
+<!-- colend -->
+
+<!--references_-->
+[Judgment Call the Game: Using Value Sensitive Design and Design
+Fiction to Surface Ethical Concerns Related to Technology](https://dl.acm.org/doi/10.1145/3322276.3323697)
+
+----
 ## 3. Negotiate Fairness Goals/Measures
 
 * Negotiate with stakeholders to determine fairness requirement for
 the product: What is the suitable notion of fairness for the
 product? Equality or equity?
 * Map the requirements to model-level  (model) specifications: Anti-classification? Group fairness? Equalized odds? 
-* Negotiation can be challenging! Conflicts among different beliefs,
-values, political views, etc., 
-	* Will often need to accept some (perceived) unfairness
+* Negotiation can be challenging! 
+  * Conflicts with other system goals (accuracy, profits...) 
+  * Conflicts among different beliefs, values, political views, etc., 
+  * Will often need to accept some (perceived) unfairness
 
 ----
 ## Recall: What is fair?
@@ -217,7 +251,7 @@ Individual and group differences not always clearly attributable, e.g., nature v
 
 Fair or not? Should we account for unequal starting positions?
 * Tom is lazier than Bob. He should get less pie.
-* People in Egypt have on average a much longer work week (53h) than people in the Germany (35h). They have less time to bake and should get more pie.
+* People in Egypt have on average a much longer work week (53h) than people in Germany (35h). They have less time to bake and should get more pie.
 * Disabled people are always exhausted quickly. They should get less pie, because they contribute less.
 * Men are on average more violent than women. This should be reflected in recidivism prediction.
 * Employees with a PhD should earn higher wages than those with a bachelor's degree, because they decided to invest in more schooling.
@@ -299,6 +333,31 @@ Ian Foster, Rayid Ghani, Ron S. Jarmin, Frauke Kreuter and Julia Lane. [Big Data
 
 
 ----
+## Trade-offs in Fairness vs Accuracy
+
+<!-- colstart -->
+
+![](fairness-accuracy.jpeg)
+<!-- .element: class="stretch" -->
+
+
+<!-- col -->
+
+Fairness imposes constraints, limits what models can be learned
+
+**But:** Arguably, unfair predictions are not desirable!
+
+Determine how much compromise in accuracy or fairness is acceptable to
+  your stakeholders
+
+<!-- colend -->
+
+<!-- references_ -->
+
+[Fairness Constraints: Mechanisms for Fair Classification.](https://proceedings.mlr.press/v54/zafar17a.html) Zafar et
+al. (AISTATS 2017).
+
+----
 ## Fairness, Accuracy, and Profits
 
 ![](loanprofit.png)
@@ -320,18 +379,6 @@ Unfair products may receive bad press, reputation damage
 
 Improving fairness through better data can benefit everybody
 
-----
-## Trade-offs in Fairness vs Accuracy
-
-
-General view: Accuracy is at odds with fairness (e.g., impossible to achieve perfect accuracy $R = Y$ while ensuring group fairness)
-
-Fairness imposes constraints, limits what models can be learned
-
-**But:** Arguably unfair predictions not desirable, accuracy based on misleading ground truth
-
-Determine how much compromise in accuracy or fairness is acceptable to
-  your stakeholders; is accuracy the right measure or based on the right data?
 
 
 ----
@@ -447,8 +494,8 @@ essential to the safe & efficient operation)
 * "Impossibility Theorem": Can't satisfy multiple fairness criteria 
 * Easy to pick some definition & claim that the model is fair
   * But does a "fair" model really help reduce harm in the long term?
-* Instead of trying to "fix" bias through a model, can we understand &
-  address the root causes of bias in the first place?
+* Instead of just focusing on building a "fair"' model, can we understand &
+  address the root causes of bias?
   
 <!-- references_ -->
 
@@ -516,7 +563,6 @@ Boundaries_, Olteanu et al., Frontiers in Big Data (2016).
 
 * Differences in demographics between dataset vs target population
 * May result in degraded services for certain groups 
-* Another example: Demographics on social media
 
 <!-- references_ -->
 Merler, Ratha, Feris, and Smith. [Diversity in Faces](https://arxiv.org/abs/1901.10436)
