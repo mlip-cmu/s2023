@@ -47,137 +47,19 @@ fairness criteria
 * Consider achieving fairness in AI-based systems as an activity throughout the entire development cycle
 
 ---
-# Improving Fairness of a Model
+## A few words about I4
 
-In all pipeline stages:
-* Data collection
-* Data cleaning, processing
-* Training
-* Inference
-* Evaluation and auditing
-
-
-----
-## Today: Model-centric view
-
-Consider fairness throughout the ML lifecycle!
-
-![](fairness-lifecycle.jpg)
-<!-- .element: class="stretch" -->
-
-<!-- references_ -->
-
-From _Fairness-aware Machine Learning_, Bennett et al., WSDM Tutorial (2019).
-
-
-
-----
-## 1. Improve with Model Evaluation and Auditing
-
-Lots of tools to measure and visualize fairness with many metrics
-
-Can be integrated in notebooks and production (telemetry, monitoring)
-
-Audit: In-depth evaluation of a model snapshot
-
-Efforts to crowdsource feedback and audits
-
-Debugging tools to investigate potential fairness issues
-
-----
-## Example audit tool: Aequitas
-
-![](aequitas.png)
-
-----
-## Example audit tool: Aequitas
-
-![](aequitas-report.png)
-<!-- .element: class="stretch" -->
-
-----
-## Example debugging tool: What-If
-
-![](what-if-tool.png)
-<!-- .element: class="stretch" -->
-
-<!-- references_ -->
-[Google What-If Tool](https://pair-code.github.io/what-if-tool/demos/compas.html)
-
-
-----
-## 2. Improve during Model Inference
-
-Remove/scramble protected attributes and correlated attributes? (anti-classification)
-
-Calibrate by adjusting thresholds (group fairness, equalized odds)
-* $P[R > t_0 | A = 0]  = P[R > t_1 | A = 1]$
-
-Weaken predictor for one group?
-
-----
-## Example: Tweaking Thresholds
-
-![](tweakthresholds.svg)
-<!-- .element: class="stretch plain" -->
-
-----
-## 3. Improve during Model Training
-
-Incorporate fairness metric during training, e.g., in loss function
-
-Use fairness for model selection/hyperparameter tuning
-
-Weigh training data differently based on (expected) bias or trust
-
-Much research, many approaches...
-
-<!-- references -->
-Further reading: 🗎 Pessach, Dana, and Erez Shmueli. "[A Review on Fairness in Machine Learning](https://dl.acm.org/doi/full/10.1145/3494672)." ACM Computing Surveys (CSUR) 55, no. 3 (2022): 1-44.
-
-----
-## 4. Improve during Data Cleaning, Feature Engineering
-
-<div class="smallish">
-
-Remove features for protected attributes; measure correlations to identify proxies <- anti-classification
-
-Correct for known biases, e.g.,
-* Discard known biased training data, fix *tainted labels*
-* Remove training data influenced by *feedback loop*
-* Analyze data for *limited features*, remove or enhance
-* Augment data for *sample size disparity*
-* Normalize data across subpopulations
-
-Active research field of data debugging to find influential outliers and potential bias (more later in Explainability lecture)
-
-
-</div>
-
-----
-## 5. Improvement during Data Collection
-
-
-Carefully review data collection procedures, sampling biases, what data is collected, how trustworthy labels are, etc.
-
-Can address most sources of bias: tainted labels, skewed samples, limited features, sample size disparity, proxies:
-* deliberate what data to collect
-* collect more data, oversample where needed
-* extra effort in unbiased labels
-
-
-Potentially expensive, but typically **highest leverage point**
-
-
+* Pick an ML-related open source tool & write a blog post about it
+* Use case in the context of movie recommendation, but no need to be
+about your specific system
+* If the tool is from the previous semester, discuss different
+features/capabilities
+* Can also compare different tools (strengths & limitations) 
+* Think of it as a learning experience! Pick a new tool that you haven't used before
+ 
 
 ---
-# Recall: Model vs System
-
-![System thinking](component.svg)
-<!-- .element: class="plain stretch" -->
-
-----
-## Fairness is a System Quality
+## Today: Fairness as a System Quality
 
 Fairness can be measured for a model
 
@@ -190,6 +72,8 @@ Fairness can be measured for a model
 
 ----
 ## Fair ML Pipeline Process
+
+Fairness must be considered throughout the entire lifecycle!
 
 ![](fairness-lifecycle.jpg)
 <!-- .element: class="stretch" -->
@@ -205,7 +89,7 @@ _Fairness-aware Machine Learning_, Bennett et al., WSDM Tutorial (2019).
 * **Requirements engineering challenges:** How to identify fairness concerns, fairness metric, design data collection and labeling
 * **Human-computer-interaction design challenges:** How to present results to users, fairly collect data from users, design mitigations
 * **Quality assurance challenges:** Evaluate the entire system for fairness, continuously assure in production
-* **Process integration challenges:** Incoprorate fairness work in development process
+* **Process integration challenges:** Incorprorate fairness work in development process
 * **Education and documentation challenges:** Create awareness, foster interdisciplinary collaboration
 
 
@@ -213,6 +97,7 @@ _Fairness-aware Machine Learning_, Bennett et al., WSDM Tutorial (2019).
 # Understanding System-Level Goals for Fairness
 
 i.e., Requirements engineering
+
 
 ----
 ## Recall: Fairness metrics
@@ -222,7 +107,81 @@ i.e., Requirements engineering
 * Equalized odds (separation)
 * ...and numerous others and variations!
 
-**But which one makes most sense for my application?**
+**But which one makes most sense for my product?**
+
+----
+## Identifying Fairness Goals is a Requirements Engineering Problem
+
+<div class="smallish">
+
+* What is the goal of the system? What benefits does it provide and to whom?
+* Who are the stakeholders of the system? What are the stakeholders’ views or expectations on fairness and where do they conflict? Are we trying to achieve fairness based on equality or equity? 
+* What subpopulations (including minority groups) may be using or be affected by the system? What types of harms can the system cause with discrimination?
+* Does fairness undermine any other goals of the system (e.g., accuracy, profits, time to release)?
+* Are there legal anti-discrimination requirements to consider? Are
+  there societal expectations about ethics w.r.t. to this product? What is the activist position?
+* ...
+
+</div>
+
+
+----
+## 1. Identify Protected Attributes
+
+Against which groups might we discriminate? What attributes identify them directly or indirectly?
+
+Requires understanding of target population and subpopulations
+
+Use anti-discrimination law as starting point, but do not end there
+* Socio-economic status? Body height? Weight? Hair style? Eye color? Sports team preferences?
+* Protected attributes for non-humans? Animals, inanimate objects?
+
+Involve stakeholders, consult lawyers, read research, ask experts, ...
+
+
+----
+## 2. Analyze Potential Harms
+
+Anticipate harms from unfair decisions
+* Harms of allocation, harms of representation?
+* How do biased model predictions contribute to system behavior? (show predictions, act on predictions?)
+
+Consider how automation can amplify harm
+
+Overcome blind spots within teams
+* Systematically consider consequences of bias
+* Consider safety engineering techniques (e.g., FTA)
+* Assemble diverse teams, use personas, crowdsource audits
+
+
+----
+## Example: Judgment Call Game
+
+<!-- colstart -->
+
+Card "Game" by Microsoft Research
+
+Participants write "Product reviews" from different perspectives
+* encourage thinking about consequences
+* enforce persona-like role taking
+
+<!-- col -->
+
+![Photo of Judgment Call Game cards](../_chapterimg/17_fairnessgame.jpg)
+<!-- .element: class="stretch" -->
+
+<!-- colend -->
+
+----
+## 3. Negotiate Fairness Goals/Measures
+
+* Negotiate with stakeholders to determine fairness requirement for
+the product: What is the suitable notion of fairness for the
+product? Equality or equity?
+* Map the requirements to model-level  (model) specifications: Anti-classification? Group fairness? Equalized odds? 
+* Negotiation can be challenging! Conflicts among different beliefs,
+values, political views, etc., 
+	* Will often need to accept some (perceived) unfairness
 
 ----
 ## Recall: What is fair?
@@ -257,7 +216,7 @@ Individual and group differences not always clearly attributable, e.g., nature v
 <div class="smallish">
 
 Fair or not? Should we account for unequal starting positions?
-* Tom is more lazy than Bob. He should get less pie.
+* Tom is lazier than Bob. He should get less pie.
 * People in Egypt have on average a much longer work week (53h) than people in the Germany (35h). They have less time to bake and should get more pie.
 * Disabled people are always exhausted quickly. They should get less pie, because they contribute less.
 * Men are on average more violent than women. This should be reflected in recidivism prediction.
@@ -315,62 +274,28 @@ Problem dependent and goal dependent
 
 What differences are associated with merits and which with systemic disadvantages of certain groups? Can we agree on the degree a group is disadvantaged?
 
-----
-## Identifying Fairness Goals is a Requirements Engineering Problem
-
-<div class="smallish">
-
-* What is the goal of the system? What benefits does it provide and to whom?
-* Who are the stakeholders of the system? What are the stakeholders’ views or expectations on fairness and where do they conflict? Are we trying to achieve fairness based on equality or equity? 
-* What subpopulations (including minority groups) may be using or be affected by the system? What types of harms can the system cause with discrimination?
-* Does fairness undermine any other goals of the system (e.g., accuracy, profits, time to release)?
-* Are there legal anti-discrimination requirements to consider? Are
-  there societal expectations about ethics w.r.t. to this product? What is the activist position?
-* ...
-
-</div>
 
 ----
-## Analyzing Potential Harms
+## Punitive vs Assistive Decisions
 
-Anticipate harms from unfair decisions
-* Harms of allocation, harms of representation?
-* How do biased model predictions contribute to system behavior? (show predictions, act on predictions?)
-
-Consider how automation can amplify harm
-
-Overcome blind spots within teams
-* Systematically consider consequences of bias
-* Consider safety engineering techniques (e.g., FTA)
-* Assemble diverse teams, use personas, crowdsource audits
+* If the decision is **punitive** in nature:
+  * Harm is caused when a group is given an unwarranted penalty
+  * e.g. decide whom to deny bail based on risk of recidivism
+  * Heuristic: Use a fairness metric (equalized odds) based on false positive rates
+* If the decision is **assistive** in nature:
+  * Harm is caused when a group in need is denied assistance
+  * e.g., decide who should receive a loan or a food subsidy
+  * Heuristic: Use a fairness metric based on false negative rates
 
 ----
-## Some Guidance on Equality Metric:
+## Fairness Tree
 
-Are the interventions punitive or assistive
-  * Punitive (could hurt individuals): Focus on similar false positive rates
-  * Assistive (will help individuals): Focus on similar recall, false negative rates
-
-----
 ![](fairness_tree.png)
 <!-- .element: class="stretch" -->
 
 <!-- references_ -->
 
 Ian Foster, Rayid Ghani, Ron S. Jarmin, Frauke Kreuter and Julia Lane. [Big Data and Social Science: Data Science Methods and Tools for Research and Practice](https://textbook.coleridgeinitiative.org/). Chapter 11, 2nd ed, 2020
-
-----
-## Identify Protected Attributes
-
-Against which groups might we discriminate? What attributes identify them directly or indirectly?
-
-Requires understanding of target population and subpopulations
-
-Use anti-discrimination law as starting point, but do not end there
-* Socio-economic status? Body height? Weight? Hair style? Eye color? Sports team preferences?
-* Protected attributes for non-humans? Animals, inanimate objects?
-
-Involve stakeholders, consult lawyers, read research, ask experts, ...
 
 
 ----
@@ -409,8 +334,6 @@ Determine how much compromise in accuracy or fairness is acceptable to
   your stakeholders; is accuracy the right measure or based on the right data?
 
 
-
-
 ----
 ## Discussion: Fairness Goal for Mortgage Applications?
 
@@ -425,31 +348,49 @@ Need to justify strong differences in outcomes
 
 Can also sue over disparate treatment if bank indicates that protected attribute was reason for decision
 
+----
+## Discussion: Fairness Goal for Cancer Prognosis?
 
+![](mri.jpg)
+<!-- .element: class="stretch" -->
 
+* What kind of harm can be caused? 
+* Fairness goal: Equality or equity?
+* Model: Anti-classification, group fairness, or equalized odds (with FPR/FNR)?
+
+----
+## Breakout: Fairness Goal for College Admission?
+
+![](college-admission.jpg)
+<!-- .element: class="stretch" -->
+
+Post as a group in #lecture: 
+* What kind of harm can be caused? 
+* Fairness goal: Equality or equity?
+* Model: Anti-classification, group fairness, or equalized odds (with FPR/FNR)?
 
 ----
 ## Discussion: Fairness Goal for College Admission?
 
-<!-- discussion -->
+Very limited scope of *affirmative action*: Contentious topic,
+subject of multiple legal cases, banned in many states
+* Supporters: Promote representation, counteract historical bias
+* Opponents: Discriminate against certain racial groups 
 
-----
-## Discussion: Fairness Goal for College Admission?
-
-Strong legal precedents
-
-Very limited scope of *affirmative action*
-
-Most forms of group fairness likely illegal
+Most forms of group fairness are likely illegal
 
 In practice: Anti-classification
-
 
 
 ----
 ## Discussion: Fairness Goal for Hiring Decisions?
 
-<!-- discussion -->
+![](hiring.png)
+<!-- .element: class="stretch" -->
+
+* What kind of harm can be caused? 
+* What do we want to achieve? Equality or equity?
+* Anti-classification, group fairness, or equalized odds (FPR/FNR)?
 
 ----
 ## Law: "Four-fifth rule" (or "80% rule")
@@ -466,42 +407,52 @@ essential to the safe & efficient operation)
 * Example: Hiring 50% of male applicants vs 20% female applicants hired
   (0.2/0.5 = 0.4) -- Is there a business justification for hiring men at a higher rate?
 
-----
-## Discussion: Fairness Goal for Cancer Prognosis?
-
-<!-- discussion -->
 
 ----
-## Discussion: Fairness Goal for Recidivism Prediction?
+## Recidivism Revisited
 
 ![](recidivism-propublica.png)
+<!-- .element: class="stretch" -->
 
-<!-- references -->
+* COMPAS system, developed by Northpointe: Used by judges in
+  sentencing decisions across multiple states (incl. PA)
+</div>
+
+<!-- references_ -->
 
 [ProPublica article](https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing)
 
+
 ----
-## Discussion: Recidivism Prediction?
-
-<!-- colstart -->
-
-* ProPublica investigation: COMPAS violates separation w/ FPR & FNR
-* Northpointe response: COMPAS is fair because it has similar FDRs
-  across both races
-* _Is COMPAS both fair & unfair at the same time? Which definition
-  is the "right" one?_
-
-<!-- col -->
+## Which fairness definition?
 
 ![](compas-metrics.png)
+<!-- .element: class="stretch" -->
 
+* ProPublica: COMPAS violates equalized odds w/ FPR & FNR
+* Northpointe: COMPAS is fair because it has similar FDRs
+  * FDR = FP / (FP + TP) = 1 - Precision; FPR = FP / (FP + TN)
+* __Q. So is COMPAS both fair & unfair at the same time?__
 
-<!-- references -->
-
+<!-- references_ -->
 [Figure from Big Data and Social Science, Ch. 11](https://textbook.coleridgeinitiative.org/chap-bias.html#ref-angwin2016b)
 
-<!-- colend -->
 
+----
+## Fairness Definitions: Pitfalls 
+
+<!-- ![](fairness-accuracy.jpeg) -->
+![](bongo.gif)
+
+* "Impossibility Theorem": Can't satisfy multiple fairness criteria 
+* Easy to pick some definition & claim that the model is fair
+  * But does a "fair" model really help reduce harm in the long term?
+* Instead of trying to "fix" bias through a model, can we understand &
+  address the root causes of bias in the first place?
+  
+<!-- references_ -->
+
+A. Chouldechova [Fair prediction with disparate impact: A study of bias in recidivism prediction instruments](https://arxiv.org/pdf/1703.00056.pdf)
 
 
 
@@ -510,280 +461,330 @@ essential to the safe & efficient operation)
 
 
 ---
-# Identifying and Negotiating Fairness Requirements
-
-Measuring is easy, but what to measure? 
-
-----
-## Identifying Fairness Goals is a Requirements Engineering Problem
-
-<div class="smallish">
-
-* What is the goal of the system? What benefits does it provide and to whom?
-* What subpopulations (including minority groups) may be using or be affected by the system? What types of harms can the system cause with discrimination?
-* Who are the stakeholders of the system? What are the stakeholders’ views or expectations on fairness and where do they conflict? Are we trying to achieve fairness based on equality or equity? 
-* Does fairness undermine any other goals of the system (e.g., accuracy, profits, time to release)?
-* Are there legal anti-discrimination requirements to consider? Are there societal expectations about ethics that relate to this product? What is the activist position?
-* ...
-
-</div>
-
+# Dataset Construction for Fairness
 
 
 ----
-## Analyzing Potential Harms
+## Flexibility in Data Collection
 
-Anticipate harms from unfair decisions
-* Harms of allocation, harms of representation?
-* How do biased model predictions contribute to system behavior? (show predictions, act on predictions?)
+* Data science education often assumes data as given
+* In industry, we often have control over data collection and curation (65%)
+* Most address fairness issues by collecting more data (73%)
+  * Carefully review data collection procedures, sampling bias, how
+  trustworthy labels are
+  * **Often high-leverage point to improve fairness!**
 
-Consider how automation can amplify harm
 
-Overcome blind spots within teams
-* Systematically consider consequences of bias
-* Consider safety engineering techniques (e.g., FTA)
-* Assemble diverse teams, use personas, crowdsource audits
+<!-- references -->
 
-----
-## Example: Harms in Biased College Admission Screening
-
-<!-- discussion -->
-
-What can we do beyond brainstorming?
+[Challenges of incorporating algorithmic fairness into practice](https://www.youtube.com/watch?v=UicKZv93SOY),
+FAT* Tutorial, 2019  ([slides](https://bit.ly/2UaOmTG))
 
 ----
-## Example: Judgment Call Game
+## Data Bias
 
-<!-- colstart -->
-
-Card "Game" by Microsoft Research
-
-Participants write "Product reviews" from different perspectives
-* encourage thinking about consequences
-* enforce persona-like role taking
-
-<!-- col -->
-
-![Photo of Judgment Call Game cards](../_chapterimg/17_fairnessgame.jpg)
+![](data-bias-stage.png)
 <!-- .element: class="stretch" -->
 
-<!-- colend -->
+* Bias can be introduced at any stage of the data pipeline!
+
+<!-- references_ -->
+
+Bennett et al., [Fairness-aware Machine Learning](https://sites.google.com/view/wsdm19-fairness-tutorial), WSDM Tutorial (2019).
 
 
 ----
-## Identify Protected Attributes
+## Types of Data Bias
 
-Against which groups might we discriminate? What attributes identify them directly or indirectly?
+* __Population bias__
+* __Historical bias__
+* __Behavioral bias__
+* Content production bias
+* Linking bias
+* Temporal bias
 
-Requires understanding of target population and subpopulations
+<!-- references -->
 
-Use anti-discrimination law as starting point, but do not end there
-* Socio-economic status? Body height? Weight? Hair style? Eye color? Sports team preferences?
-* Protected attributes for non-humans? Animals, inanimate objects?
-
-Involve stakeholders, consult lawyers, read research, ask experts, ...
-
-----
-## Negotiate Fairness Goals/Measures
-
-Equality or equity? Equalized odds? ...
-
-Cannot satisfy all. People have conflicting preferences...
-
-> *Treating everybody equally in a meritocracy will reinforce existing inequalities whereas uplifting disadvantaged communities can be seen as giving unfair advantages to people who contributed less, making it harder to succeed in the advantaged group merely due to group status.*
-
+_Social Data: Biases, Methodological Pitfalls, and Ethical
+Boundaries_, Olteanu et al., Frontiers in Big Data (2016).
 
 ----
-## Recall: CEOs in Image Search
+## Population Bias
+
+![](facial-dataset.png)
+<!-- .element: class="stretch" -->
+
+* Differences in demographics between dataset vs target population
+* May result in degraded services for certain groups 
+* Another example: Demographics on social media
+
+<!-- references_ -->
+Merler, Ratha, Feris, and Smith. [Diversity in Faces](https://arxiv.org/abs/1901.10436)
+
+----
+## Historical Bias
 
 ![Image search for "CEO"](ceo.png)
 <!-- .element: class="stretch" -->
 
-> "Through user studies, the [image search] team learned that many users
-were uncomfortable with the idea of the company “manipulating” search results, viewing this behavior as unethical." -- observation from interviews by Ken Holstein
+* Dataset matches the reality, but certain groups are under- or
+over-represented due to historical reasons
 
 ----
-## Fairness, Accuracy, and Profits
+## Behavioral Bias
 
-![](loanprofit.png)
+![](freelancing.png)
+<!-- .element: class="stretch" -->
+
+* Differences in user behavior across platforms or social contexts
+* Example: Freelancing platforms (Fiverr vs TaskRabbit)
+  * Bias against certain minority groups on different platforms
+
+<!-- references_ -->
+
+_Bias in Online Freelance Marketplaces_, Hannak et al., CSCW (2017).
+
+----
+## Fairness-Aware Data Collection
+
+* Address population bias
+<!-- .element: class="fragment" -->
+  * Does the dataset reflect the demographics in the target
+  population?
+  * If not, collect more data to achieve this
+* Address under- & over-representation issues
+<!-- .element: class="fragment" -->
+	* Ensure sufficient amount of data for all groups to avoid being
+	treated as "outliers" by ML
+	* Also avoid over-representation of certain groups (e.g.,
+     remove historical data)
+	
+<!-- references_ -->
+_Fairness-aware Machine Learning_, Bennett et al., WSDM Tutorial (2019).
+
+----
+## Fairness-Aware Data Collection
+
+* Data augmentation: Synthesize data for minority groups to reduce under-representation
+  <!-- .element: class="fragment" -->
+  * Observed: "He is a doctor" -> synthesize "She is a doctor"
+* Model auditing for better data collection
+  <!-- .element: class="fragment" -->
+  * Evaluate accuracy across different groups
+  * Collect more data for groups with highest error rates 
+	
+<!-- references_ -->
+_Fairness-aware Machine Learning_, Bennett et al., WSDM Tutorial (2019).
+
+----
+## Example Audit Tool: Aequitas
+
+![](aequitas.png)
+
+----
+## Example Audit Tool: Aequitas
+
+![](aequitas-report.png)
+<!-- .element: class="stretch" -->
+
+
+<!-- ---- -->
+<!-- ## Breaekout: College Admission -->
+
+<!-- ![](college-admission.jpg) -->
+<!-- <\!-- .element: class="stretch" -\-> -->
+
+<!-- * Features: GPA, GRE/SAT, gender, race, undergrad institute, alumni -->
+<!--   connections, household income, hometown, etc.,  -->
+<!-- * Type into #lecture in Slack: -->
+<!--   * What are different sub-populations? -->
+<!--   * What are potential sources of data bias? -->
+<!--   * What are ways to mitigate this bias? -->
+
+----
+## Documentation for Fairness: Data Sheets
+
+![](datasheet.png)
+<!-- .element: class="stretch" -->
+
+* Common practice in the electronics industry, medicine
+* Purpose, provenance, creation, __composition__, distribution
+  * "Does the dataset relate to people?"
+  * "Does the dataset identify any subpopulations (e.g., by age)?"
+
+<!-- references_ -->
+
+_Datasheets for Dataset_, Gebru et al., (2019). https://arxiv.org/abs/1803.09010
+
+----
+## Model Cards
+
+See also: https://modelcards.withgoogle.com/about
+
+![Model Card Example](modelcards.png)
 <!-- .element: class="stretch" -->
 
 <!-- references_ -->
-Interactive visualization: https://research.google.com/bigpicture/attacking-discrimination-in-ml/
+
+Mitchell, Margaret, et al. "[Model cards for model reporting](https://www.seas.upenn.edu/~cis399/files/lecture/l22/reading2.pdf)." In Proceedings of the Conference on fairness, accountability, and transparency, pp. 220-229. 2019.
+
 
 ----
-## Fairness, Accuracy, and Profits
+## Dataset Exploration
 
-Fairness can conflict with accuracy goals
+![](what-if-tool.png)
+<!-- .element: class="stretch" -->
 
-Fairness can conflict with organizational goals (profits, usability)
+[Google What-If Tool](https://pair-code.github.io/what-if-tool/demos/compas.html)
 
-Fairer products may attract more customers
+<!-- ---- -->
+<!-- ## Breakout: Data Collection for Fairness -->
 
-Unfair products may receive bad press, reputation damage
 
-Improving fairness through better data can benefit everybody
+<!-- * For each system, discuss: -->
+<!--   * What harms can be caused by this system? -->
+<!--   * What are possible types of bias in the data? -->
+<!-- 	* Population bias? Under- or over-representation? -->
+<!--   * How would you modify the dataset reduce bias? -->
+<!--   * Collect more data? Remove? Augment? -->
 
-----
-## Negotiate Fairness Goals/Measures
 
-<div class="smallish">
 
-Negotiation with tradeoffs, inherently political, weigh/balance preferences
 
-Will need to accept some (perceived) unfairness
 
-Power structures often influence outcomes
-* Product owners can often drive decisions
-* Legal requirements pose constraints
-* Users and activists and press can create pressure
 
-Just like other requirements negotiation:
-* Consider design space, expose tradeoffs explicitly
-* Somebody will need to make a decision, often project owner
-* Document decision with justification
-
-</div>
 
 
 
 ---
-# Societal Implications
-
-Automation at scale can shift power dynamics at scale
-* Path for social good or path into dystopia?
-* Who benefits from ML-based automation? Who bears the cost?
+# Anticipate Feedback Loops
 
 ----
-## Making Rare Skills Attainable
+## Feedback Loops
 
-Reduce reliance on specialized training, improve access, improve cost
+![Feedback loop](feedbackloop.svg)
+<!-- .element: class="plain" -->
 
-Examples?
+----
+## Feedback Loops in Mortgage Applications?
 
 <!-- discussion -->
 
 ----
-## Making Rare Skills Attainable
+## Feedback Loops go through the Environment
 
-
-![radiology](radiology.jpg)
-
-> We should stop training radiologists now. It’s just completely obvious that within five years, deep learning is going to do better than radiologists. -- [Geoffrey Hinton](https://www.youtube.com/watch?v=2HMPRXstSvQ&t=29s), 2016
+![](component.svg)
+<!-- .element: class="plain" -->
 
 
 ----
-## Making Rare Skills Attainable
+## Analyze the World vs the Machine
 
-Examples:
-* Healthcare in rural settings, developing countries
-* Generative models for Art (DALL·E, stable diffusion)
-* Navigation tools (trained taxi license -> Uber)
+![world vs machine](worldvsmachine.svg)
+<!-- .element: class="plain stretch" -->
 
-----
-## Making Rare Skills Attainable, but...
+*State and check assumptions!*
 
-*Downsides?*
-
-<!-- discussion -->
 
 ----
-## Making Rare Skills Attainable, but...
+## Analyze the World vs the Machine
 
-Displacing high-skilled jobs
+How do outputs affect change in the real world, how does this (indirectly) influence inputs?
 
-Low skilled, machine-directed jobs, "algorithmic management"
+Can we decouple inputs from outputs? Can telemetry be trusted?
 
-Who owns the ML-enabled products? Rent-seeking economies?
+Interventions through system (re)design:
+* Focus data collection on less influenced inputs
+* Compensate for bias from feedback loops in ML pipeline
+* Do not build the system in the first place
 
-Society without relying on work? 14h work week? Automation dividend? Universal basic income? "Fully automated luxury communism"
-
-----
-## Making Rare Skills Attainable, but...
-
-Who owns the algorithms?
-* DALL·E: Corporate control, API only
-* Stable diffusion: open source, CreativeML Open RAIL-M license ("ethical license")
 
 ----
-## Exploitative Data Collection
+## Long-term Impact of ML
 
-Problems?
-
-<!-- discussion -->
+* ML systems make multiple decisions over time, influence the
+behaviors of populations in the real world
+* *But* most models are built & optimized assuming that the world is
+static
+* Difficult to estimate the impact of ML over time
+  * Need to reason about the system dynamics (world vs machine)
+  * e.g., what's the effect of a mortgage lending policy on a population?
 
 ----
-[![Headline Rutkowski not happy about AI art](rutkowski.png)](https://www.technologyreview.com/2022/09/16/1059598/this-artist-is-dominating-ai-generated-art-and-hes-not-happy-about-it/)
+## Long-term Impact & Fairness
+
+<!-- colstart -->
+
+Deploying an ML model with a fairness criterion does NOT guarantee
+  improvement in equality/equity over time
+
+Even if a model appears to promote fairness in
+short term, it may result harm over long term 
+
+<!-- col -->
+
+![](fairness-longterm.png)
 <!-- .element: class="stretch" -->
 
-----
-## Exploitative Data Collection
+<!-- colend -->
 
-Scraping public data, without compensation of creators, ignoring licenses
-
-Labeling often crowd sourced at poverty wages
-
-Data entry often assigned to field workers (e.g., nurses) in addition to existing tasks 
-
-Data workers may not benefit from system, are often not valued, are often manipulated through surveillance and gamification mechanisms
-
-<!-- references -->
-Further reading: Sambasivan, Nithya, and Rajesh Veeraraghavan. "The Deskilling of Domain Expertise in AI Development." In CHI. 2022.
+<!-- references_ -->
+[Fairness is not static: deeper understanding of long term fairness via simulation studies](https://dl.acm.org/doi/abs/10.1145/3351095.3372878),
+in FAT* 2020.
 
 
 ----
-## Exploitative Data Collection
+## Prepare for Feedback Loops
 
-Who owns the data? Who does the data work?
+We will likely not anticipate all feedback loops...
 
-Who owns the model or product? Who owns their outputs?
+... but we can anticipate that unknown feedback loops exist
 
-Who benefits?
-
-What are fair working conditions?
+-> Monitoring!
 
 
-----
-## Who does the Fairness Work?
 
 
-<!-- discussion -->
+---
+# Monitoring
 
 
 ----
-## Who does the Fairness Work?
+## Monitoring & Auditing
 
-Within organizations usually little institutional support for fairness work, few activists
-
-Fairness issues often raised by communities affected, after harm occurred
-
-Affected groups may need to organize to affect change
-
-
-
-*Do we place the cost of unfair systems on those already marginalized and disadvantaged?*
-
-
+* Operationalize fairness measure in production with telemetry
+* Continuously monitor for:
+<!-- .element: class="fragment" -->
+  - Mismatch between training data, test data, and instances encountered in deployment
+  - Data shifts: May suggest needs to adjust fairness metric/thresholds
+  - User reports & complaints: Log and audit system decisions
+    perceived to be unfair by users
+* Invite diverse stakeholders to audit system for biases
+<!-- .element: class="fragment" -->
 
 ----
-## Breakout: College Admission
+## Monitoring & Auditing
 
-![](college-admission.jpg)
+![](model_drift.jpg)
 <!-- .element: class="stretch" -->
 
-Assume most universities want to automate admissions decisions. 
+* Continuosly monitor the fairness metric (e.g., error rates for
+different sub-populations)
+* Re-train model with recent data or adjust classification thresholds
+  if needed
 
 
-As a group in `#lecture`, tagging group members:
+----
+## Preparing for Problems
 
-> What good or bad societal implications can you anticipate, beyond a single product? 
-> Should we do something about it?
+Prepare an *incidence response plan* for fairness issues
+* What can be shut down/reverted on short notice?
+* Who does what?
+* Who talks to the press? To affected parties? What do they need to know?
 
-
-
-
-
-
+Provide users with a path to *appeal decisions*
+* Provide feedback mechanism to complain about unfairness
+* Human review? Human override?
 
 
 
@@ -908,143 +909,8 @@ Lally, Nick. "[“It makes almost no difference which algorithm you use”: on t
 
 
 
----
-# Fairer Data Collection
 
 
-----
-## Data Collection is Amendable
-
-Data science education often assumes data as given
-
-In industry, we often have control over data collection, curation, labeling (65% in Holstein et al.)
-
-Most address fairness issues by collecting more data (73%)
-
-
-<!-- references -->
-
-[Challenges of incorporating algorithmic fairness into practice](https://www.youtube.com/watch?v=UicKZv93SOY),
-FAT* Tutorial, 2019  ([slides](https://bit.ly/2UaOmTG))
-
-----
-## Fairer Data Collection
-
-
-Often high-leverage point to improve fairness
-
-"Raw data is an oxymoron"
-
-<!-- discussion -->
-
-
-
-----
-## Fairer Data Collection
-
-
-Carefully review data collection procedures, sampling biases, what data is collected, how trustworthy labels are, etc.
-
-Can address most sources of bias: tainted labels, skewed samples, limited features, sample size disparity, proxies:
-* deliberate what data to collect
-* collect more data, oversample where needed
-* extra effort in unbiased labels
-
--> Requirements engineering, system engineering
-
--> World vs machine, data quality, data cascades
-
-
-
-
----
-# Anticipate Feedback Loops
-
-----
-## Feedback Loops
-
-![Feedback loop](feedbackloop.svg)
-<!-- .element: class="plain" -->
-
-----
-## Feedback Loops in Mortgage Applications?
-
-<!-- discussion -->
-
-----
-## Feedback Loops go through the Environment
-
-![](component.svg)
-<!-- .element: class="plain" -->
-
-
-----
-## Analyze the World vs the Machine
-
-![world vs machine](worldvsmachine.svg)
-<!-- .element: class="plain stretch" -->
-
-*State and check assumptions!*
-
-
-----
-## Analyze the World vs the Machine
-
-How do outputs affect change in the real world, how does this (indirectly) influence inputs?
-
-Can we decouple inputs from outputs? Can telemetry be trusted?
-
-Interventions through system (re)design:
-* Focus data collection on less influenced inputs
-* Compensate for bias from feedback loops in ML pipeline
-* Do not build the system in the first place
-
-
-----
-## Long-term Impact of ML
-
-* ML systems make multiple decisions over time, influence the
-behaviors of populations in the real world
-* *But* most models are built & optimized assuming that the world is
-static
-* Difficult to estimate the impact of ML over time
-  * Need to reason about the system dynamics (world vs machine)
-  * e.g., what's the effect of a mortgage lending policy on a population?
-
-----
-## Long-term Impact & Fairness
-
-<!-- colstart -->
-
-Deploying an ML model with a fairness criterion does NOT guarantee
-  improvement in equality/equity over time
-
-Even if a model appears to promote fairness in
-short term, it may result harm over a long-term period
-
-<!-- col -->
-
-![](fairness-longterm.png)
-<!-- .element: class="stretch" -->
-
-<!-- colend -->
-
-<!-- references_ -->
-[Fairness is not static: deeper understanding of long term fairness via simulation studies](https://dl.acm.org/doi/abs/10.1145/3351095.3372878),
-in FAT* 2020.
-
-
-----
-## Prepare for Feedback Loops
-
-We will likely not anticipate all feedback loops...
-
-... but we can anticipate that unknown feedback loops exist
-
--> Monitoring!
-
-
- 
 ---
 # Process Integration
 
@@ -1202,100 +1068,6 @@ Unsupported fairness work is frustrating and often ineffective
 
 
 
----
-# Documenting Fairness at the Interface
-
-----
-## Fairness Concerns cut across Components
-
-![](component.svg)
-<!-- .element: class="plain stretch" -->
-
-*Product vs model team, product vs model requirements*
-
-----
-## Fairness Concerns cut across Components
-
-*Product vs model team, product vs model requirements*
-
-As all design/architecture:
-* Identify system-level requirements, break down to component level
-* Assign responsibilities
-* Document component requirements, provide evidence of results
-
-----
-## Documenting Model Fairness
-
-Recall: Model cards
-
-![Model Card Example](modelcards.png)
-<!-- .element: class="stretch" -->
-
-<!-- references_ -->
-
-Mitchell, Margaret, et al. "[Model cards for model reporting](https://www.seas.upenn.edu/~cis399/files/lecture/l22/reading2.pdf)." In Proc. FAccT, 220-229. 2019.
-
-
-----
-## Documenting Fairness of Datasets
-
-Datasheets for Datasets, Dataset Nutrition Labels, ...
-
-![Datasheet describing demographics](datasheet.png)
-
-----
-## Documenting Fairness of Datasets
-
-![Datasheet describing labeling procedure](datasheet2.png)
-<!-- .element: class="stretch" -->
-
-<!-- references_ -->
-*Excerpt from a “Data Card” for Google’s* [*Open Images Extended*](https://storage.googleapis.com/openimages/web/extended.html#miap) *dataset ([*full data card*](https://storage.googleapis.com/openimages/open_images_extended_miap/Open%20Images%20Extended%20-%20MIAP%20-%20Data%20Card.pdf)*) 
-
-
-
----
-# Monitoring
-
-----
-## Monitoring
-
-Operationalize fairness measure in production with telemetry
-
-Monitor like any other metric, use alerts
-
-Monitor distribution shifts, especially across protected attributes
-
-Track through experiments, A/B testing etc.
-
-**How would you monitor fairness in mortgage applications?**
-
-Challenge: Access to protected attributes? Access to ground truth?
-
-
-----
-## Monitoring Tools: Example
-
-![](aequitas-process.png)
-<!-- .element: class="stretch" -->
-
-(Involve policy makers in the monitoring & auditing process)
-
-<!-- references_ -->
-http://aequitas.dssg.io/
-
-----
-## Preparing for Problems
-
-Provide users with a path to *appeal decisions*
-* Provide feedback mechanism to complain about unfairness
-* Human review? Human override?
-
-Prepare an *incidence response plan* for fairness issues
-* What can be shut down/reverted on short notice?
-* Who does what?
-* Who talks to the press? To affected parties? What do they need to know?
-
 
 
 
@@ -1347,10 +1119,11 @@ Checklist:
   * Identify potential harms, protected attributes
   * Negotiate conflicting fairness goals, tradeoffs
   * Consider societal implications
-* Design fair systems beyond the model, mitigate bias outside the model
+* Apply fair data collection practices 
 * Anticipate feedback loops
+* Operationalize & monitor for fairness metrics  
+* Design fair systems beyond the model, mitigate bias outside the model
 * Integrate fairness work in process and culture
-* Document and monitor fairness
 
 
 ----
