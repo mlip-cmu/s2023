@@ -348,15 +348,15 @@ Need to justify strong differences in outcomes
 
 Can also sue over disparate treatment if bank indicates that protected attribute was reason for decision
 
-----
-## Discussion: Fairness Goal for Cancer Prognosis?
+<!-- ---- -->
+<!-- ## Discussion: Fairness Goal for Cancer Prognosis? -->
 
-![](mri.jpg)
-<!-- .element: class="stretch" -->
+<!-- ![](mri.jpg) -->
+<!-- <\!-- .element: class="stretch" -\-> -->
 
-* What kind of harm can be caused? 
-* Fairness goal: Equality or equity?
-* Model: Anti-classification, group fairness, or equalized odds (with FPR/FNR)?
+<!-- * What kind of harm can be caused?  -->
+<!-- * Fairness goal: Equality or equity? -->
+<!-- * Model: Anti-classification, group fairness, or equalized odds (with FPR/FNR)? -->
 
 ----
 ## Breakout: Fairness Goal for College Admission?
@@ -675,6 +675,7 @@ Mitchell, Margaret, et al. "[Model cards for model reporting](https://www.seas.u
 
 ![](component.svg)
 <!-- .element: class="plain" -->
+
 
 
 ----
