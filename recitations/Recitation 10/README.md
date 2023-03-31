@@ -9,6 +9,7 @@ In this recitation, we explore Kubernetes, a container orchestration system. We 
 
 ## Installation
 - *Docker* - Docker is installed by default on most Linux distributions. However, if you do not have it, you can install it by following the instructions [here](https://docs.docker.com/engine/install/).
+    - Note: Make sure you have docker with this version - `Docker version 23.0.1`. The Kind load docker image command may fail otherwise. 
 - *Kind* - Kind is a tool for running local Kubernetes clusters using Docker container “nodes”. You can install it with the following on Linux:
     ```
     curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.17.0/kind-linux-amd64
