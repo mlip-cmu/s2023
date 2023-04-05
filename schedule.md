@@ -38,9 +38,9 @@
 | Wed, Apr 05 | [Transparency & Accountability](https://mlip-cmu.github.io/s2023/slides/20_transparency/transparency.html) ([book chapter](https://ckaestne.medium.com/transparency-and-accountability-in-ml-enabled-systems-f8ed0b6fd183)) | [People + AI, Ch. Explainability and Trust](https://pair.withgoogle.com/chapter/explainability-trust/) |  |
 | Fri, Apr 07 | ![Recitation](https://img.shields.io/badge/-rec-yellow.svg) Fairness Toolkits | |  |
 | Mon, Apr 10 | [Versioning, Provenance, and Reproducability](https://mlip-cmu.github.io/s2023/slides/21_provenance/provenance.html) ([book chapter](https://ckaestne.medium.com/versioning-provenance-and-reproducibility-in-production-machine-learning-355c48665005)) | |  |
-| Wed, Apr 12 | Safety ([book chapter](https://ckaestne.medium.com/safety-in-ml-enabled-systems-b5a5901933ac)) | |  |
+| Wed, Apr 12 | Security and Privacy ([book chapter](https://ckaestne.medium.com/security-and-privacy-in-ml-enabled-systems-1855f561b894)) | [Building Intelligent Systems](https://cmu.primo.exlibrisgroup.com/permalink/01CMU_INST/6lpsnm/alma991019649190004436), Ch. 25 & [The Top 10 Risks of Machine Learning Security](https://ieeexplore.ieee.org/document/9107290) |  |
 | Fri, Apr 14 | ![Break](https://img.shields.io/badge/-break-red.svg) Spring Carnival, no classes | |  |
-| Mon, Apr 17 | Security and Privacy ([book chapter](https://ckaestne.medium.com/security-and-privacy-in-ml-enabled-systems-1855f561b894)) | |  |
+| Mon, Apr 17 | Safety ([book chapter](https://ckaestne.medium.com/safety-in-ml-enabled-systems-b5a5901933ac)) | |  |
 | Wed, Apr 19 | More Safety, Security, and Privacy (tbd) | | [M3: Monitoring and CD](https://github.com/mlip-cmu/s2023/blob/main/assignments/project.md#milestone-3-monitoring-and-continuous-deployment) |
 | Fri, Apr 21 | ![Recitation](https://img.shields.io/badge/-rec-yellow.svg) Model Explainability Tools | |  |
 | Mon, Apr 24 | Fostering Interdisciplinary Teams ([book chapter](https://ckaestne.medium.com/building-machine-learning-products-with-interdisciplinary-teams-a1fdfbf49e81)) | [Collaboration Challenges in Building ML-Enabled Systems](https://arxiv.org/abs/2110.10234) |  |
