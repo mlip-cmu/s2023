@@ -89,8 +89,9 @@ But increasingly wider range of harms caused by security attacks
 - Not just data leaks anymore
 - Can cause physical, environmental harms
 - Viewpoint: We can't all be security experts, but should be aware of
-  possible consequences of no/little security; understand basic principles;
-  know who to talk to (recall: T-shaped people!)
+  possible consequences of no/little security; know who to talk to;
+  omit common pitfalls; understand basic principles; know how to apply
+  best practices (recall: T-shaped people!)
 
 ---
 # Security – A (Very Brief) Overview
