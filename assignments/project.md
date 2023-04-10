@@ -157,7 +157,7 @@ If you hit resource limits of your virtual machine, contact the course staff or 
 * Infrastructure for automatic periodic retraining of models
 * Version and track provenance of training data and models
 
-**Tasks:** *Important: Read availability requirements. The service should be available during the 5 days before the milestone deadline.*
+**Tasks:** *Important: Read availability requirements. The service should be available during the 3 days before the milestone deadline.*
 
 After gaining confidence in your infrastructure quality and automating essential tasks, we will now focus on deployment, versioning, and monitoring. 
 
@@ -171,7 +171,7 @@ Fourth, build or setup an experimentation environment, in which you can compare 
 
 Finally, track provenance of your predictions and models such that for every prediction your recommendation service makes you can answer: (1) which version of the model has made the prediction, (2) which version of the pipeline code and ML algorithms has been used to train that model, and (3) what data has been used for training that model.
 
-Keep your recommendation service running as much as possible for the remainder of the project. We will evaluate the availability in the *4 days before your submission, the day of your submission, and the 3 days after the day of your submission*. Prefer low-quality recommendations over missing or very slow answers from your service. We will look at the logs (public, in the Kafka stream) to assess downtime. 
+Keep your recommendation service running as much as possible for the remainder of the project. We will evaluate the availability in the *3 days before your submission, the day of your submission, and the 4 days after the day of your submission*. Prefer low-quality recommendations over missing or very slow answers from your service. We will look at the logs (public, in the Kafka stream) to assess downtime. 
 
 **Technical details:** We recommend Docker to containerize your model serving infrastructure. You can package the model inside the container or have the container load the model from an external resource (e.g., mounted file system or web server). You can write your own simple load balancer in 10 lines of Python or Node.js code if needed, say with [flask](https://flask.palletsprojects.com/en/1.1.x/) or [express](https://expressjs.com/), so you can switch between multiple models without downtime. Alternatively, some teams have used orchestration software like Kubernetis or minikube to manage containers, but the learning curve can be steep.  
 
@@ -202,7 +202,7 @@ If you hit resource limits of your virtual machine, contact the course staff or 
 - [ ] 25pt: A monitoring infrastructure observes (a) service availability and (b) model accuracy. The report describes the infrastructure. The report describes and justifies what alerts were set up or why no alerts were used. A screenshot of the service is included and pointers to implementation and running dashboard are provided. The description matches the implementation.
 - [ ] 25pt: An infrastructure for online experimentation is implemented and has been used for at least one experiment. Appropriate statistical tests are used to report confidence in the experiments’ results. The report describes how users are split, how quality is tracked, and how results are reported. A screenshot of an experiment’s outcome is included and links to the corresponding implementation are provided. The description matches the implementation.
 - [ ] 10pt: The report describes how provenance is tracked. It explains how for a given prediction the responsible model can be identified and how for that model the corresponding pipeline version and training data can be identified. It illustrates that process with one concrete example. Links to the corresponding implementation are provided. The description matches the implementation.
-- [ ] 10pt: The recommendation service is at least 70% available in the 96 hours before the submission and the 72 hours after (i.e., max downtime of 50h), while at least two updates are performed in that time period.
+- [ ] 10pt: The recommendation service is at least 70% available in the 72 hours before the submission and the 96 hours after (i.e., max downtime of 50h), while at least two updates are performed in that time period.
 - [ ] 3pt (individually): The teamwork survey for this milestone is filled out.
 - [ ] 5pt: Bonus points if the recommendation service is at least 99% available in the same 7-day window (max 100min downtime), while at least two updates are performed in that time period.
 - [ ] 3pt: Bonus points for social activity (see very end of this document)
