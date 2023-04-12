@@ -77,9 +77,9 @@ Source: Wall Street Journal, Sept 30, 2021
 
 Security is expensive
 - Additional development cost; need security expertise in your team/organization
-- Annoys and interferes with the user's work (e.g. two-factor authentication)
+- Annoys and interferes with the user's work (e.g., two-factor authentication)
 - Not really regulated/enforced by law 
-- Often retroactively added after an incident, to avoid embarrassment,
+- Often retroactively added after an incident, to avoid embarrassment, lawsuits,
   fines (sometimes)
 
 ----
@@ -90,7 +90,7 @@ But increasingly wider range of harms caused by security attacks
 - Can cause **safety** failures; physical, environmental, mental harms
 - Viewpoint: We can't all be security experts, but:
   - should be aware of possible consequences of no/little security
-  - understand basic principles; omit common pitfalls
+  - understand basic principles; avoid common pitfalls
   - know how to apply best practices
   - know how to talk to security experts 
 
@@ -210,7 +210,6 @@ Who can access/influence...
 * Model stealing attacks (confidentiality violation against model data)
 * Model inversion attack (confidentiality violation against training data)
 
-
 ----
 ## Evasion Attacks (Adversarial Examples)
 
@@ -220,6 +219,7 @@ Who can access/influence...
 Attack at inference time
 * Add noise to an existing sample & cause misclassification
 * Possible with and without access to model internals
+* **Q. Other examples?**
 
 <!-- references_ -->
 _Accessorize to a Crime: Real and Stealthy Attacks on State-of-the-Art
@@ -240,9 +240,10 @@ Eykholt et al., in CVPR (2018).
 ## Task Decision Boundary vs Model Boundary
 
 [![Decision boundary vs model boundary](decisionboundary.png)](decisionboundary.png)
+<!-- .element: class="stretch" -->
 
 
-<!-- references -->
+<!-- references_ -->
 From Goodfellow et al (2018). [Making machine learning robust against adversarial inputs](https://par.nsf.gov/servlets/purl/10111674). *Communications of the ACM*, *61*(7), 56-66. 
 
 Note:
@@ -287,10 +288,6 @@ Input sanitization
   * e.g., Color depth reduction, spatial smoothing, JPEG compression
 
 
-
-<!-- references -->
-_Reliable Smart Road Signs_, Sayin et al. (2019).
-
 ----
 ## Generating Adversarial Examples
 
@@ -323,6 +320,8 @@ Inject mislabeled training data to damage model quality
   * 3% poisoning => 11% decrease in accuracy (Steinhardt, 2017)
 
 Attacker must have some access to the public or private training set
+
+**Q. Other examples?**
 
 <!-- col -->
 
@@ -421,7 +420,7 @@ Inject artificial noise (vs. accuracy)
 Given a model output (e.g., name of a person), infer the
 corresponding, potentially sensitive input (facial image of the
 person)
-* e.g., gradient descent on input space 
+* e.g., exploit model confidence values & search over input space
 
 <!-- col -->
 
@@ -429,7 +428,6 @@ person)
 ![](model-inversion-image.png)
 
 <!-- colend -->
-
 
 <!-- references -->
 _Model Inversion Attacks that Exploit Confidence Information and Basic
