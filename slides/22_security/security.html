@@ -450,13 +450,13 @@ Remember: There may be easier ways to compromise system
 </script></section><section data-markdown><script type="text/template">## Attacker Goal
 
 What is the attacker trying to achieve?
-* Typically, undermine one or more security requirements
+* Typically, undermine security requirements (recall C.I.A)
 
 Example: College admission
-* Access other applicants info without being authorized
-  * Modify application status to “accepted”
-  * Modify admissions model to reject certain applications
-  * Cause website shutdown to sabotage other applicants
+* Access other applicants info without being authorized (C)
+* Modify application status to “accepted” (I)
+* Modify admissions model to reject certain applications (I)
+* Cause website shutdown to sabotage other applicants (A)
   </script></section><section data-markdown><script type="text/template">## Attacker Capability
 
 ![](admission-threat-model.jpg)
@@ -480,10 +480,10 @@ What actions are available to the attacker (to achieve its goal)?
 ![](stride.png)
 <!-- .element: class="stretch" -->
 
-A systematic approach to identifying threats (i.e., attacker actions)
+A systematic approach to identifying attacks
 * Construct an architectural diagram with components & connections
 * Indicate trust boundaries 
-* For each untrusted component/connection, identify threats
+* For each untrusted connection, enumerate STRIDE threats
 * For each potential threat, devise a mitigation strategy
 
 <!-- references_ -->
@@ -720,14 +720,6 @@ society
 harm!
 * __Viewpoint__: Users should be given an ability to learn and control how their data is
   collected and used
-</script></section><section data-markdown><script type="text/template">## Does Informed Consent Work?
-
-![Signup screen in Chipotle app](chipotlesignup.png)
-<!-- .element: class="stretch" -->
-</script></section><section data-markdown><script type="text/template">## Does Informed Consent Work?
-
-![Popup on German news site asking for consent to advertisement](spiegel.png)
-<!-- .element: class="stretch" -->
 </script></section><section data-markdown><script type="text/template">## Best Practices for ML & Data Privacy
 
 <div class="smallish">
@@ -848,6 +840,11 @@ devices
 
 ![Techcrunch privacy](techcrunch-privacy.png)
 <!-- .element: class="stretch" -->
+</script></section><section data-markdown><script type="text/template">## But Does Informed Consent Work?
+
+![Popup on German news site asking for consent to advertisement](spiegel.png)
+<!-- .element: class="stretch" -->
+
 </script></section><section data-markdown><script type="text/template">
 ![Amazon gdpr](amazon-gdpr.png)
 <!-- .element: class="stretch" -->
