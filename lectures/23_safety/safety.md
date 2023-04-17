@@ -84,8 +84,7 @@ Can build safe systems from unreliable components (e.g. redundancy, safeguards)
 
 System may be unsafe despite reliable components (e.g. stronger gas tank causes more severe damage in incident)
 
-
-Accuracy and robustness are about reliability!
+Accuracy is usually about reliability!
 
 
 ----
@@ -93,10 +92,14 @@ Accuracy and robustness are about reliability!
 
 <div class="tweet" data-src="https://twitter.com/EmilyEAckerman/status/1186363305851576321"></div>
 
+Notes: Systems can be unsafe in unexpected ways
+
 ----
 ## Safety of AI-Enabled Systems
 
 <div class="tweet" data-src="https://twitter.com/skoops/status/1065700195776847872"></div>
+
+Notes: Systems can be unsafe in unexpected ways
 
 ----
 ## Safety is a broad concept
@@ -117,12 +120,19 @@ Includes harm to society, e.g. poverty, polarization
 ----
 ## How did traditional vehicles become safer?
 
+<!-- colstart -->
+
 ![](nader-report.png)
 <!-- .element: class="stretch" -->
+
+<!-- col -->
 
 National Traffic & Motor Safety Act (1966): 
 * Mandatory design changes (head rests, shatter-resistant windshields, safety belts)
 * Road improvements (center lines, reflectors, guardrails)
+* Significant reduction (13-46%) in traffic fatalities 
+
+<!-- colend -->
 
 ----
 ## Autonomous Vehicles: What's different?
@@ -144,7 +154,7 @@ etc.,
 ![](av-miles.jpg)
 <!-- .element: class="stretch" -->
 
-__More miles tested => safer?__
+__Q. More miles tested => safer?__
 
 
 ----
@@ -183,11 +193,6 @@ Plan for mistakes, design mitigations (recall earlier lecture!)
 * Guardrails
 * Mistaked detection
 * Redundancy, ...
-
-Improve reliability (accuracy, robustness)
-
-
-
 
 
 ---
@@ -326,7 +331,7 @@ argument.
 Environment sometimes deviates from expected, normal conditions
 - Extreme weathers, unexpected obstacles, etc., 
 - Erratic user behaviors; unusually high service demand
-- Adversarial actors
+- Adversarial agents
 
 Does your system work reasonably well under these deviations? i.e., is
 it _robust_?
@@ -629,27 +634,34 @@ Test model *and* system quality *in production*
 * Safety analysis not only for regulated domains (nuclear power plants, medical devices, planes, cars, ...)
 * Many end-user applications have a safety component 
 
-**Examples?**
-
-<!-- discussion -->
+**Q. Examples?**
 
 
 ----
 ## Mental Health
 
 [![Social Media vs Mental Health](mentalhealth.png)](https://www.healthline.com/health-news/social-media-use-increases-depression-and-loneliness)
+<!-- .element: class="stretch" -->
+
+----
+## Mental Health
+
+[![Social Media vs Mental Health](mentalhealth.png)](https://www.healthline.com/health-news/social-media-use-increases-depression-and-loneliness)
+<!-- .element: class="stretch" -->
+
 
 ----
 ## IoT
 
 ![Servers down](serversdown.png)
+<!-- .element: class="stretch" -->
 
 
 ----
 ## Addiction
 
 [![Blog: Robinhood Has Gamified Online Trading Into an Addiction](robinhood.png)](https://marker.medium.com/robinhood-has-gamified-online-trading-into-an-addiction-cc1d7d989b0c)
-
+<!-- .element: class="stretch" -->
 
 ----
 ## Society: Unemployment Engineering / Deskilling
@@ -678,6 +690,7 @@ Also isolation, Cambridge Analytica, collaboration with ICE, ...
 ## Environmental: Energy Consumption
 
 [![Article: Creating an AI can be five times worse for the planet than a car](energy.png)](https://www.newscientist.com/article/2205779-creating-an-ai-can-be-five-times-worse-for-the-planet-than-a-car/)
+<!-- .element: class="stretch" -->
 
 ----
 ## Exercise
@@ -747,11 +760,11 @@ safety design at the system level
 
 <div class="small">
 
-* 🗎 Borg, Markus, Cristofer Englund, Krzysztof Wnuk, Boris Duran, Christoffer Levandowski, Shenjian Gao, Yanwen Tan, Henrik Kaijser, Henrik Lönn, and Jonas Törnqvist. “[Safely entering the deep: A review of verification and validation for machine learning and a challenge elicitation in the automotive industry](https://www.atlantis-press.com/journals/jase/125905766).” Journal of Automotive Software Engineering. 2019
-* 🕮 Leveson, Nancy G. [Engineering a safer world: Systems thinking applied to safety](https://direct.mit.edu/books/book/2908/Engineering-a-Safer-WorldSystems-Thinking-Applied). The MIT Press, 2016.
-* 🗎 Salay, Rick, and Krzysztof Czarnecki. “[Using machine learning safely in automotive software: An assessment and adaption of software process requirements in ISO 26262](https://arxiv.org/pdf/1808.01614).” arXiv preprint arXiv:1808.01614 (2018).
-* 🗎 Mohseni, Sina, Mandar Pitale, Vasu Singh, and Zhangyang Wang. “[Practical Solutions for Machine Learning Safety in Autonomous Vehicles](https://arxiv.org/abs/1912.09630).” SafeAI workshop at AAAI’20, (2020).
-* 🗎 Huang, Xiaowei, Daniel Kroening, Wenjie Ruan, James Sharp, Youcheng Sun, Emese Thamo, Min Wu, and Xinping Yi. “[A survey of safety and trustworthiness of deep neural networks: Verification, testing, adversarial attack and defence, and interpretability](https://arxiv.org/abs/1812.08342).” Computer Science Review 37 (2020).
-* 🗎 Amodei, Dario, Chris Olah, Jacob Steinhardt, Paul Christiano, John Schulman, and Dan Mané. "[Concrete problems in AI safety](https://arxiv.org/pdf/1606.06565.pdf)." arXiv preprint arXiv:1606.06565 (2016).
+* Borg, Markus, Cristofer Englund, Krzysztof Wnuk, Boris Duran, Christoffer Levandowski, Shenjian Gao, Yanwen Tan, Henrik Kaijser, Henrik Lönn, and Jonas Törnqvist. “[Safely entering the deep: A review of verification and validation for machine learning and a challenge elicitation in the automotive industry](https://www.atlantis-press.com/journals/jase/125905766).” Journal of Automotive Software Engineering. 2019
+* Leveson, Nancy G. [Engineering a safer world: Systems thinking applied to safety](https://direct.mit.edu/books/book/2908/Engineering-a-Safer-WorldSystems-Thinking-Applied). The MIT Press, 2016.
+* Salay, Rick, and Krzysztof Czarnecki. “[Using machine learning safely in automotive software: An assessment and adaption of software process requirements in ISO 26262](https://arxiv.org/pdf/1808.01614).” arXiv preprint arXiv:1808.01614 (2018).
+* Mohseni, Sina, Mandar Pitale, Vasu Singh, and Zhangyang Wang. “[Practical Solutions for Machine Learning Safety in Autonomous Vehicles](https://arxiv.org/abs/1912.09630).” SafeAI workshop at AAAI’20, (2020).
+* Huang, Xiaowei, Daniel Kroening, Wenjie Ruan, James Sharp, Youcheng Sun, Emese Thamo, Min Wu, and Xinping Yi. “[A survey of safety and trustworthiness of deep neural networks: Verification, testing, adversarial attack and defence, and interpretability](https://arxiv.org/abs/1812.08342).” Computer Science Review 37 (2020).
+* Amodei, Dario, Chris Olah, Jacob Steinhardt, Paul Christiano, John Schulman, and Dan Mané. "[Concrete problems in AI safety](https://arxiv.org/pdf/1606.06565.pdf)." arXiv preprint arXiv:1606.06565 (2016).
 
 </div>
