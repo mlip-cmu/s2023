@@ -482,7 +482,7 @@ What actions are available to the attacker (to achieve its goal)?
 
 A systematic approach to identifying threats (i.e., attacker actions)
 * Construct an architectural diagram with components & connections
-* Designate the trust boundary 
+* Indicate trust boundaries 
 * For each untrusted component/connection, identify threats
 * For each potential threat, devise a mitigation strategy
 
@@ -515,13 +515,28 @@ A systematic approach to identifying threats (i.e., attacker actions)
 </div></script></section><section data-markdown><script type="text/template">## STRIDE: Example Mitigations
 
 * Spoofing: Attacker pretends to be another applicant by logging in 
-  * -> __Require stronger passwords__
+  * -> __Require two-factor authentication__
 * Tampering: Attacker modifies applicant info using browser exploits 
   * -> __Add server-side security tokens__
 * Information disclosure: Attacker intercepts HTTP requests from/to server to read applicant info 
   * -> __Use encryption (HTTPS)__
 * Denial of service: Attacker creates many bogus accounts and overwhelms system with requests 
   * -> __Limit requests per IP address__
+</script></section><section data-markdown><script type="text/template">## Breakout: Threat Modeling
+
+<!-- colstart -->
+
+Again: Dashcam system from I2/I3
+
+Using STRIDE, discuss & post:
+  * Data flow throughout the system
+  * Possible attacks on the system
+
+<!-- col -->
+
+![](dashcam-architecture.jpg)
+
+<!-- colend -->
 </script></section><section data-markdown><script type="text/template">## STRIDE & Other Threat Modeling Methods
 
 A systematic approach to identifying threats & attacker actions
