@@ -536,13 +536,13 @@ Remember: There may be easier ways to compromise system
 ## Attacker Goal
 
 What is the attacker trying to achieve?
-* Typically, undermine one or more security requirements
+* Typically, undermine security requirements (recall C.I.A)
 
 Example: College admission
-* Access other applicants info without being authorized
-  * Modify application status to “accepted”
-  * Modify admissions model to reject certain applications
-  * Cause website shutdown to sabotage other applicants
+* Access other applicants info without being authorized (C)
+* Modify application status to “accepted” (I)
+* Modify admissions model to reject certain applications (I)
+* Cause website shutdown to sabotage other applicants (A)
   
 ----
 ## Attacker Capability
@@ -570,10 +570,10 @@ What actions are available to the attacker (to achieve its goal)?
 ![](stride.png)
 <!-- .element: class="stretch" -->
 
-A systematic approach to identifying threats (i.e., attacker actions)
+A systematic approach to identifying attacks
 * Construct an architectural diagram with components & connections
 * Indicate trust boundaries 
-* For each untrusted component/connection, identify threats
+* For each untrusted connection, enumerate STRIDE threats
 * For each potential threat, devise a mitigation strategy
 
 <!-- references_ -->
@@ -870,18 +870,6 @@ harm!
   collected and used
 
 ----
-## Does Informed Consent Work?
-
-![Signup screen in Chipotle app](chipotlesignup.png)
-<!-- .element: class="stretch" -->
-
-----
-## Does Informed Consent Work?
-
-![Popup on German news site asking for consent to advertisement](spiegel.png)
-<!-- .element: class="stretch" -->
-
-----
 ## Best Practices for ML & Data Privacy
 
 <div class="smallish">
@@ -1018,6 +1006,13 @@ devices
 
 ![Techcrunch privacy](techcrunch-privacy.png)
 <!-- .element: class="stretch" -->
+
+----
+## But Does Informed Consent Work?
+
+![Popup on German news site asking for consent to advertisement](spiegel.png)
+<!-- .element: class="stretch" -->
+
 
 ----
 
