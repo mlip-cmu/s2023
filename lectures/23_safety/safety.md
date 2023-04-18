@@ -243,6 +243,16 @@ software), Common Criteria (security)
 </div>
 
 
+----
+## Assurance (Safety) Cases
+
+* An emerging approach to demonstrating safety
+* An explicit argument that a system achieves a desired safety
+requirement, along with supporting evidence
+* Structure:
+  * Argument: A top-level claim decomposed into multiple sub-claims
+  * Evidence: Testing, software analysis, formal verification,
+  inspection, expert opinions, design mechanisms...
 
 ----
 ## Documenting Safety with Assurance (Safety) Cases
@@ -250,15 +260,6 @@ software), Common Criteria (security)
 ![](safetycase.svg)
 <!-- .element: class="stretch plain " -->
 
-----
-## Assurance (Safety) Cases
-
-* An explicit argument that a system achieves a desired safety
-requirement, along with supporting evidence
-* Structure:
-  * Argument: A top-level claim decomposed into multiple sub-claims
-  * Evidence: Testing, software analysis, formal verification,
-  inspection, expert opinions, design mechanisms...
 
 ----
 ## Assurance Cases: Example
@@ -323,7 +324,7 @@ argument.
 
 
 ---
-# Model Robustness
+# Robustness for ML-based Systems
 
 ----
 ## Robustness
@@ -337,6 +338,7 @@ Does your system work reasonably well under these deviations? i.e., is
 it _robust_?
 
 Most safety-critical systems require some level of robustness
+- Not enough to show that system is safe in normal conditions
 
 ----
 ## Defining Robustness for ML:
@@ -425,7 +427,6 @@ ELSE predict no arrest
   - Example:
     [_Certified adversarial robustness via randomized smoothing_](https://arxiv.org/abs/1902.02918). Cohen,
     Rosenfeld, and Kolter, ICML (2019).
-* Lots of tools that provide a robustness number
 </div>
 
 ----
@@ -469,11 +470,6 @@ As a group, tagging members, post to `#lecture`:
 > 1. What safety concerns can you anticipate?
 > 2. What notion of robustness are you concerned about (i.e., what distance function)?
 > 3. How could you use robustness to improve the product (i.e., when/how to check robustness)?
-
-
-
-
-
 
 
 
@@ -712,6 +708,65 @@ Consider safety broadly: including stress, mental health, discrimination, and en
 * Start with requirements and hazard analysis
 
 
+
+
+---
+# Feedback Loops
+
+----
+## Feedback Loops
+
+![Feedback loop](feedbackloop.svg)
+<!-- .element: class="plain" -->
+
+----
+## Feedback Loops go through the Environment
+
+![](component.svg)
+<!-- .element: class="plain" -->
+
+
+----
+## Analyze the World vs the Machine
+
+![world vs machine](worldvsmachine.svg)
+<!-- .element: class="plain stretch" -->
+
+*State and check assumptions!*
+
+
+----
+## Analyze the World vs the Machine
+
+How do outputs affect change in the real world, how does this (indirectly) influence inputs?
+
+Can we decouple inputs from outputs? Can telemetry be trusted?
+
+Interventions through system (re)design:
+* Focus data collection on less influenced inputs
+* Compensate for bias from feedback loops in ML pipeline
+* Do not build the system in the first place
+
+
+----
+## Long-term Impact of ML
+
+* ML systems make multiple decisions over time, influence the
+behaviors of populations in the real world
+* *But* most models are built & optimized assuming that the world is
+static
+* Difficult to estimate the impact of ML over time
+  * Need to reason about the system dynamics (world vs machine)
+  * e.g., what's the effect of a mortgage lending policy on a population?
+
+----
+## Prepare for Feedback Loops
+
+We will likely not anticipate all feedback loops...
+
+... but we can anticipate that unknown feedback loops exist
+
+-> Monitoring!
 
 
 
