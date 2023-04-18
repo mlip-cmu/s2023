@@ -217,19 +217,20 @@ software), Common Criteria (security)
 
 </div>
 
-
-</script></section><section data-markdown><script type="text/template">## Documenting Safety with Assurance (Safety) Cases
-
-![](safetycase.svg)
-<!-- .element: class="stretch plain " -->
 </script></section><section data-markdown><script type="text/template">## Assurance (Safety) Cases
 
+* An emerging approach to demonstrating safety
 * An explicit argument that a system achieves a desired safety
 requirement, along with supporting evidence
 * Structure:
   * Argument: A top-level claim decomposed into multiple sub-claims
   * Evidence: Testing, software analysis, formal verification,
   inspection, expert opinions, design mechanisms...
+</script></section><section data-markdown><script type="text/template">## Documenting Safety with Assurance (Safety) Cases
+
+![](safetycase.svg)
+<!-- .element: class="stretch plain " -->
+
 </script></section><section data-markdown><script type="text/template">## Assurance Cases: Example
 
 ![](safetycase.svg)
@@ -284,7 +285,7 @@ argument.
 
 
 
-</script></section></section><section ><section data-markdown><script type="text/template"># Model Robustness
+</script></section></section><section ><section data-markdown><script type="text/template"># Robustness for ML-based Systems
 </script></section><section data-markdown><script type="text/template">## Robustness
 
 Environment sometimes deviates from expected, normal conditions
@@ -296,6 +297,7 @@ Does your system work reasonably well under these deviations? i.e., is
 it _robust_?
 
 Most safety-critical systems require some level of robustness
+- Not enough to show that system is safe in normal conditions
 </script></section><section data-markdown><script type="text/template">## Defining Robustness for ML:
 
 * A prediction for input $x$ is robust if the outcome is stable under
@@ -372,7 +374,6 @@ ELSE predict no arrest
   - Example:
     [_Certified adversarial robustness via randomized smoothing_](https://arxiv.org/abs/1902.02918). Cohen,
     Rosenfeld, and Kolter, ICML (2019).
-* Lots of tools that provide a robustness number
 </div>
 </script></section><section data-markdown><script type="text/template">## Improving Robustness for Safety
 
@@ -410,11 +411,6 @@ As a group, tagging members, post to `#lecture`:
 > 1. What safety concerns can you anticipate?
 > 2. What notion of robustness are you concerned about (i.e., what distance function)?
 > 3. How could you use robustness to improve the product (i.e., when/how to check robustness)?
-
-
-
-
-
 
 
 
@@ -602,6 +598,51 @@ Consider safety broadly: including stress, mental health, discrimination, and en
 * Start with requirements and hazard analysis
 
 
+
+</script></section></section><section ><section data-markdown><script type="text/template"># Feedback Loops
+</script></section><section data-markdown><script type="text/template">## Feedback Loops
+
+![Feedback loop](feedbackloop.svg)
+<!-- .element: class="plain" -->
+</script></section><section data-markdown><script type="text/template">## Feedback Loops go through the Environment
+
+![](component.svg)
+<!-- .element: class="plain" -->
+
+</script></section><section data-markdown><script type="text/template">## Analyze the World vs the Machine
+
+![world vs machine](worldvsmachine.svg)
+<!-- .element: class="plain stretch" -->
+
+*State and check assumptions!*
+
+</script></section><section data-markdown><script type="text/template">## Analyze the World vs the Machine
+
+How do outputs affect change in the real world, how does this (indirectly) influence inputs?
+
+Can we decouple inputs from outputs? Can telemetry be trusted?
+
+Interventions through system (re)design:
+* Focus data collection on less influenced inputs
+* Compensate for bias from feedback loops in ML pipeline
+* Do not build the system in the first place
+
+</script></section><section data-markdown><script type="text/template">## Long-term Impact of ML
+
+* ML systems make multiple decisions over time, influence the
+behaviors of populations in the real world
+* *But* most models are built & optimized assuming that the world is
+static
+* Difficult to estimate the impact of ML over time
+  * Need to reason about the system dynamics (world vs machine)
+  * e.g., what's the effect of a mortgage lending policy on a population?
+</script></section><section data-markdown><script type="text/template">## Prepare for Feedback Loops
+
+We will likely not anticipate all feedback loops...
+
+... but we can anticipate that unknown feedback loops exist
+
+-> Monitoring!
 
 
 
