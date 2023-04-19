@@ -453,6 +453,16 @@ ELSE predict no arrest
 
 * Does the model detect stop signs under normal settings?
 * Does the model detect stop signs under deviations?
+  * __Q. What deviations do we care about?__
+
+![Stop Sign](stop-sign.png)
+<!-- .element: class="stretch" -->
+
+----
+## Robustness in a Safety Setting
+
+* Does the model detect stop signs under normal settings?
+* Does the model detect stop signs under deviations?
   * Poor lighting? In fog? With a tilted camera? Sensor noise?
   * With stickers taped to the sign? (Does it matter?)
 
