@@ -216,7 +216,23 @@ software), Common Criteria (security)
 * Good processes are important, but not sufficient; provides only indirect evidence for system safety
 
 </div>
+</script></section><section data-markdown><script type="text/template">## Certification Standards: Example
 
+
+![IEC process](IEC-process.png)
+<!-- .element: class="stretch" -->
+</script></section><section data-markdown><script type="text/template">## Demonstrating Safety
+
+Two main strategies:
+
+1. **Evidence of safe behavior in the field** 
+   * Extensive field trials
+   * Usually expensive
+2. **Evidence of responsible (safety) engineering process**
+   * Process with hazard analysis, testing mitigations, etc
+   * Not sufficient to assure safety
+
+**Most standards require both, but often not sufficient!**
 </script></section><section data-markdown><script type="text/template">## Assurance (Safety) Cases
 
 * An emerging approach to demonstrating safety
@@ -247,14 +263,13 @@ Questions to think about:
 
 [Aurora Safety Case](https://aurora.tech/blog/aurora-unveils-first-ever-safety-case-framework)
 
-</script></section><section data-markdown><script type="text/template">## Exercise: Assurance Case for Recommender
+</script></section><section data-markdown><script type="text/template">## Discussion: Assurance Case for Recommender
 
 ![](movie-recommendation.png)
 <!-- .element: class="stretch" -->
 
-Build a safety case to argue that your movie recommendation system
-provides at least 95% availability. Include evidence to support your
-argument. 
+How would you argue that your recommendation system
+provides at least 95% availability? What evidence would you provide? 
 </script></section><section data-markdown><script type="text/template">## Assurance Cases: Benefits & Limitations
 
 <div class="smallish">
@@ -288,10 +303,10 @@ argument.
 </script></section></section><section ><section data-markdown><script type="text/template"># Robustness for ML-based Systems
 </script></section><section data-markdown><script type="text/template">## Robustness
 
-Environment sometimes deviates from expected, normal conditions
+Environment sometimes __deviates__ from expected, normal conditions
 - Extreme weathers, unexpected obstacles, etc., 
 - Erratic user behaviors; unusually high service demand
-- Adversarial agents
+- Adversarial actors; users trying to game your system, etc., 
 
 Does your system work reasonably well under these deviations? i.e., is
 it _robust_?
@@ -324,17 +339,7 @@ minor perturbations to the input:
 <!-- references_ -->
 Image: [_An abstract domain for certifying neural networks_](https://dl.acm.org/doi/pdf/10.1145/3290354).
     Gagandeep et al., POPL (2019).
-    </script></section><section data-markdown><script type="text/template">## Robustness in a Safety Setting
 
-* Does the model reliably detect stop signs?
-* Also in poor lighting? In fog? With a tilted camera? Sensor noise?
-* With stickers taped to the sign? (adversarial attacks)
-
-![Stop Sign](stop-sign.png)
-<!-- .element: class="stretch" -->
-
-<!-- references_ -->
-Image: David Silver. [Adversarial Traffic Signs](https://medium.com/self-driving-cars/adversarial-traffic-signs-fd16b7171906). Blog post, 2017
 </script></section><section data-markdown><script type="text/template">## No Model is Fully Robust
 
 * Every useful model has at least one decision boundary
@@ -356,8 +361,7 @@ ELSE
 IF more than three priors THEN predict arrest
 ELSE predict no arrest
 ```
-
-</script></section><section data-markdown><script type="text/template">## Evaluating Robustness
+</script></section><section data-markdown><script type="text/template">## Evaluating ML Robustness
 
 <div class="smallish">
 
@@ -375,13 +379,50 @@ ELSE predict no arrest
     [_Certified adversarial robustness via randomized smoothing_](https://arxiv.org/abs/1902.02918). Cohen,
     Rosenfeld, and Kolter, ICML (2019).
 </div>
+</script></section><section data-markdown><script type="text/template">## ML Robustness: Limitations
+
+
+* Lots of on-going research (especially for DNNs)
+* Mostly model-centric, focusing on small ($\epsilon$) perburtations to input
+  * Common use case: Robustness against adversarial attacks
+  * Q. But do these pertubations matter for safety?
+* In practice: Perturbations depend on environmental changes! (Recall: world vs. machine)
+  * Which parts of the environment does the SW sense?
+  * Can those parts change over time? Can the sensors be noisy,
+  faulty, etc.,? (these are **domain-specific**)
+  * What input pertburbations could be caused by from these changes/noise...?
+
+</script></section><section data-markdown><script type="text/template">## Robustness in a Safety Setting
+
+* Does the model detect stop signs under normal settings?
+* Does the model detect stop signs under deviations?
+  * Poor lighting? In fog? With a tilted camera? Sensor noise?
+  * With stickers taped to the sign?
+
+![Stop Sign](stop-sign.png)
+<!-- .element: class="stretch" -->
+
+<!-- references_ -->
+Image: David Silver. [Adversarial Traffic Signs](https://medium.com/self-driving-cars/adversarial-traffic-signs-fd16b7171906). Blog post, 2017
 </script></section><section data-markdown><script type="text/template">## Improving Robustness for Safety
 
-Robustness checking at inference time 
-  - Handle inputs with non-robust predictions differently
-    (e.g. discard or output low confidence score)
-  - Downside: Significantly raises cost of prediction; may not be suitable
-    for time-sensitive applications (e.g., self-driving cars)
+![](weather-conditions.png)
+<!-- .element: class="stretch" -->
+
+Learn more robust models
+  - Test/think about domain-specific deviations that might result in
+    perturbations to model input (e.g., 
+    fogs, snow, sensor noise)
+  - Curate data for those abnormal scenarios or augment training data with transformed inputs
+
+<!-- references_ -->
+_Automated driving recognition technologies for adverse weather
+conditions._ Yoneda et al., (2019).
+
+</script></section><section data-markdown><script type="text/template">## Improving Robustness for Safety
+
+![](sensor-fusion.jpeg)
+<!-- .element: class="stretch" -->
 
 Design mechanisms
   - Deploy redundant components for critical tasks (e.g., vision + map)
@@ -389,18 +430,16 @@ Design mechanisms
   - Multiple, independent sensors (e.g., LiDAR + radar + cameras)
 </script></section><section data-markdown><script type="text/template">## Improving Robustness for Safety
 
-![](weather-conditions.png)
-<!-- .element: class="stretch" -->
-
-Learning more robust models
-  - Test/think about domain-specific scenarios that might result in
-    perturbations to model input (e.g., 
-    fogs, snow, sensor noise)
-  - Curate data for those abnormal scenarios or augment training data with transformed inputs
-
-<!-- references_ -->
-Image: _Automated driving recognition technologies for adverse weather
-conditions._ Yoneda et al., IATSS Research (2019).
+Design mechanisms
+  - Deploy redundant components for critical tasks (e.g., vision + map)
+  - Ensemble learning: Combine models with different biases
+  - Multiple, independent sensors (e.g., LiDAR + radar + cameras)
+  
+Robustness checking at inference time 
+  - Handle inputs with non-robust predictions differently
+    (e.g. discard or output low confidence score for outliers)
+  - Downside: Raises cost of prediction; may not be suitable
+    for time-sensitive applications (e.g., self-driving cars)
 
 </script></section><section data-markdown><script type="text/template">## Breakout: Robustness
 
@@ -409,7 +448,7 @@ Scenario: Medical use of transcription service, dictate diagnoses and prescripti
 As a group, tagging members, post to `#lecture`:
 
 > 1. What safety concerns can you anticipate?
-> 2. What notion of robustness are you concerned about (i.e., what distance function)?
+> 2. What types of deviations are you concerned about?
 > 3. How could you use robustness to improve the product (i.e., when/how to check robustness)?
 
 
@@ -597,52 +636,6 @@ Consider safety broadly: including stress, mental health, discrimination, and en
 * Consider safety broadly: including stress, mental health, discrimination, and environment pollution
 * Start with requirements and hazard analysis
 
-
-
-</script></section></section><section ><section data-markdown><script type="text/template"># Feedback Loops
-</script></section><section data-markdown><script type="text/template">## Feedback Loops
-
-![Feedback loop](feedbackloop.svg)
-<!-- .element: class="plain" -->
-</script></section><section data-markdown><script type="text/template">## Feedback Loops go through the Environment
-
-![](component.svg)
-<!-- .element: class="plain" -->
-
-</script></section><section data-markdown><script type="text/template">## Analyze the World vs the Machine
-
-![world vs machine](worldvsmachine.svg)
-<!-- .element: class="plain stretch" -->
-
-*State and check assumptions!*
-
-</script></section><section data-markdown><script type="text/template">## Analyze the World vs the Machine
-
-How do outputs affect change in the real world, how does this (indirectly) influence inputs?
-
-Can we decouple inputs from outputs? Can telemetry be trusted?
-
-Interventions through system (re)design:
-* Focus data collection on less influenced inputs
-* Compensate for bias from feedback loops in ML pipeline
-* Do not build the system in the first place
-
-</script></section><section data-markdown><script type="text/template">## Long-term Impact of ML
-
-* ML systems make multiple decisions over time, influence the
-behaviors of populations in the real world
-* *But* most models are built & optimized assuming that the world is
-static
-* Difficult to estimate the impact of ML over time
-  * Need to reason about the system dynamics (world vs machine)
-  * e.g., what's the effect of a mortgage lending policy on a population?
-</script></section><section data-markdown><script type="text/template">## Prepare for Feedback Loops
-
-We will likely not anticipate all feedback loops...
-
-... but we can anticipate that unknown feedback loops exist
-
--> Monitoring!
 
 
 
