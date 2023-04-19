@@ -438,17 +438,15 @@ ELSE predict no arrest
 ----
 ## ML Robustness: Limitations
 
-
 * Lots of on-going research (especially for DNNs)
-* Mostly model-centric, focusing on small ($\epsilon$) perburtations to input
+* Mostly input-centric, focusing on small ($\epsilon$) perburtations
   * Common use case: Robustness against adversarial attacks
   * Q. But do these pertubations matter for safety?
-* In practice: Perturbations depend on environmental changes! (Recall: world vs. machine)
-  * Which parts of the environment does the SW sense?
+* In practice: Perturbations result from environmental changes! 
+  * Which parts of the world does the software sense?
   * Can those parts change over time? Can the sensors be noisy,
   faulty, etc.,? (these are **domain-specific**)
   * What input pertburbations could be caused by from these changes/noise...?
-
 
 ----
 ## Robustness in a Safety Setting
@@ -456,7 +454,7 @@ ELSE predict no arrest
 * Does the model detect stop signs under normal settings?
 * Does the model detect stop signs under deviations?
   * Poor lighting? In fog? With a tilted camera? Sensor noise?
-  * With stickers taped to the sign?
+  * With stickers taped to the sign? (Does it matter?)
 
 ![Stop Sign](stop-sign.png)
 <!-- .element: class="stretch" -->
@@ -482,7 +480,7 @@ conditions._ Yoneda et al., (2019).
 
 
 ----
-## Improving Robustness for Safety
+## Improving Robustness for Safety 
 
 ![](sensor-fusion.jpeg)
 <!-- .element: class="stretch" -->
@@ -515,9 +513,8 @@ Scenario: Medical use of transcription service, dictate diagnoses and prescripti
 As a group, tagging members, post to `#lecture`:
 
 > 1. What safety concerns can you anticipate?
-> 2. What types of deviations are you concerned about?
-> 3. How could you use robustness to improve the product (i.e., when/how to check robustness)?
-
+> 2. What deviations are you concerned about?
+> 3. How would improve the robustness of the overall system?
 
 
 
@@ -606,20 +603,18 @@ See also [Center for Humane Technology](https://www.humanetech.com/)
 ## AI Alignment Problem = Requirements Problem
 
 Recall: "World vs. machine"
-
-Identify stakeholders in the environment & possible effects on them
-
-Anticipate side effects, feedback loops
-
-Constrain scope of the system
-
-Perfect contracts usually infeasible, undesirable
+* Identify stakeholders in the environment & possible effects on them
+* Anticipate side effects, feedback loops
+* Constrain the scope of the system
+* Perfect contracts usually infeasible, undesirable
 
 But more requirements engineering unlikely to be only solution
 
 
 ----
 ## Other Challenges
+
+<div class="smallish">
 
 * Safe Exploration
   - Exploratory actions "in production" may have consequences
@@ -629,6 +624,8 @@ But more requirements engineering unlikely to be only solution
 * Scalable Oversight
     - Cannot provide human oversight over every action (or label all possible training data)
   - Use indirect proxies in telemetry to assess success/satisfaction
+
+</div>
 
 <!-- references -->
 Amodei, Dario, Chris Olah, Jacob Steinhardt, Paul Christiano, John Schulman, and Dan Mané. "[Concrete problems in AI safety](https://arxiv.org/pdf/1606.06565.pdf%20http://arxiv.org/abs/1606.06565)." arXiv preprint arXiv:1606.06565 (2016).
@@ -644,11 +641,24 @@ Ord estimates 10% existential risk from unaligned AI in 100 years
 
 **Our view:** AI alignment not a real concern for the kind of ML-enabled products we consider here
 
-
 <!-- references -->
 Ord, Toby. The precipice: Existential risk and the future of humanity. Hachette Books, 2020.
 
 Note: Relevant for reinforcement learning and AGI
+
+----
+## More pressing AI isks?
+
+![TechCrunch article](techcrunch.png)
+<!-- .element: class="stretch" -->
+
+> “Those hypothetical risks are the focus of a dangerous ideology
+called longtermism that ignores the actual harms resulting from the
+deployment of AI systems today,” they wrote, citing worker
+exploitation, data theft, synthetic media that props up existing power
+structures and the further concentration of those power structures in
+fewer hands.
+
 
 
 ----
@@ -793,7 +803,7 @@ See Lecture **Planning for Mistakes**
 * Assume all components will eventually fail in one way or another, especially ML components
 * Hazard analysis to identify safety risks and requirements; classic
 safety design at the system level
-* Model robustness can help with some problems
+* Robustness: Identify & address relevant deviations
 * AI alignment: AI goals are difficult to specify precisely; susceptible to negative
   side effect & reward hacking
 
