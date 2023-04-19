@@ -404,7 +404,8 @@ Image: [_An abstract domain for certifying neural networks_](https://dl.acm.org/
 
 Is this model robust?
 
-Is the prediction for a 20 year old female with 3 priors robust?
+Is the prediction for a 20 year old male with 2 priors robust? Against
+what perturbations? 
 
 ```fortran
 IF age between 18–20 and sex is male THEN predict arrest
@@ -451,7 +452,7 @@ ELSE predict no arrest
 ----
 ## Robustness in a Safety Setting
 
-* Does the model detect stop signs under normal settings?
+* Does the model detect stop signs under normal conditions?
 * Does the model detect stop signs under deviations?
   * __Q. What deviations do we care about?__
 
@@ -466,7 +467,7 @@ ELSE predict no arrest
   * Poor lighting? In fog? With a tilted camera? Sensor noise?
   * With stickers taped to the sign? (Does it matter?)
 
-![Stop Sign](stop-sign.png)
+![Stop Sign](stop-sign-adversarial.png)
 <!-- .element: class="stretch" -->
 
 <!-- references_ -->
