@@ -404,7 +404,7 @@ Image: [_An abstract domain for certifying neural networks_](https://dl.acm.org/
 
 Is this model robust?
 
-Is the prediction for a 20 year old male with 2 priors robust?
+Is the prediction for a 20 year old female with 3 priors robust?
 
 ```fortran
 IF age between 18–20 and sex is male THEN predict arrest
@@ -461,6 +461,13 @@ ELSE predict no arrest
 
 <!-- references_ -->
 Image: David Silver. [Adversarial Traffic Signs](https://medium.com/self-driving-cars/adversarial-traffic-signs-fd16b7171906). Blog post, 2017
+
+----
+## Improving Robustness for Safety
+
+Q. How do we make ML-based systems more robust?
+
+<!-- discussion -->
 
 ----
 ## Improving Robustness for Safety
