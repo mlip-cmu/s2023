@@ -5613,16 +5613,26 @@ Joint responsibilities, joint processes, joint tools, joint vocabulary
 * Slack for coordination and questions
 
 ----
-## Feedback
+## Last Breakout: Feedback
 
-* What was useful?
-* What could be improved?
-* Where did we overdo it with the homework?
-* Ideas for better scaling?
-* How to better support teamwork?
-* How to better use the recitations?
+<div class="smallish">
 
-<!-- discussion -->
+Discuss feedback in small groups. Post feedback you feel comfortable sharing publicly to `#lecture`, tagging group members:
+
+> 1. Which topics were valuable and should be kept for future versions of the course?
+> 2. To improve the course in future offerings, which topics should we cover additionally, cover more, or cover less?
+> 3. Are there any tools (specific or general categories of tools) we should have covered or should have covered more? 
+> 4. How can we improve the way we teach the class (e.g., lectures, readings, recitations, assignments, scheduling, web site, guest lectures, group work, grading, bonus points)?
+
+For anonymous feedback option, see link on Slack.
+
+</div>
+
+----
+## Interested in TAing in Spring 2024?
+
+Email Christian
+
 
 ---
 <!-- .element: class="titleslide"  data-background="../_chapterimg/24_summary.jpg" -->
