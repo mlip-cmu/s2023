@@ -19,7 +19,7 @@
 | Mon, Feb 19 | Testing in Production ([book chapter](https://ckaestne.medium.com/quality-assurance-in-production-for-ml-enabled-systems-4d1b3442316f)) |  | M1: Modeling and First Deployment |
 | Wed, Feb 21 | Data Quality ([book chapter](https://ckaestne.medium.com/data-quality-for-building-production-ml-systems-2e0cc7e6113f)) |  |  |
 | Fri, Feb 23 | ![Lab](https://img.shields.io/badge/-lab-yellow.svg) Model Testing: Zeno and AdaTest  |  |  |
-| Mon, Feb 26 | Automating and Testing ML Pipelines ([book chapter 1](https://ckaestne.medium.com/quality-assurance-basics-6ce1eca9921), [chapter 2](https://ckaestne.medium.com/quality-assurance-for-machine-learning-pipelines-d495b8e5ad6a), [chapter 3](https://ckaestne.medium.com/integration-and-system-testing-bc4db6650d1)) |  | I3: Architecture |
+| Mon, Feb 26 | Automating and Testing ML Pipelines ([book chapter 1](https://ckaestne.medium.com/quality-assurance-basics-6ce1eca9921), [chapter 2](https://ckaestne.medium.com/quality-assurance-for-machine-learning-pipelines-d495b8e5ad6a), [chapter 3](https://ckaestne.medium.com/integration-and-system-testing-bc4db6650d1)) |  |  |
 | Wed, Feb 28 | ![Midterm](https://img.shields.io/badge/-midterm-blue.svg) Midterm  |  |  |
 | Fri, Mar 01 | ![Lab](https://img.shields.io/badge/-lab-yellow.svg) Continuous Integration: Jenkins  |  |  |
 | Mon, Mar 04 | ![Break](https://img.shields.io/badge/-break-red.svg) Spring break, no classes  |  |  |
@@ -28,21 +28,21 @@
 | Mon, Mar 11 | Scaling Data Storage and Data Processing ([book chapter](https://ckaestne.medium.com/scaling-ml-enabled-systems-b5c6b1527bc)) |  |  |
 | Wed, Mar 13 | Planning for Operations ([book chapter](https://ckaestne.medium.com/planning-for-operations-of-ml-enabled-systems-a3d18e07ef7c)) |  |  |
 | Fri, Mar 15 | ![Lab](https://img.shields.io/badge/-lab-yellow.svg) Pipeline automation: MLFlow  |  |  |
-| Mon, Mar 18 | Process & Technical Debt ([book chapter 1](https://ckaestne.medium.com/data-science-and-software-engineering-process-models-ea997ea53711), [chapter 2](https://ckaestne.medium.com/technical-debt-in-machine-learning-systems-62035b82b6de)) |  |  |
-| Wed, Mar 20 | Intro to Ethics + Fairness ([book chapter 1](https://ckaestne.medium.com/responsible-ai-engineering-c97e44e6c57a), [chapter 2](https://ckaestne.medium.com/fairness-in-machine-learning-and-ml-enabled-products-8ee05ed8ffc4)) |  |  |
+| Mon, Mar 18 | Versioning, Provenance, and Reproducability ([book chapter 1](https://ckaestne.medium.com/data-science-and-software-engineering-process-models-ea997ea53711), [chapter 2](https://ckaestne.medium.com/technical-debt-in-machine-learning-systems-62035b82b6de)) |  | M2: Infrastructure Quality |
+| Wed, Mar 20 | Process & Technical Debt ([book chapter 1](https://ckaestne.medium.com/responsible-ai-engineering-c97e44e6c57a), [chapter 2](https://ckaestne.medium.com/fairness-in-machine-learning-and-ml-enabled-products-8ee05ed8ffc4)) |  |  |
 | Fri, Mar 22 | ![Lab](https://img.shields.io/badge/-lab-yellow.svg) Monitoring: Prometheus, Grafana  |  |  |
-| Mon, Mar 25 | Measuring Fairness ([book chapter](https://ckaestne.medium.com/fairness-in-machine-learning-and-ml-enabled-products-8ee05ed8ffc4))  |  | M2: Infrastructure Quality |
-| Wed, Mar 27 | Building Fairer Systems ([book chapter](https://ckaestne.medium.com/fairness-in-machine-learning-and-ml-enabled-products-8ee05ed8ffc4))  |  |  |
+| Mon, Mar 25 | Intro to Ethics + Fairness ([book chapter](https://ckaestne.medium.com/fairness-in-machine-learning-and-ml-enabled-products-8ee05ed8ffc4))  |  | I3: Open Source Tools |
+| Wed, Mar 27 | Measuring Fairness ([book chapter](https://ckaestne.medium.com/fairness-in-machine-learning-and-ml-enabled-products-8ee05ed8ffc4))  |  |  |
 | Fri, Mar 29 | ![Lab](https://img.shields.io/badge/-lab-yellow.svg) Container orchestration: Kubernetis  |  |  |
-| Mon, Apr 01 | Explainability & Interpretability ([book chapter](https://ckaestne.medium.com/interpretability-and-explainability-a80131467856)) |  | I4: Open Source Tools |
-| Wed, Apr 03 | Transparency & Accountability ([book chapter](https://ckaestne.medium.com/transparency-and-accountability-in-ml-enabled-systems-f8ed0b6fd183)) |  |  |
+| Mon, Apr 01 | Building Fairer Systems ([book chapter](https://ckaestne.medium.com/interpretability-and-explainability-a80131467856)) |  |  |
+| Wed, Apr 03 | Explainability & Interpretability ([book chapter](https://ckaestne.medium.com/transparency-and-accountability-in-ml-enabled-systems-f8ed0b6fd183)) |  |  |
 | Fri, Apr 05 | ![Lab](https://img.shields.io/badge/-lab-yellow.svg) Fairness Toolkits  |  |  |
-| Mon, Apr 08 | Versioning, Provenance, and Reproducability ([book chapter](https://ckaestne.medium.com/versioning-provenance-and-reproducibility-in-production-machine-learning-355c48665005)) |  |  |
+| Mon, Apr 08 | Transparency & Accountability ([book chapter](https://ckaestne.medium.com/versioning-provenance-and-reproducibility-in-production-machine-learning-355c48665005)) |  | M3: Monitoring and CD |
 | Wed, Apr 10 | Security and Privacy ([book chapter](https://ckaestne.medium.com/security-and-privacy-in-ml-enabled-systems-1855f561b894)) |  |  |
 | Fri, Apr 12 | ![Break](https://img.shields.io/badge/-break-red.svg) Spring Carnival, no classes  |  |  |
 | Mon, Apr 15 | Safety ([book chapter](https://ckaestne.medium.com/safety-in-ml-enabled-systems-b5a5901933ac)) |  |  |
-| Wed, Apr 17 | More safety, security, privacy  |  | M3: Monitoring and CD |
+| Wed, Apr 17 | More safety, security, privacy  |  | I4: Explainability |
 | Fri, Apr 19 | ![Lab](https://img.shields.io/badge/-lab-yellow.svg) Model Explainability Tools  |  |  |
 | Mon, Apr 22 | Fostering Interdisciplinary Teams ([book chapter](https://ckaestne.medium.com/building-machine-learning-products-with-interdisciplinary-teams-a1fdfbf49e81)) |  |  |
 | Wed, Apr 24 | Summary and Review  |  | M4: Fairness, Security and Feedback Loops |
-| tbd | Final Project Presentations  |  | Final report |
+| [tbd](https://www.cmu.edu/hub/docs/final-exams.pdf) | Final Project Presentations  |  | Final report |
