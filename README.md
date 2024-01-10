@@ -94,7 +94,7 @@ We regularly use Slack for in-class activities. Please make sure that you have a
 
 If you cannot attend class due to a medical issue, family emergency, interview, or other unforeseeable reason, please contact us about possible accommodations. We try to be as flexible as we can, but will handle these cases individually.
 
-**Grading:** Evaluation will be based on the following distribution: 30% individual assignments, 30% group project, 10% midterm, 10% participation, 10% labs, 10% reading quizzes. No final exam.
+**Grading:** Evaluation will be based on the following distribution: 35% individual assignments, 30% group project, 10% midterm, 10% participation, 5% labs, 10% reading quizzes. No final exam.
 
 We strive to provide clear specifications and clear point breakdowns for all homework to set clear expectations and take the guessing out of homework. We often give you choices to self-direct your learning, deciding what to work on and how to address a problem (e.g., we never prescribe a programming language and often give choices to answer a subset of possible questions). Clear specifications and point breakdowns allow you to intentionally decide to skip parts of assignments with clear upfront consequences. All parts will be graded pass/fail, no partial credit. For opportunities to redo work, see *resubmissions* below. For grading participation and quizzes see below. Some assignments have a small amount of bonus points. 
 
