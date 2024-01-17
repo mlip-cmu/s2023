@@ -8,7 +8,7 @@ To receive credit for this lab, show your work to the TA during recitation.
 - [ ] Run the API endpoint with the starter code and demonstrate that it works with an example invocation (e.g., using curl).
 
 ## Getting started
-Clone the starter code from this Git repository: tbd
+Clone the starter code from this Git repository: https://github.com/eshetty/mlip-api-lab
 
 The code implements a flask web application that receives API requests to analyze an image and return information about the image, including the text contained within. To identify the text, the OCR feature of the Azure Vision API [[documentation](https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-2/operations/56f91f2e778daf14a499f20d#:~:text=test.jpg%22%7D-,Response%20200,-The%20OCR%20results), [response format](https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-2/operations/56f91f2e778daf14a499f20d#:~:text=test.jpg%22%7D-,Response%20200,-The%20OCR%20results)] can be used by adjusting the API endpoint and credentials in the code. We use the Azure’s provided libraries to abstract from low-level protocol details.
 
