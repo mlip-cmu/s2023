@@ -3,7 +3,7 @@
 | Date  | Topic | Reading | Assignment due |
 | -     | -     | -       | -              |
 | Wed, Jan 17 | [Introduction and Motivation](https://mlip-cmu.github.io/s2024/slides/01_introduction/intro.html)  ([book chapter](https://ckaestne.medium.com/introduction-to-machine-learning-in-production-eef7427426f1)) |  |  |
-| Fri, Jan 19 | ![Lab](https://img.shields.io/badge/-lab-yellow.svg) Calling, securing, and creating APIs: Flask  |  |  |
+| Fri, Jan 19 | ![Lab](https://img.shields.io/badge/-lab-yellow.svg) [Calling, securing, and creating APIs](https://github.com/mlip-cmu/s2024/blob/main/labs/lab01.md)  |  |  |
 | Mon, Jan 22 | [From Models to AI-Enabled Systems](https://mlip-cmu.github.io/s2024/slides/02_systems/systems.html) ([book chapter 1](https://ckaestne.medium.com/machine-learning-in-production-from-models-to-systems-e1422ec7cd65), [chapter 2](https://ckaestne.medium.com/when-to-use-machine-learning-83fe9be1b8e1), [chapter 3](https://ckaestne.medium.com/setting-and-measuring-goals-for-machine-learning-projects-c887bc6ab9d0)) | [Building Intelligent Systems](https://cmu.primo.exlibrisgroup.com/permalink/01CMU_INST/6lpsnm/alma991019649190004436), Ch. 4, 5, 7, 8 |  |
 | Wed, Jan 24 | Gathering and Untangling Requirements  ([book chapter](https://ckaestne.medium.com/gathering-requirements-for-ml-enabled-systems-4f0a7a23730f)) |  |  |
 | Fri, Jan 26 | ![Lab](https://img.shields.io/badge/-lab-yellow.svg) Stream processing: Apache Kafka  |  |  |
