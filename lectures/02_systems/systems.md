@@ -19,6 +19,16 @@ license: Creative Commons Attribution 4.0 International (CC BY 4.0)
 
 ---
 
+# Administrativa
+
+* Still waiting for registrar to add another section
+* Follow up on syllabus discussion:
+  * When not feeling well -- please stay home and get well, and email us for accommodation
+  * When using generative AI to generate responses (or email/slack messages) -- please ask it to be brief and to the point!
+
+
+----
+
 # Learning goals
 
 * Understand how ML components are a (small or large) part of a larger system
@@ -379,6 +389,13 @@ Passi, S., & Sengers, P. (2020). [Making data science systems work](https://jour
 
 
 ----
+## Model vs System Goal?
+
+![Model and system goals not aligning at booking.com](bookingcom2.png)
+<!-- .element: class="stretch" -->
+
+
+----
 ## More Accurate Predictions may not be THAT Important
 
 * "Good enough" may be good enough
@@ -466,7 +483,7 @@ Start understanding the **requirements** of the system and its components
 <div class="small">
 
 * **Organizational objectives:** Innate/overall goals of the organization
-* **System goals:** Goals of the software system/feature to be built
+* **System goals:** Goals of the software system/product/feature to be built
 * **User outcomes:** How well the system is serving its users, from the user's perspective
 * **Model properties:** Quality of the model used in a system, from the model's perspective
 *
@@ -622,7 +639,25 @@ As a group post answer to `#lecture` tagging all group members using template:
 > User goals: ...<br />
 > Model goals: ...<br />
 
+----
+## Academic Integrity Issue
 
+* Please do not cover for people not participating in discussion
+* Easy to detect discrepancy between # answers and # people in classroom 
+* Please let's not have to have unpleasant meetings.
+
+
+----
+## Breakout: Automating Admission Decisions
+
+What are different types of goals behind automating admissions decisions to a Master's program?
+
+As a group post answer to `#lecture` tagging all group members using template:
+> Organizational goals: ...<br />
+> Leading indicators: ...<br />
+> System goals: ...<br />
+> User goals: ...<br />
+> Model goals: ...<br />
 
 
 
