@@ -11,7 +11,7 @@ To receive credit for this lab, show your work to the TA during recitation.
 
 
 ## Getting started
-- Clone the starter code from this Git repository.
+- Clone the starter code from this [Git repository](https://github.com/tanya-5/mlip-kafka-lab/).
 - The repository includes a python notebook for Kafka producer and consumer model.
 - Install the Kafka Python package by running:  
   `python -m pip install kafka-python`
