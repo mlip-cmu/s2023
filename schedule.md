@@ -31,7 +31,7 @@
 | Mon, Mar 18 | Versioning, Provenance, and Reproducability ([book chapter 1](https://ckaestne.medium.com/data-science-and-software-engineering-process-models-ea997ea53711), [chapter 2](https://ckaestne.medium.com/technical-debt-in-machine-learning-systems-62035b82b6de)) |  | [M2: Infrastructure Quality](https://github.com/mlip-cmu/s2024/blob/main/assignments/project.md) |
 | Wed, Mar 20 | Process & Technical Debt ([book chapter 1](https://ckaestne.medium.com/responsible-ai-engineering-c97e44e6c57a), [chapter 2](https://ckaestne.medium.com/fairness-in-machine-learning-and-ml-enabled-products-8ee05ed8ffc4)) |  |  |
 | Fri, Mar 22 | ![Lab](https://img.shields.io/badge/-lab-yellow.svg) Monitoring: Prometheus, Grafana  |  |  |
-| Mon, Mar 25 | Intro to Ethics + Fairness ([book chapter](https://ckaestne.medium.com/fairness-in-machine-learning-and-ml-enabled-products-8ee05ed8ffc4))  |  | I3: Open Source Tools |
+| Mon, Mar 25 | Intro to Ethics + Fairness ([book chapter](https://ckaestne.medium.com/fairness-in-machine-learning-and-ml-enabled-products-8ee05ed8ffc4))  |  | [I3: Open Source Tools](https://github.com/mlip-cmu/s2024/blob/main/assignments/I3_mlops_tools.md) |
 | Wed, Mar 27 | Measuring Fairness ([book chapter](https://ckaestne.medium.com/fairness-in-machine-learning-and-ml-enabled-products-8ee05ed8ffc4))  |  |  |
 | Fri, Mar 29 | ![Lab](https://img.shields.io/badge/-lab-yellow.svg) Container orchestration: Kubernetis  |  |  |
 | Mon, Apr 01 | Building Fairer Systems ([book chapter](https://ckaestne.medium.com/interpretability-and-explainability-a80131467856)) |  |  |
@@ -41,7 +41,7 @@
 | Wed, Apr 10 | Security and Privacy ([book chapter](https://ckaestne.medium.com/security-and-privacy-in-ml-enabled-systems-1855f561b894)) |  |  |
 | Fri, Apr 12 | ![Break](https://img.shields.io/badge/-break-red.svg) Spring Carnival, no classes  |  |  |
 | Mon, Apr 15 | Safety ([book chapter](https://ckaestne.medium.com/safety-in-ml-enabled-systems-b5a5901933ac)) |  |  |
-| Wed, Apr 17 | More safety, security, privacy  |  | I4: Explainability |
+| Wed, Apr 17 | More safety, security, privacy  |  | [I4: Explainability](https://github.com/mlip-cmu/s2024/blob/main/assignments/I4_explainability.md) |
 | Fri, Apr 19 | ![Lab](https://img.shields.io/badge/-lab-yellow.svg) Model Explainability Tools  |  |  |
 | Mon, Apr 22 | Fostering Interdisciplinary Teams ([book chapter](https://ckaestne.medium.com/building-machine-learning-products-with-interdisciplinary-teams-a1fdfbf49e81)) |  |  |
 | Wed, Apr 24 | Summary and Review  |  | [M4: Fairness, Security and Feedback Loops](https://github.com/mlip-cmu/s2024/blob/main/assignments/project.md) |
