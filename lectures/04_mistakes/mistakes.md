@@ -413,8 +413,7 @@ Notes: Cancer prediction, sentencing + recidivism, Tesla autopilot, military "ki
 
 ![Example of email responses suggested by GMail](email.png)
 
-* Fall detection smartwatch
-* Safe browsing
+* Fall detection smartwatch?
 
 ----
 ## Human in the Loop - Examples?
