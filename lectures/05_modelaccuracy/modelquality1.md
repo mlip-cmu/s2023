@@ -1103,7 +1103,8 @@ Note: The curve is the real trend, red points are training data, green points ar
 
 Example: Kaggle competition on detecting distracted drivers
 
-![Driver Picture 1](driver_phone1.png) ![Driver Picture 2](driver_phone2.png)
+![Driver Picture 1](driver_phone1.png) 
+![Driver Picture 2](driver_phone2.png)
 <!-- .element: class="stretch" -->
 
 Relation of datapoints may not be in the data (e.g., driver)
