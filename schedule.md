@@ -9,16 +9,16 @@
 | Fri, Jan 26 | ![Lab](https://img.shields.io/badge/-lab-yellow.svg) [Stream processing: Apache Kafka](https://github.com/mlip-cmu/s2024/blob/main/labs/lab02.md)  |  |  |
 | Mon, Jan 29 | [Planning for Mistakes](https://mlip-cmu.github.io/s2024/slides/04_mistakes/mistakes.html) ([book chapter](https://ckaestne.medium.com/planning-for-machine-learning-mistakes-2574f4fcf529)) |  | [I1: ML Product](https://github.com/mlip-cmu/s2024/blob/main/assignments/I1_mlproduct.md) |
 | Wed, Jan 31 | [Model Quality](https://mlip-cmu.github.io/s2024/slides/05_modelaccuracy/modelquality1.html) ([book chapter 1](https://ckaestne.medium.com/model-quality-defining-correctness-and-fit-a8361b857df), [chapter 2](https://ckaestne.medium.com/model-quality-measuring-prediction-accuracy-38826216ebcb)) |  |  |
-| Fri, Feb 02 | ![Lab](https://img.shields.io/badge/-lab-yellow.svg) tbd  |  |  |
+| Fri, Feb 02 | ![Lab](https://img.shields.io/badge/-lab-yellow.svg) [Git](https://github.com/mlip-cmu/s2024/blob/main/labs/lab03.md)  |  |  |
 | Mon, Feb 05 | [Fostering Interdisciplinary (Student) Teams](https://mlip-cmu.github.io/s2024/slides/06_teamwork/teams.html) |  | [I2: Requirements](https://github.com/mlip-cmu/s2024/blob/main/assignments/I2_requirements.md) |
 | Wed, Feb 07 | Behavioral Model Testing ([book chapter](https://ckaestne.medium.com/model-quality-slicing-capabilities-invariants-and-other-testing-strategies-27e456027bd)) |  |  |
-| Fri, Feb 09 | ![Lab](https://img.shields.io/badge/-lab-yellow.svg) tbd (collaboration tools)  |  |  |
+| Fri, Feb 09 | ![Lab](https://img.shields.io/badge/-lab-yellow.svg) Model Testing: Zeno and AdaTest  |  |  |
 | Mon, Feb 12 | Toward Architecture and Design  ([book chapter 1](https://ckaestne.medium.com/architectural-components-in-ml-enabled-systems-78cf76b29a92), [chapter 2](https://ckaestne.medium.com/thinking-like-a-software-architect-121ea6919871), [chapter 3](https://ckaestne.medium.com/quality-drivers-in-architectures-for-ml-enabled-systems-836f21c44334)) |  |  |
 | Wed, Feb 14 | Deploying a Model ([book chapter](https://ckaestne.medium.com/deploying-a-model-f0b7ffefd06a)) |  |  |
 | Fri, Feb 16 | ![Lab](https://img.shields.io/badge/-lab-yellow.svg) Containers: Docker  |  |  |
 | Mon, Feb 19 | Testing in Production ([book chapter](https://ckaestne.medium.com/quality-assurance-in-production-for-ml-enabled-systems-4d1b3442316f)) |  | [M1: Modeling and First Deployment](https://github.com/mlip-cmu/s2024/blob/main/assignments/project.md) |
 | Wed, Feb 21 | Data Quality ([book chapter](https://ckaestne.medium.com/data-quality-for-building-production-ml-systems-2e0cc7e6113f)) |  |  |
-| Fri, Feb 23 | ![Lab](https://img.shields.io/badge/-lab-yellow.svg) Model Testing: Zeno and AdaTest  |  |  |
+| Fri, Feb 23 | ![Lab](https://img.shields.io/badge/-lab-yellow.svg) tbd  |  |  |
 | Mon, Feb 26 | Automating and Testing ML Pipelines ([book chapter 1](https://ckaestne.medium.com/quality-assurance-basics-6ce1eca9921), [chapter 2](https://ckaestne.medium.com/quality-assurance-for-machine-learning-pipelines-d495b8e5ad6a), [chapter 3](https://ckaestne.medium.com/integration-and-system-testing-bc4db6650d1)) |  |  |
 | Wed, Feb 28 | ![Midterm](https://img.shields.io/badge/-midterm-blue.svg) Midterm  |  |  |
 | Fri, Mar 01 | ![Lab](https://img.shields.io/badge/-lab-yellow.svg) Continuous Integration: Jenkins  |  |  |
