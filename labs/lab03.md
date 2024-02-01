@@ -1,4 +1,4 @@
-# Exercises
+# Lab 3: Git
 
 ## Deliverables:
 You will perform three tasks in this exercise. 
