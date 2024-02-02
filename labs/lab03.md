@@ -42,6 +42,8 @@ git checkout
 
 ## Exercise 3: Create and approve a pull request
 
+**Note: Please ensure you create the pull request to the main branch of your forked repository. Under no circumstances should you create a pull request to the original PyTorch repository.**
+
 1. Create a new branch called `pull-request` from `main` branch.
 2. In the `torch/nn/functional.py` file, navigate to the `l1_loss` function (line 3308) and add code to check if the reduction mode is `sum` and raise an exception:
 3. Commit the changes to the `pull-request` branch. Make sure you add a meaningful commit message.
