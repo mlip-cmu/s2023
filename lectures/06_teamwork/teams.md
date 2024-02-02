@@ -1,8 +1,8 @@
 ---
-author: Christian Kaestner and Eunsuk Kang
+author: Christian Kaestner and Claire Le Goues
 title: "MLiP: Working with Interdisciplinary (Student) Teams"
-semester: Spring 2023
-footer: "Machine Learning in Production/AI Engineering • Christian Kaestner & Eunsuk Kang, Carnegie Mellon University • Spring 2023"
+semester: Spring 2024
+footer: "Machine Learning in Production/AI Engineering • Christian Kaestner & Claire Le Goues, Carnegie Mellon University • Spring 2024"
 license: Creative Commons Attribution 4.0 International (CC BY 4.0)
 ---
 <!-- .element: class="titleslide"  data-background="../_chapterimg/03a_teamwork.jpg" -->
@@ -31,7 +31,7 @@ license: Creative Commons Attribution 4.0 International (CC BY 4.0)
 * Say hi, introduce yourself: Name? SE or ML background? Favorite movie? Fun fact?
 * Find time for first team meeting in next few days
 * Agree on primary communication until team meeting
-* Pick a movie-related team name, post team name and tag all group members on slack in `#social`
+* Pick a movie-related team name (use a language model if needed), post team name and tag all group members on slack in `#social`
 
 ---
 ## Teamwork is crosscutting...
@@ -390,7 +390,7 @@ Based on research and years of own experience
 
 
 ----
-## Breakout: Navigating Team Issues
+## Breakout: Premortem
 
 Pick one or two of the scenarios (or another one team member faced in the past) and openly discuss proactive/reactive solutions
 
